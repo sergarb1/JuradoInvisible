@@ -9,6 +9,9 @@ const router = useRouter()
 
 const caso = ref<CaseData | null>(null)
 const error = ref('')
+const coverFailed = ref(false)
+
+const coverSrc = (caseId: string) => `${import.meta.env.BASE_URL}assets/cases/${caseId}-cover.webp`
 
 onMounted(async () => {
   try {
@@ -36,6 +39,13 @@ async function comenzar() {
         <p class="text-xs uppercase tracking-wide text-sky-400">Caso</p>
         <h1 class="text-3xl font-bold">{{ caso.title }}</h1>
       </div>
+      <img
+        v-if="!coverFailed"
+        :src="coverSrc(caso.id)"
+        :alt="`Portada del caso ${caso.title}`"
+        class="aspect-video w-full rounded-xl object-cover"
+        @error="coverFailed = true"
+      />
       <p class="text-slate-300">{{ caso.intro }}</p>
       <div class="rounded-xl bg-slate-900 p-4 text-sm text-slate-400">
         {{ caso.description }}

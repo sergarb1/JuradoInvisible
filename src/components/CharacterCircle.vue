@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed } from 'vue'
+import { computed, ref } from 'vue'
 import type { Character } from '../models/types'
 import { ROLE_META } from '../lib/caseMeta'
 
@@ -9,7 +9,13 @@ const props = defineProps<{
   relationships: Record<string, number>
 }>()
 
+const avatarFailed = ref(false)
+
 const meta = computed(() => ROLE_META[props.character.role])
+
+const avatarSrc = computed(
+  () => `${import.meta.env.BASE_URL}assets/avatars/rol-${props.character.role}.webp`,
+)
 
 const size = computed(() => 36 + props.character.traits.influence / 4)
 const relationToVictim = computed(() => {
@@ -35,11 +41,19 @@ const icon = computed(() => meta.value.icon)
     :title="`${character.name}: ${meta.label}. ${meta.desc}`"
   >
     <div
-      class="relative flex items-center justify-center rounded-full text-lg font-bold ring-2"
+      class="relative flex items-center justify-center overflow-hidden rounded-full text-lg font-bold ring-2"
       :class="ring"
       :style="{ width: `${size}px`, height: `${size}px` }"
     >
       <span class="select-none">{{ initial }}</span>
+      <img
+        v-if="!avatarFailed"
+        :src="avatarSrc"
+        :alt="`Retrato de ${character.name}`"
+        class="absolute inset-0 h-full w-full object-cover"
+        loading="lazy"
+        @error="avatarFailed = true"
+      />
       <span
         class="absolute -bottom-1 -right-1 flex h-5 w-5 items-center justify-center rounded-full bg-slate-950 ring-1 ring-slate-700"
         :title="meta.label"
