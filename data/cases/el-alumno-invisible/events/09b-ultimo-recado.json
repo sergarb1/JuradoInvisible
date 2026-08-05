@@ -1,0 +1,54 @@
+{
+  "id": "ultimo-recado",
+  "day": 9,
+  "priority": 3,
+  "condition": null,
+  "actor": "pablo",
+  "speaker": "Pablo",
+  "scene": "Al terminar el recreo, la propuesta del torneo queda flotando en el silencio del grupo.",
+  "text": "Alguien sugiere invitar a Marcos al torneo. La propuesta flota en el aire.",
+  "choices": [
+    {
+      "id": "voto",
+      "text": "Votas a favor en voz alta.",
+      "stance": "pro",
+      "consequence": "Tu 'sí' rompe el silencio. Uno a uno, otros se suman. El torneo se convierte en algo donde Marcos también está. No es nada heroico: es un nombre que suena.",
+      "effects": {
+        "support": 6,
+        "norm": 5,
+        "isolation": -4
+      },
+      "relationEffects": {
+        "tu:marcos": 8
+      },
+      "setFlags": [],
+      "clearFlags": []
+    },
+    {
+      "id": "silencio",
+      "text": "No dices nada entre todos.",
+      "stance": "anti",
+      "consequence": "El silencio decide por todos. La propuesta muere sin votos y sin que nadie la entierre. Marcos no pregunta, ya ha aprendido a no hacerlo.",
+      "effects": {
+        "support": -3,
+        "silence": 4
+      },
+      "relationEffects": {},
+      "setFlags": [],
+      "clearFlags": []
+    },
+    {
+      "id": "depende",
+      "text": "'Depende de si él querrá', dices, y lo dejas caer.",
+      "stance": "neutral",
+      "consequence": "La frase deja la puerta abierta, y la propuesta respira un poco más. Nadie lo invita aún, pero nadie la cierra tampoco.",
+      "effects": {
+        "support": 2,
+        "norm": 2
+      },
+      "relationEffects": {},
+      "setFlags": [],
+      "clearFlags": []
+    }
+  ]
+}

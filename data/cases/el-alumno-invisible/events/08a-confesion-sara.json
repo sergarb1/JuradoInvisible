@@ -1,0 +1,56 @@
+{
+  "id": "confesion-sara",
+  "day": 8,
+  "priority": 4,
+  "condition": {
+    "flag": "duda"
+  },
+  "actor": "sara",
+  "speaker": "Sara, a solas",
+  "scene": "En un hueco tranquilo del pasillo, Sara se detiene y baja la voz.",
+  "text": "'Lo mío me revuelve', te confiesa. Le duele verlo, y se siente cómplice por callar.",
+  "choices": [
+    {
+      "id": "escuchar",
+      "text": "La acoges y juntas un gesto concreto.",
+      "stance": "pro",
+      "consequence": "Sara se queda más tranquila al decirlo. El gesto concreto os une, y por primera vez el 'yo no he hecho nada' se convierte en 'yo puedo hacer algo'.",
+      "effects": {
+        "support": 8,
+        "silence": -5,
+        "norm": 5
+      },
+      "relationEffects": {},
+      "setFlags": [
+        "incipiente"
+      ],
+      "clearFlags": []
+    },
+    {
+      "id": "tranquila",
+      "text": "Intentas calmarla para evitar líos.",
+      "stance": "anti",
+      "consequence": "La calmas, le dices que no pasa nada y que ya se olvidará. Te lo agradece, pero el 'no pasa nada' también se lo dice ella a sí misma cada noche.",
+      "effects": {
+        "support": -5,
+        "silence": 4
+      },
+      "relationEffects": {},
+      "clearFlags": [],
+      "setFlags": []
+    },
+    {
+      "id": "omision",
+      "text": "Escuchas; no sabes qué hacer.",
+      "stance": "neutral",
+      "consequence": "Escuchas y no sabes qué decir. Sara agradece que la hayas escuchado, aunque los dos sabéis que eso no cambia nada. Aún no.",
+      "effects": {
+        "silence": 2,
+        "pressure": 2
+      },
+      "relationEffects": {},
+      "clearFlags": [],
+      "setFlags": []
+    }
+  ]
+}

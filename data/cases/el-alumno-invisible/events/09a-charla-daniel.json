@@ -1,0 +1,62 @@
+{
+  "id": "charla-daniel",
+  "day": 9,
+  "priority": 5,
+  "condition": {
+    "variable": "norm",
+    "op": "<",
+    "value": 45
+  },
+  "actor": "daniel",
+  "speaker": "Daniel",
+  "scene": "Daniel te intercepta al salir de clase. No pregunta, exige una respuesta.",
+  "text": "Daniel te busca: 'Es todo bromista. ¿Por qué le das importancia?'",
+  "choices": [
+    {
+      "id": "sindicato",
+      "text": "'No. Esto ha cruzado una línea.'",
+      "stance": "pro",
+      "consequence": "Daniel se queda mirándote, midiendo si hablas en serio. No te responde. A partir de ahí el patio lo siente distinto, y Marcos también.",
+      "effects": {
+        "support": 10,
+        "norm": 8,
+        "pressure": -2
+      },
+      "relationEffects": {},
+      "setFlags": [
+        "firmeza"
+      ],
+      "clearFlags": []
+    },
+    {
+      "id": "quito",
+      "text": "Bajas la cabeza y aguantas el miedo.",
+      "stance": "anti",
+      "consequence": "Bajas la cabeza. Daniel da la conversación por zanjada y se aleja satisfecho. El miedo te dura toda la tarde; a Marcos, todo el curso.",
+      "effects": {
+        "support": -6,
+        "norm": -5,
+        "silence": 6,
+        "pressure": 4
+      },
+      "relationEffects": {},
+      "clearFlags": [
+        "firmeza"
+      ],
+      "setFlags": []
+    },
+    {
+      "id": "respuesta",
+      "text": "'Le doy el margen, pero no te pases.'",
+      "stance": "neutral",
+      "consequence": "Daniel acepta el margen a regañadientes. No es un acuerdo, es una tregua, y las treguas dependen de que alguien las recuerde cada día.",
+      "effects": {
+        "norm": 2,
+        "pressure": 2
+      },
+      "relationEffects": {},
+      "setFlags": [],
+      "clearFlags": []
+    }
+  ]
+}

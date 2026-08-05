@@ -1,0 +1,61 @@
+{
+  "id": "reunion-final",
+  "day": 10,
+  "priority": 9,
+  "condition": null,
+  "actor": "tu",
+  "speaker": "Tutoría / claustro / asamblea",
+  "scene": "Diez días después, la tutoría es una asamblea. La clase entera espera saber qué rumbo toma esto.",
+  "text": "Diez días después hay que decidir el curso de la clase: investigar como grupo, darle la espalda o archivarlo por falta de pruebas.",
+  "choices": [
+    {
+      "id": "proteger",
+      "text": "Impulsas un protocolo de acompañamiento y explicas que el silencio no es inocencia.",
+      "stance": "pro",
+      "consequence": "La asamblea acaba con un protocolo, pero lo que queda es más pequeño y más grande a la vez: la clase ha dejado de fingir que no ve. Eso ya no se deshace.",
+      "effects": {
+        "support": 12,
+        "norm": 10,
+        "isolation": -8,
+        "silence": -8
+      },
+      "relationEffects": {},
+      "setFlags": [
+        "programa"
+      ],
+      "clearFlags": []
+    },
+    {
+      "id": "imponer2",
+      "text": "Aunque el consenso es frágil, fuerzas una mediación.",
+      "stance": "pro",
+      "consequence": "La mediación se pone en marcha, frágil. Algunos la aceptan por orden, no por convicción, pero el mecanismo existe: cuando algo está escrito, es más difícil que no pase.",
+      "effects": {
+        "support": 6,
+        "norm": 4,
+        "pressure": 5
+      },
+      "relationEffects": {},
+      "setFlags": [
+        "programa"
+      ],
+      "clearFlags": []
+    },
+    {
+      "id": "diluir2",
+      "text": "Como 'no hay pruebas contundentes', decides no removerlo.",
+      "stance": "anti",
+      "consequence": "'No hay pruebas' suena a cierre definitivo. La clase se dispersa aliviada. El silencio queda firmado por todos, sin una firma.",
+      "effects": {
+        "support": -8,
+        "silence": 8,
+        "isolation": 6
+      },
+      "relationEffects": {},
+      "setFlags": [
+        "silencio_final"
+      ],
+      "clearFlags": []
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "id": "amago-defensa",
+  "day": 8,
+  "priority": 4,
+  "condition": null,
+  "actor": "lucia",
+  "speaker": "Lucía (tensa)",
+  "scene": "Lucía intenta acercarse a Marcos, pero la risa de Iván corta el aire y ella se calla, incómoda.",
+  "text": "Lucía intenta hablar con Marcos pero tropieza con la risa de Iván y se calla.",
+  "choices": [
+    {
+      "id": "respaldar",
+      "text": "La respaldas y encaráis la conversación.",
+      "stance": "pro",
+      "consequence": "Con dos personas la conversación se sostiene. Iván se ríe solo y se rinde. Lucía te mira con gratitud: no ha tenido que hacerlo sola.",
+      "effects": {
+        "support": 7,
+        "norm": 5,
+        "silence": 4
+      },
+      "relationEffects": {
+        "tu:lucia": 10
+      },
+      "setFlags": [
+        "alianza"
+      ],
+      "clearFlags": []
+    },
+    {
+      "id": "dejar",
+      "text": "La dejas pasar como la vez anterior.",
+      "stance": "neutral",
+      "consequence": "Lucía se calla y tú también. La risa de Iván llena el hueco. Marcos se queda otra vez sin saber que alguien intentó llegar a él.",
+      "effects": {
+        "silence": 3
+      },
+      "relationEffects": {},
+      "setFlags": [],
+      "clearFlags": []
+    },
+    {
+      "id": "seguir-la-risa",
+      "text": "Finges que no lo has visto y te unes a la conversación de enfrente.",
+      "stance": "anti",
+      "consequence": "Evitas el compromiso. Lucía lo nota y no vuelve a intentarlo a tu lado. El silencio de dos pesa igual que el de veinte.",
+      "effects": {
+        "support": -4,
+        "silence": 4
+      },
+      "relationEffects": {},
+      "setFlags": [],
+      "clearFlags": []
+    }
+  ]
+}

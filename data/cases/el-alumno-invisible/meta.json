@@ -1,0 +1,39 @@
+{
+  "id": "el-alumno-invisible",
+  "title": "El alumno invisible",
+  "seed": 7,
+  "description": "Marcos lleva dos meses sin encajar en el grupo. Las bromas, el silencio y la inercia colectiva deciden si la clase lo protege o lo abandona.",
+  "intro": "Marcos es nuevo. En dos meses nadie le ha invitado a un grupo. Lo que hagas en estos diez días y lo que la clase haga marcará el desenlace. No hay respuestas correctas: cada decisión tiene un coste y consecuencias.",
+  "prologue": [
+    {
+      "title": "Lunes, 8:20",
+      "text": "Suena el timbre y entras en clase como cualquier otro día. Conoces cada cara: Daniel, que marca el ritmo del patio; Iván, que siempre encuentra la palabra exacta para hacer reír; Lucía, que habla poco pero se fija en todo; Sara, Pablo, Laura. La tuya es una clase normal. Como todas."
+    },
+    {
+      "title": "Marcos",
+      "text": "Marcos llegó hace dos meses, a mitad de curso. No venía con amigos ni con un grupo que le esperase. Los primeros días nadie le invitó a sentarse en el recreo; la gente le miraba de reojo y seguía con lo suyo. Poco a poco, dejó de sentarse con nadie."
+    },
+    {
+      "title": "Tu papel",
+      "text": "Tú no eres el cabecilla del grupo ni el que lo arregla todo. Eres uno más, con tus dudas y tu miedo a quedarte fuera. Lo que hagas —o no hagas— estos diez días no lo decide un guion: lo decide cómo se comporta el grupo a tu alrededor."
+    },
+    {
+      "title": "Diez días",
+      "text": "Van a pasar diez días de instituto. Cada día puede traer una situación y varias salidas. No hay respuestas correctas ni incorrectas: cada decisión tiene un coste, y la clase reacciona a lo que haces y a lo que no haces."
+    },
+    {
+      "title": "No es un examen",
+      "text": "No te van a puntuar. Nadie te dirá si has jugado bien o mal. Lo que sí ocurrirá: verás cómo se mueven el silencio, el apoyo, la presión y la norma en una clase real, y qué precio tienen las cosas. Empezamos."
+    }
+  ],
+  "days": 10,
+  "playerId": "tu",
+  "victimId": "marcos",
+  "initial": {
+    "isolation": 55,
+    "support": 20,
+    "pressure": 40,
+    "norm": 35,
+    "silence": 50
+  }
+}

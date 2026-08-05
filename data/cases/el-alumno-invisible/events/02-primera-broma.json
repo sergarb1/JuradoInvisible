@@ -1,0 +1,61 @@
+{
+  "id": "primera-broma",
+  "day": 2,
+  "priority": 5,
+  "condition": null,
+  "actor": "ivan",
+  "speaker": "Iván",
+  "scene": "En el pasillo, entre risas, Iván hace de anfitrión y varios miran de reojo para ver quién se ríe.",
+  "text": "Algunos se ríen cuando Iván hace una broma sobre Marcos. 'Bienvenido al club, Marcitos.'",
+  "choices": [
+    {
+      "id": "parar",
+      "text": "'Dejadle en paz, no tiene gracia.'",
+      "stance": "pro",
+      "consequence": "La risa se corta un instante. Algunos se miran; Iván encoge los hombros como si nada, pero el chiste ya no tiene la misma gracia.",
+      "effects": {
+        "support": 7,
+        "norm": 6,
+        "silence": -4,
+        "pressure": -3
+      },
+      "relationEffects": {
+        "tu:marcos": 10
+      },
+      "setFlags": [
+        "firmeza"
+      ],
+      "clearFlags": []
+    },
+    {
+      "id": "reir",
+      "text": "Te ríes para encajar.",
+      "stance": "anti",
+      "consequence": "Te ríes. Marcos baja la mirada y finge que no escucha. La risa os une a vosotros y le separa a él. Esa es la cuenta.",
+      "effects": {
+        "support": -4,
+        "norm": -4,
+        "silence": 5,
+        "pressure": 3,
+        "isolation": 4
+      },
+      "relationEffects": {},
+      "setFlags": [],
+      "clearFlags": []
+    },
+    {
+      "id": "callar",
+      "text": "Callas y miras el móvil.",
+      "stance": "neutral",
+      "consequence": "El silencio es tu respuesta. Nadie te señala, pero todos han visto que no has dicho nada.",
+      "effects": {
+        "silence": 3,
+        "isolation": 2,
+        "pressure": 1
+      },
+      "relationEffects": {},
+      "setFlags": [],
+      "clearFlags": []
+    }
+  ]
+}

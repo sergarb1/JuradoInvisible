@@ -1,0 +1,60 @@
+{
+  "id": "pregunta-lucia",
+  "day": 3,
+  "priority": 4,
+  "condition": {
+    "variable": "silence",
+    "op": ">",
+    "value": 50
+  },
+  "actor": "lucia",
+  "speaker": "Lucía se detiene",
+  "scene": "El comedor bulle. Marcos come solo en la esquina y Lucía, a tu lado, no aparta la vista de él.",
+  "text": "Nadie comenta lo de ayer. Marcos come solo. Lucía duda si pronunciarse.",
+  "choices": [
+    {
+      "id": "reforzar",
+      "text": "Te sumas a Lucía para acercaros.",
+      "stance": "pro",
+      "consequence": "Lucía te sonríe con alivio. Los dos os sentáis cerca de Marcos, y por primera vez alguien no le hace hueco por lástima, sino por costumbre.",
+      "effects": {
+        "support": 6,
+        "silence": -3,
+        "norm": 4
+      },
+      "relationEffects": {
+        "tu:lucia": 10
+      },
+      "setFlags": [
+        "alianza"
+      ],
+      "clearFlags": []
+    },
+    {
+      "id": "indiferente",
+      "text": "Sigues, indiferente.",
+      "stance": "neutral",
+      "consequence": "Sigues con lo tuyo. Lucía no insiste, y el comedor vuelve a su rutina: Marcos, solo; el resto, en sus grupos.",
+      "effects": {
+        "silence": 2
+      },
+      "relationEffects": {},
+      "setFlags": [],
+      "clearFlags": []
+    },
+    {
+      "id": "ironizar",
+      "text": "Señalas lo 'loco' de la broma de Iván.",
+      "stance": "anti",
+      "consequence": "Tu ironía consigue alguna risa, pero la broma se vuelve contra Marcos otra vez. Lucía te mira, decepcionada, y no vuelve a sacar el tema.",
+      "effects": {
+        "support": -3,
+        "silence": 3,
+        "norm": -3
+      },
+      "relationEffects": {},
+      "setFlags": [],
+      "clearFlags": []
+    }
+  ]
+}

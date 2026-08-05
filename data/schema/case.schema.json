@@ -1,0 +1,216 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://eljuradoinvisible.dev/case.schema.json",
+  "title": "Caso de simulación social",
+  "description": "Esquema de un caso jugable de El Jurado Invisible",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "title",
+    "seed",
+    "description",
+    "intro",
+    "days",
+    "playerId",
+    "victimId",
+    "initial",
+    "characters",
+    "events",
+    "endings"
+  ],
+  "properties": {
+    "id": { "type": "string" },
+    "title": { "type": "string" },
+    "seed": { "type": "number" },
+    "description": { "type": "string" },
+    "intro": { "type": "string" },
+    "days": { "type": "number", "minimum": 1 },
+    "playerId": { "type": "string" },
+    "victimId": { "type": "string" },
+    "initial": { "$ref": "#/definitions/variableMap" },
+    "characters": {
+      "type": "array",
+      "minItems": 2,
+      "items": { "$ref": "#/definitions/character" }
+    },
+    "events": {
+      "type": "array",
+      "items": { "$ref": "#/definitions/event" }
+    },
+    "endings": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/definitions/ending" }
+    },
+    "prologue": {
+      "type": "array",
+      "items": { "$ref": "#/definitions/narrativeBlock" }
+    }
+  },
+  "definitions": {
+    "variableMap": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["isolation", "support", "pressure", "norm", "silence"],
+      "properties": {
+        "isolation": { "type": "number", "minimum": 0, "maximum": 100 },
+        "support": { "type": "number", "minimum": 0, "maximum": 100 },
+        "pressure": { "type": "number", "minimum": 0, "maximum": 100 },
+        "norm": { "type": "number", "minimum": 0, "maximum": 100 },
+        "silence": { "type": "number", "minimum": 0, "maximum": 100 }
+      }
+    },
+    "character": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "name",
+        "role",
+        "age",
+        "traits",
+        "beliefs",
+        "relationships"
+      ],
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "role": {
+          "type": "string",
+          "enum": ["victim", "aggressor", "defender", "bystander", "neutral"]
+        },
+        "age": { "type": "number", "minimum": 10, "maximum": 20 },
+        "traits": { "$ref": "#/definitions/traits" },
+        "beliefs": { "$ref": "#/definitions/beliefs" },
+        "relationships": {
+          "type": "object",
+          "additionalProperties": { "type": "number" }
+        }
+      }
+    },
+    "traits": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["empathy", "popularity", "influence", "conformity", "rejectionFear"],
+      "properties": {
+        "empathy": { "type": "number", "minimum": 0, "maximum": 100 },
+        "popularity": { "type": "number", "minimum": 0, "maximum": 100 },
+        "influence": { "type": "number", "minimum": 0, "maximum": 100 },
+        "conformity": { "type": "number", "minimum": 0, "maximum": 100 },
+        "rejectionFear": { "type": "number", "minimum": 0, "maximum": 100 }
+      }
+    },
+    "beliefs": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["victimResponsibility", "groupPressure"],
+      "properties": {
+        "victimResponsibility": { "type": "number", "minimum": 0, "maximum": 100 },
+        "groupPressure": { "type": "number", "minimum": 0, "maximum": 100 }
+      }
+    },
+    "event": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "day", "priority", "condition", "actor", "speaker", "text", "choices"],
+      "properties": {
+        "id": { "type": "string" },
+        "day": { "type": "number", "minimum": 1 },
+        "priority": { "type": "number" },
+        "condition": { "anyOf": [{ "$ref": "#/definitions/condition" }, { "type": "null" }] },
+        "actor": { "type": "string" },
+        "speaker": { "type": "string" },
+        "scene": { "type": "string" },
+        "text": { "type": "string" },
+        "choices": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "#/definitions/choice" }
+        }
+      }
+    },
+    "choice": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "text", "stance", "effects", "relationEffects", "setFlags", "clearFlags"],
+      "properties": {
+        "id": { "type": "string" },
+        "text": { "type": "string" },
+        "stance": { "type": "string", "enum": ["pro", "anti", "neutral"] },
+        "consequence": { "type": "string" },
+        "effects": { "$ref": "#/definitions/effectMap" },
+        "relationEffects": {
+          "type": "object",
+          "additionalProperties": { "type": "number" }
+        },
+        "setFlags": { "type": "array", "items": { "type": "string" } },
+        "clearFlags": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "narrativeBlock": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["title", "text"],
+      "properties": {
+        "title": { "type": "string" },
+        "speaker": { "type": "string" },
+        "text": { "type": "string" }
+      }
+    },
+    "effectMap": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "isolation": { "type": "number" },
+        "support": { "type": "number" },
+        "pressure": { "type": "number" },
+        "norm": { "type": "number" },
+        "silence": { "type": "number" }
+      }
+    },
+    "condition": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "variable": { "type": "string", "enum": ["isolation", "support", "pressure", "norm", "silence"] },
+        "op": { "type": "string", "enum": [">", "<", ">=", "<=", "==", "!="] },
+        "value": { "type": "number" },
+        "flag": { "type": "string" },
+        "notFlag": { "type": "string" }
+      },
+      "anyOf": [
+        {
+          "required": ["variable", "op", "value"],
+          "properties": { "variable": { "enum": ["isolation", "support", "pressure", "norm", "silence"] }, "op": { "enum": [">", "<", ">=", "<=", "==", "!="] }, "value": { "type": "number" } }
+        },
+        { "required": ["flag"] },
+        { "required": ["notFlag"] }
+      ]
+    },
+    "ending": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "title", "text", "condition"],
+      "properties": {
+        "id": { "type": "string" },
+        "title": { "type": "string" },
+        "text": { "type": "string" },
+        "condition": { "$ref": "#/definitions/endingCondition" }
+      }
+    },
+    "endingCondition": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["rules"],
+      "properties": {
+        "logic": { "type": "string", "enum": ["and", "or"] },
+        "rules": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "#/definitions/condition" }
+        }
+      }
+    }
+  }
+}

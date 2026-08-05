@@ -1,0 +1,56 @@
+{
+  "id": "charla-tutor",
+  "day": 8,
+  "priority": 5,
+  "condition": {
+    "flag": "datos"
+  },
+  "actor": "laura",
+  "speaker": "Laura (después de tutoría)",
+  "scene": "A la salida de tutoría, la clase se dispersa en corrillos. Varios te miran.",
+  "text": "Laura ha hablado con la tutora con los datos que juntasteis. Ahora la clase murmura: '¿Qué se habrá dicho?'.",
+  "choices": [
+    {
+      "id": "informar-clase",
+      "text": "Explicas a la clase por qué os reunisteis, sin juicios.",
+      "stance": "pro",
+      "consequence": "Contar con calma desactiva el chisme: el 'qué se habrá dicho' se convierte en 'qué se puede hacer'. La tutora ya no es un enemigo, es un recurso.",
+      "effects": {
+        "norm": 6,
+        "silence": -3,
+        "support": 3
+      },
+      "relationEffects": {},
+      "setFlags": [],
+      "clearFlags": []
+    },
+    {
+      "id": "reservado",
+      "text": "'Es un tema de dirección, no puedo contaros nada.'",
+      "stance": "neutral",
+      "consequence": "La reserva evita el fuego, pero deja la curiosidad encendida. La clase se queda a medias entre el miedo y la sospecha.",
+      "effects": {
+        "silence": 1
+      },
+      "relationEffects": {},
+      "setFlags": [],
+      "clearFlags": []
+    },
+    {
+      "id": "desinflar",
+      "text": "'Nada, un malentendido. Todo en orden.'",
+      "stance": "anti",
+      "consequence": "Restas importancia para que todo vuelva a la normalidad. La normalidad, justamente, era el problema.",
+      "effects": {
+        "norm": -3,
+        "silence": 4,
+        "support": -2
+      },
+      "relationEffects": {},
+      "setFlags": [],
+      "clearFlags": [
+        "datos"
+      ]
+    }
+  ]
+}

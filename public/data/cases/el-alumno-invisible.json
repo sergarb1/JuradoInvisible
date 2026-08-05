@@ -1,0 +1,1417 @@
+{
+  "id": "el-alumno-invisible",
+  "title": "El alumno invisible",
+  "seed": 7,
+  "description": "Marcos lleva dos meses sin encajar en el grupo. Las bromas, el silencio y la inercia colectiva deciden si la clase lo protege o lo abandona.",
+  "intro": "Marcos es nuevo. En dos meses nadie le ha invitado a un grupo. Lo que hagas en estos diez días y lo que la clase haga marcará el desenlace. No hay respuestas correctas: cada decisión tiene un coste y consecuencias.",
+  "prologue": [
+    {
+      "title": "Lunes, 8:20",
+      "text": "Suena el timbre y entras en clase como cualquier otro día. Conoces cada cara: Daniel, que marca el ritmo del patio; Iván, que siempre encuentra la palabra exacta para hacer reír; Lucía, que habla poco pero se fija en todo; Sara, Pablo, Laura. La tuya es una clase normal. Como todas."
+    },
+    {
+      "title": "Marcos",
+      "text": "Marcos llegó hace dos meses, a mitad de curso. No venía con amigos ni con un grupo que le esperase. Los primeros días nadie le invitó a sentarse en el recreo; la gente le miraba de reojo y seguía con lo suyo. Poco a poco, dejó de sentarse con nadie."
+    },
+    {
+      "title": "Tu papel",
+      "text": "Tú no eres el cabecilla del grupo ni el que lo arregla todo. Eres uno más, con tus dudas y tu miedo a quedarte fuera. Lo que hagas —o no hagas— estos diez días no lo decide un guion: lo decide cómo se comporta el grupo a tu alrededor."
+    },
+    {
+      "title": "Diez días",
+      "text": "Van a pasar diez días de instituto. Cada día puede traer una situación y varias salidas. No hay respuestas correctas ni incorrectas: cada decisión tiene un coste, y la clase reacciona a lo que haces y a lo que no haces."
+    },
+    {
+      "title": "No es un examen",
+      "text": "No te van a puntuar. Nadie te dirá si has jugado bien o mal. Lo que sí ocurrirá: verás cómo se mueven el silencio, el apoyo, la presión y la norma en una clase real, y qué precio tienen las cosas. Empezamos."
+    }
+  ],
+  "days": 10,
+  "playerId": "tu",
+  "victimId": "marcos",
+  "initial": {
+    "isolation": 55,
+    "support": 20,
+    "pressure": 40,
+    "norm": 35,
+    "silence": 50
+  },
+  "characters": [
+    {
+      "id": "marcos",
+      "name": "Marcos",
+      "role": "victim",
+      "age": 15,
+      "traits": {
+        "empathy": 70,
+        "popularity": 20,
+        "influence": 15,
+        "conformity": 75,
+        "rejectionFear": 80
+      },
+      "beliefs": {
+        "victimResponsibility": 50,
+        "groupPressure": 60
+      },
+      "relationships": {
+        "daniel": -40,
+        "ivan": -30,
+        "tu": 10
+      }
+    },
+    {
+      "id": "daniel",
+      "name": "Daniel",
+      "role": "aggressor",
+      "age": 16,
+      "traits": {
+        "empathy": 25,
+        "popularity": 90,
+        "influence": 90,
+        "conformity": 25,
+        "rejectionFear": 20
+      },
+      "beliefs": {
+        "victimResponsibility": 70,
+        "groupPressure": 30
+      },
+      "relationships": {
+        "marcos": -40,
+        "ivan": 60,
+        "lucia": 20
+      }
+    },
+    {
+      "id": "ivan",
+      "name": "Iván",
+      "role": "aggressor",
+      "age": 16,
+      "traits": {
+        "empathy": 30,
+        "popularity": 60,
+        "influence": 55,
+        "conformity": 70,
+        "rejectionFear": 65
+      },
+      "beliefs": {
+        "victimResponsibility": 60,
+        "groupPressure": 70
+      },
+      "relationships": {
+        "daniel": 60,
+        "marcos": -25,
+        "pablo": 20
+      }
+    },
+    {
+      "id": "lucia",
+      "name": "Lucía",
+      "role": "defender",
+      "age": 15,
+      "traits": {
+        "empathy": 85,
+        "popularity": 65,
+        "influence": 55,
+        "conformity": 40,
+        "rejectionFear": 40
+      },
+      "beliefs": {
+        "victimResponsibility": 30,
+        "groupPressure": 35
+      },
+      "relationships": {
+        "tu": 40,
+        "sara": 30,
+        "marcos": 20
+      }
+    },
+    {
+      "id": "sara",
+      "name": "Sara",
+      "role": "bystander",
+      "age": 15,
+      "traits": {
+        "empathy": 60,
+        "popularity": 45,
+        "influence": 35,
+        "conformity": 65,
+        "rejectionFear": 60
+      },
+      "beliefs": {
+        "victimResponsibility": 50,
+        "groupPressure": 55
+      },
+      "relationships": {
+        "lucia": 30,
+        "pablo": 15
+      }
+    },
+    {
+      "id": "pablo",
+      "name": "Pablo",
+      "role": "bystander",
+      "age": 15,
+      "traits": {
+        "empathy": 50,
+        "popularity": 40,
+        "influence": 30,
+        "conformity": 80,
+        "rejectionFear": 75
+      },
+      "beliefs": {
+        "victimResponsibility": 45,
+        "groupPressure": 70
+      },
+      "relationships": {
+        "sara": 15,
+        "ivan": 20
+      }
+    },
+    {
+      "id": "laura",
+      "name": "Laura",
+      "role": "neutral",
+      "age": 16,
+      "traits": {
+        "empathy": 45,
+        "popularity": 70,
+        "influence": 60,
+        "conformity": 55,
+        "rejectionFear": 40
+      },
+      "beliefs": {
+        "victimResponsibility": 40,
+        "groupPressure": 45
+      },
+      "relationships": {
+        "daniel": 35,
+        "ivan": 20,
+        "sara": 20
+      }
+    },
+    {
+      "id": "tu",
+      "name": "Tú",
+      "role": "neutral",
+      "age": 15,
+      "traits": {
+        "empathy": 50,
+        "popularity": 50,
+        "influence": 45,
+        "conformity": 50,
+        "rejectionFear": 50
+      },
+      "beliefs": {
+        "victimResponsibility": 50,
+        "groupPressure": 50
+      },
+      "relationships": {
+        "marcos": 10,
+        "lucia": 40,
+        "daniel": 20
+      }
+    }
+  ],
+  "events": [
+    {
+      "id": "primer-dia",
+      "day": 1,
+      "priority": 5,
+      "condition": null,
+      "actor": "laura",
+      "speaker": "Laura (la delegada)",
+      "scene": "El aula, primer recreo del trimestre. Las mesas forman islas y Marcos se sienta solo en una, junto a la ventana.",
+      "text": "Marcos es nuevo. Ningún grupo le invita y hay sitio junto a él. Laura te mira, esperando que lo veas.",
+      "choices": [
+        {
+          "id": "acoger",
+          "text": "Te sientas con Marcos.",
+          "stance": "pro",
+          "consequence": "Marcos levanta la cabeza, sorprendido, y te dedica una sonrisa torpe. En la mesa, alguien deja de mirar el móvil. Por un momento, la isla deja de ser una isla.",
+          "effects": {
+            "support": 6,
+            "isolation": -4,
+            "silence": -2
+          },
+          "relationEffects": {
+            "tu:marcos": 15
+          },
+          "setFlags": [],
+          "clearFlags": []
+        },
+        {
+          "id": "no_mirar",
+          "text": "Miras hacia otra parte, como todos.",
+          "stance": "anti",
+          "consequence": "Nadie dice nada. La isla junto a la ventana sigue ahí, y tú también miras el móvil. Es fácil, y eso es justo lo que pesa.",
+          "effects": {
+            "support": -3,
+            "silence": 4,
+            "isolation": 2
+          },
+          "relationEffects": {},
+          "setFlags": [],
+          "clearFlags": []
+        },
+        {
+          "id": "dejar",
+          "text": "Dejas que lo organice Laura.",
+          "stance": "neutral",
+          "consequence": "Laura tampoco lo hace. El sitio junto a Marcos sigue vacío, y la clase entiende que, por ahora, nadie lo va a ocupar.",
+          "effects": {
+            "silence": 2,
+            "isolation": 1
+          },
+          "relationEffects": {},
+          "setFlags": [],
+          "clearFlags": []
+        }
+      ]
+    },
+    {
+      "id": "primera-broma",
+      "day": 2,
+      "priority": 5,
+      "condition": null,
+      "actor": "ivan",
+      "speaker": "Iván",
+      "scene": "En el pasillo, entre risas, Iván hace de anfitrión y varios miran de reojo para ver quién se ríe.",
+      "text": "Algunos se ríen cuando Iván hace una broma sobre Marcos. 'Bienvenido al club, Marcitos.'",
+      "choices": [
+        {
+          "id": "parar",
+          "text": "'Dejadle en paz, no tiene gracia.'",
+          "stance": "pro",
+          "consequence": "La risa se corta un instante. Algunos se miran; Iván encoge los hombros como si nada, pero el chiste ya no tiene la misma gracia.",
+          "effects": {
+            "support": 7,
+            "norm": 6,
+            "silence": -4,
+            "pressure": -3
+          },
+          "relationEffects": {
+            "tu:marcos": 10
+          },
+          "setFlags": [
+            "firmeza"
+          ],
+          "clearFlags": []
+        },
+        {
+          "id": "reir",
+          "text": "Te ríes para encajar.",
+          "stance": "anti",
+          "consequence": "Te ríes. Marcos baja la mirada y finge que no escucha. La risa os une a vosotros y le separa a él. Esa es la cuenta.",
+          "effects": {
+            "support": -4,
+            "norm": -4,
+            "silence": 5,
+            "pressure": 3,
+            "isolation": 4
+          },
+          "relationEffects": {},
+          "setFlags": [],
+          "clearFlags": []
+        },
+        {
+          "id": "callar",
+          "text": "Callas y miras el móvil.",
+          "stance": "neutral",
+          "consequence": "El silencio es tu respuesta. Nadie te señala, pero todos han visto que no has dicho nada.",
+          "effects": {
+            "silence": 3,
+            "isolation": 2,
+            "pressure": 1
+          },
+          "relationEffects": {},
+          "setFlags": [],
+          "clearFlags": []
+        }
+      ]
+    },
+    {
+      "id": "pregunta-lucia",
+      "day": 3,
+      "priority": 4,
+      "condition": {
+        "variable": "silence",
+        "op": ">",
+        "value": 50
+      },
+      "actor": "lucia",
+      "speaker": "Lucía se detiene",
+      "scene": "El comedor bulle. Marcos come solo en la esquina y Lucía, a tu lado, no aparta la vista de él.",
+      "text": "Nadie comenta lo de ayer. Marcos come solo. Lucía duda si pronunciarse.",
+      "choices": [
+        {
+          "id": "reforzar",
+          "text": "Te sumas a Lucía para acercaros.",
+          "stance": "pro",
+          "consequence": "Lucía te sonríe con alivio. Los dos os sentáis cerca de Marcos, y por primera vez alguien no le hace hueco por lástima, sino por costumbre.",
+          "effects": {
+            "support": 6,
+            "silence": -3,
+            "norm": 4
+          },
+          "relationEffects": {
+            "tu:lucia": 10
+          },
+          "setFlags": [
+            "alianza"
+          ],
+          "clearFlags": []
+        },
+        {
+          "id": "indiferente",
+          "text": "Sigues, indiferente.",
+          "stance": "neutral",
+          "consequence": "Sigues con lo tuyo. Lucía no insiste, y el comedor vuelve a su rutina: Marcos, solo; el resto, en sus grupos.",
+          "effects": {
+            "silence": 2
+          },
+          "relationEffects": {},
+          "setFlags": [],
+          "clearFlags": []
+        },
+        {
+          "id": "ironizar",
+          "text": "Señalas lo 'loco' de la broma de Iván.",
+          "stance": "anti",
+          "consequence": "Tu ironía consigue alguna risa, pero la broma se vuelve contra Marcos otra vez. Lucía te mira, decepcionada, y no vuelve a sacar el tema.",
+          "effects": {
+            "support": -3,
+            "silence": 3,
+            "norm": -3
+          },
+          "relationEffects": {},
+          "setFlags": [],
+          "clearFlags": []
+        }
+      ]
+    },
+    {
+      "id": "limbo-grupos",
+      "day": 3,
+      "priority": 3,
+      "condition": null,
+      "actor": "lucia",
+      "speaker": "Recreo",
+      "scene": "Recreo. Lucía reparte parejas para los trabalenguas y todos los nombres van cayendo, menos uno.",
+      "text": "Lucía organiza los trabalenguas por parejas y Marcos se queda a desechar el plan; falta alguien que lo sume.",
+      "choices": [
+        {
+          "id": "sumar",
+          "text": "Propones que Marcos forme un grupo contigo.",
+          "stance": "pro",
+          "consequence": "Nombran a Marcos antes de que pueda excusarse. Se sienta a tu lado con los ojos bajos, pero se queda. Nadie se queja.",
+          "effects": {
+            "support": 5,
+            "isolation": -5,
+            "silence": -2
+          },
+          "relationEffects": {
+            "tu:marcos": 10
+          },
+          "setFlags": [
+            "alianza"
+          ],
+          "clearFlags": []
+        },
+        {
+          "id": "callar2",
+          "text": "Dejas que los otros decidan.",
+          "stance": "neutral",
+          "consequence": "Nadie lo nombra. Marcos se queda esperando un nombre que no llega, hasta que dice que le da igual y se vuelve a su sitio.",
+          "effects": {
+            "silence": 2
+          },
+          "relationEffects": {},
+          "setFlags": [],
+          "clearFlags": []
+        },
+        {
+          "id": "quitar-pareja",
+          "text": "'En mi grupo no caben más' y miras a otro lado.",
+          "stance": "anti",
+          "consequence": "La frase se dice sin querer, pero todos la oyen. Marcos se aleja antes de que nadie le diga que no.",
+          "effects": {
+            "support": -3,
+            "silence": 3,
+            "isolation": 3
+          },
+          "relationEffects": {},
+          "setFlags": [],
+          "clearFlags": []
+        }
+      ]
+    },
+    {
+      "id": "meme",
+      "day": 3,
+      "priority": 2,
+      "condition": {
+        "variable": "support",
+        "op": "<",
+        "value": 25
+      },
+      "actor": "pablo",
+      "speaker": "Pablo (en el chat)",
+      "scene": "El grupo de clase hierve en silencio. En la pantalla, el meme de Marcos se ha quedado sin comentarios.",
+      "text": "Circula un meme con la cara de Marcos. Nadie lo denuncia ni lo comparte abiertamente.",
+      "choices": [
+        {
+          "id": "denunciar",
+          "text": "Te parece de mal gusto y lo comentáis en serio.",
+          "stance": "pro",
+          "consequence": "El meme deja de circular. Algunos lo borran sin decir nada. No hay héroes, pero por una vez alguien ha roto la rueda del 'es solo un meme'.",
+          "effects": {
+            "support": 6,
+            "norm": 5,
+            "silence": -4
+          },
+          "relationEffects": {},
+          "setFlags": [],
+          "clearFlags": []
+        },
+        {
+          "id": "compartir2",
+          "text": "'Es un meme, es la vida', dices y lo reenvías sin pensarlo.",
+          "stance": "anti",
+          "consequence": "Se reenvía en cadena. Marcos lo ve de reojo y borra la conversación. La risa es de todos menos suya.",
+          "effects": {
+            "support": -5,
+            "norm": -4,
+            "silence": 4,
+            "isolation": 4
+          },
+          "relationEffects": {},
+          "setFlags": [],
+          "clearFlags": []
+        },
+        {
+          "id": "ignorar2",
+          "text": "Lo ignoras y esperas a que se pase.",
+          "stance": "neutral",
+          "consequence": "Se pasa, pero nadie ha dicho nada. El meme muere solo, sin que nadie haya aprendido nada.",
+          "effects": {
+            "silence": 2
+          },
+          "relationEffects": {},
+          "setFlags": [],
+          "clearFlags": []
+        }
+      ]
+    },
+    {
+      "id": "elegir-sitio",
+      "day": 4,
+      "priority": 5,
+      "condition": {
+        "variable": "isolation",
+        "op": ">",
+        "value": 40
+      },
+      "actor": "sara",
+      "speaker": "Sara (un susurro incómodo)",
+      "scene": "Clase de lengua, en silencio. La frase de Sara sobrevuela la mesa y nadie levanta la cabeza.",
+      "text": "'Yo no he hecho nada', se justifica Sara en voz alta. Nadie lo rebate.",
+      "choices": [
+        {
+          "id": "evidenciar",
+          "text": "'Callándonos también estamos haciendo algo.'",
+          "stance": "pro",
+          "consequence": "Tu frase cae como una piedra en el silencio. Sara se calla, y por un momento nadie sabe mirar. Pero ya está dicho: callarse también es hacer algo.",
+          "effects": {
+            "support": 8,
+            "silence": 6,
+            "pressure": 2
+          },
+          "relationEffects": {
+            "tu:sara": 8
+          },
+          "setFlags": [
+            "duda"
+          ],
+          "clearFlags": []
+        },
+        {
+          "id": "asentir",
+          "text": "Asientes; es más fácil.",
+          "stance": "anti",
+          "consequence": "Asientes. Es más fácil. El 'yo no he hecho nada' de Sara queda sin respuesta, y todos respiráis un poco más tranquilos. Marcos, un poco menos.",
+          "effects": {
+            "support": -5,
+            "silence": 6,
+            "norm": -3
+          },
+          "relationEffects": {},
+          "setFlags": [],
+          "clearFlags": []
+        },
+        {
+          "id": "omitir",
+          "text": "No entras en ello y sigues con tu trabajo.",
+          "stance": "neutral",
+          "consequence": "No entras en ello. La frase de Sara se disuelve en el ruido de la clase, y nadie la recuerda. La palabra 'cómplice' sigue ahí, sin nombre.",
+          "effects": {
+            "silence": 4
+          },
+          "relationEffects": {},
+          "setFlags": [],
+          "clearFlags": []
+        }
+      ]
+    },
+    {
+      "id": "presion-silenciosa",
+      "day": 4,
+      "priority": 4,
+      "condition": {
+        "variable": "pressure",
+        "op": ">",
+        "value": 45
+      },
+      "actor": "daniel",
+      "speaker": "Daniel (al oído)",
+      "scene": "El patio, bajo el porche. Daniel no alza la voz: no necesita.",
+      "text": "Daniel se sienta a tu lado: 'Mira, si te pones de su lado, te vas a quedar fuera. Tú eliges.'",
+      "choices": [
+        {
+          "id": "no-negocio",
+          "text": "'No tengo que elegir eso.'",
+          "stance": "pro",
+          "consequence": "Daniel se encoge de hombros y se marcha. No es una victoria, es una línea que has dibujado sin gritar. Alguien lo ha visto.",
+          "effects": {
+            "support": 5,
+            "pressure": -3,
+            "norm": 4
+          },
+          "relationEffects": {
+            "tu:marcos": 6
+          },
+          "setFlags": [],
+          "clearFlags": []
+        },
+        {
+          "id": "calculo",
+          "text": "'Ya veremos.' Dejas la respuesta en el aire.",
+          "stance": "neutral",
+          "consequence": "Daniel sonríe, satisfecho: 'ya veremos' también es una respuesta. La presión no desaparece, solo cambia de turno.",
+          "effects": {
+            "pressure": 1,
+            "silence": 1
+          },
+          "relationEffects": {},
+          "setFlags": [],
+          "clearFlags": []
+        },
+        {
+          "id": "distanciarte",
+          "text": "Asientes y evitas a Marcos el resto del día.",
+          "stance": "anti",
+          "consequence": "Cumples el trato sin decirlo. La presión de Daniel se alivia, y el coste lo paga Marcos sin saber por qué.",
+          "effects": {
+            "support": -4,
+            "silence": 4,
+            "isolation": 3
+          },
+          "relationEffects": {},
+          "setFlags": [],
+          "clearFlags": [
+            "firmeza"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "la-hora",
+      "day": 5,
+      "priority": 4,
+      "condition": null,
+      "actor": "pablo",
+      "speaker": "Pablo",
+      "scene": "Comedor, la misma escena de siempre: el grupo que se ríe, Marcos solo, y el tiempo que pasa.",
+      "text": "En el comedor es evidente el grupo que se ríe de Marcos cada día. Pablo espera que alguien lo nombre.",
+      "choices": [
+        {
+          "id": "acomodo",
+          "text": "Comentas el tema en serio y abres la puerta a Marcos.",
+          "stance": "pro",
+          "consequence": "Nombran a Marcos, y por un momento el comedor se queda en silencio. Alguien le hace un hueco. No es un milagro: es una decisión, y empieza a ser colectiva.",
+          "effects": {
+            "support": 7,
+            "norm": 5,
+            "isolation": -4
+          },
+          "relationEffects": {
+            "tu:marcos": 8
+          },
+          "setFlags": [],
+          "clearFlags": []
+        },
+        {
+          "id": "reirse2",
+          "text": "Te ríes con ellos una hora más.",
+          "stance": "anti",
+          "consequence": "Te ríes una hora más. Marcos come rápido y se va antes de que nadie le diga nada. El grupo gana la partida del comedor, otra vez.",
+          "effects": {
+            "support": -4,
+            "norm": -4,
+            "silence": 5
+          },
+          "relationEffects": {},
+          "setFlags": [],
+          "clearFlags": []
+        },
+        {
+          "id": "desvio",
+          "text": "Desvías la conversación para que nadie lo nombre.",
+          "stance": "neutral",
+          "consequence": "Nadie lo nombra. El alivio es breve: has elegido el tema, no la persona.",
+          "effects": {
+            "silence": 3,
+            "norm": 1
+          },
+          "relationEffects": {},
+          "setFlags": [],
+          "clearFlags": []
+        }
+      ]
+    },
+    {
+      "id": "reedicion",
+      "day": 5,
+      "priority": 2,
+      "condition": {
+        "flag": "firmeza"
+      },
+      "actor": "lucia",
+      "speaker": "Lucía retoma con fuerza",
+      "scene": "Después de tu gesto, Lucía te busca entre el bullicio con una idea en la cabeza.",
+      "text": "Tu firmeza de antes anima a Lucía: propone reunir a Marcos a un plan de grupo.",
+      "choices": [
+        {
+          "id": "acompanar2",
+          "text": "Apoyas la idea y la pones en marcha.",
+          "stance": "pro",
+          "consequence": "La idea se pone en marcha. Marcos no dice mucho, pero aparece. A veces basta con que el plan exista para que alguien deje de estar solo.",
+          "effects": {
+            "support": 5,
+            "norm": 4,
+            "pressure": -2
+          },
+          "relationEffects": {},
+          "setFlags": [],
+          "clearFlags": []
+        },
+        {
+          "id": "dejar-hacer",
+          "text": "Lo dejas en manos de Lucía.",
+          "stance": "neutral",
+          "consequence": "Lucía lo organiza, pero sin refuerzo el plan se apaga en dos días.",
+          "effects": {
+            "support": 1,
+            "silence": 1
+          },
+          "relationEffects": {},
+          "setFlags": [],
+          "clearFlags": []
+        },
+        {
+          "id": "restarle",
+          "text": "'No hagas teatro, solo se va a notar más.'",
+          "stance": "anti",
+          "consequence": "Lucía se encoge. Tu cautela gana y el plan se olvida antes de empezar.",
+          "effects": {
+            "support": -3,
+            "silence": 4,
+            "norm": -2
+          },
+          "relationEffects": {},
+          "setFlags": [],
+          "clearFlags": []
+        }
+      ]
+    },
+    {
+      "id": "pregunta-confia",
+      "day": 6,
+      "priority": 5,
+      "condition": {
+        "variable": "support",
+        "op": "<",
+        "value": 30
+      },
+      "actor": "laura",
+      "speaker": "Laura (la delegada), seria",
+      "scene": "Los pasillos ya han vaciado. Laura te retiene un momento, con la voz más seria de lo habitual.",
+      "text": "Laura nota a Marcos extraño: 'Voy a informar a dirección.'",
+      "choices": [
+        {
+          "id": "frenar",
+          "text": "'Cuidémoslo bien y con datos, no para señalar.'",
+          "stance": "pro",
+          "consequence": "Laura te escucha. La palabra 'datos' cambia la conversación: ya no es chivarse, es mirar de verdad. Marcos no lo sabe, pero algo se mueve.",
+          "effects": {
+            "support": 7,
+            "silence": -4,
+            "norm": 5
+          },
+          "relationEffects": {},
+          "setFlags": [
+            "datos"
+          ],
+          "clearFlags": []
+        },
+        {
+          "id": "exagerada",
+          "text": "'Es solo una broma, no hace falta el informe.'",
+          "stance": "anti",
+          "consequence": "Laura se detiene, dudando. 'Es solo una broma' suena convincente, sobre todo porque todos queréis creerlo. El informe queda en nada.",
+          "effects": {
+            "support": -4,
+            "isolation": 4,
+            "silence": 4
+          },
+          "relationEffects": {},
+          "setFlags": [],
+          "clearFlags": []
+        },
+        {
+          "id": "posponer",
+          "text": "'Hablemos el lunes, sin prisa.'",
+          "stance": "neutral",
+          "consequence": "El lunes se convierte en el jueves, y el jueves en nada. La buena intención de Laura se disuelve en el calendario, como la de todos.",
+          "effects": {
+            "silence": 2,
+            "pressure": 2
+          },
+          "relationEffects": {},
+          "setFlags": [],
+          "clearFlags": []
+        }
+      ]
+    },
+    {
+      "id": "ruido-pasillo",
+      "day": 6,
+      "priority": 3,
+      "condition": null,
+      "actor": "ivan",
+      "speaker": "Iván",
+      "scene": "Entre clase y clase, el apodo corre por el pasillo y las risas crecen como una ola.",
+      "text": "Reaparece otro apodo en el pasillo y cada vez hay más risa.",
+      "choices": [
+        {
+          "id": "nombrar",
+          "text": "Lo nombras en voz alta para cortar la risa.",
+          "stance": "pro",
+          "consequence": "Nombrarlo en voz alta basta para cortar la risa. El apodo se queda en el pasillo, y varios se sienten tontos por haberse reído. No pasa nada más: y ya es mucho.",
+          "effects": {
+            "support": 6,
+            "norm": 4,
+            "silence": -3
+          },
+          "relationEffects": {
+            "tu:marcos": 6
+          },
+          "setFlags": [],
+          "clearFlags": []
+        },
+        {
+          "id": "mirar",
+          "text": "Miras el suelo hasta que para.",
+          "stance": "anti",
+          "consequence": "Miras el suelo hasta que para. La risa se aleja y te alegras de no haber sido el siguiente. Marcos no se alegra tanto.",
+          "effects": {
+            "support": -3,
+            "silence": 4,
+            "isolation": 3
+          },
+          "relationEffects": {},
+          "setFlags": [],
+          "clearFlags": []
+        },
+        {
+          "id": "desvio-pasillo",
+          "text": "Te unes a la risa un segundo y te alejas.",
+          "stance": "neutral",
+          "consequence": "La risa te incluye a ti también, y por eso cuesta más pararla. Te alejas, pero ya has formado parte.",
+          "effects": {
+            "silence": 3,
+            "isolation": 2
+          },
+          "relationEffects": {},
+          "setFlags": [],
+          "clearFlags": []
+        }
+      ]
+    },
+    {
+      "id": "apoyo-visible",
+      "day": 6,
+      "priority": 4,
+      "condition": {
+        "flag": "alianza"
+      },
+      "actor": "lucia",
+      "speaker": "Lucía (con el grupo de sociales)",
+      "scene": "La biblioteca, después de clase. Lucía reorganiza las hojas y levanta la vista hacia la mesa vacía.",
+      "text": "El grupo de trabajo de sociales tiene que ser de cuatro. Lucía te mira y dice: '¿Y Marcos?'.",
+      "choices": [
+        {
+          "id": "nombrar-marcos",
+          "text": "'Pues sí: Marcos.'",
+          "stance": "pro",
+          "consequence": "El nombre de Marcos entra en una lista, y las listas también cambian hábitos. Él se entera en la hora siguiente, y esta vez no tiene que pedirlo.",
+          "effects": {
+            "support": 6,
+            "isolation": -4,
+            "silence": -2
+          },
+          "relationEffects": {
+            "tu:marcos": 8
+          },
+          "setFlags": [],
+          "clearFlags": []
+        },
+        {
+          "id": "cuatro-mejor",
+          "text": "'Quedamos en tres, más fácil.'",
+          "stance": "neutral",
+          "consequence": "Quedáis en tres. Es más fácil, sí. Marcos no se entera de nada, y esa es justamente la parte incómoda.",
+          "effects": {
+            "silence": 1,
+            "support": -1
+          },
+          "relationEffects": {},
+          "setFlags": [],
+          "clearFlags": []
+        },
+        {
+          "id": "ya-sabra",
+          "text": "'Si no se apunta él, no es cosa nuestra.'",
+          "stance": "anti",
+          "consequence": "La lógica suena razonable y se repite en el grupo. Es la frase que más cuesta rebatir: 'él tendría que pedirlo'.",
+          "effects": {
+            "support": -3,
+            "silence": 3,
+            "isolation": 3
+          },
+          "relationEffects": {},
+          "setFlags": [],
+          "clearFlags": []
+        }
+      ]
+    },
+    {
+      "id": "grupo-comer",
+      "day": 7,
+      "priority": 5,
+      "condition": {
+        "variable": "isolation",
+        "op": ">",
+        "value": 50
+      },
+      "actor": "tu",
+      "speaker": "",
+      "scene": "El comedor a mediodía. Marcos, otra vez junto a la ventana. La escena se repite y algo te pesa más que otros días.",
+      "text": "Al mediodía Marcos vuelve a quedarse solo junto a la ventana. Esta vez la escena te resulta cada vez menos neutral.",
+      "choices": [
+        {
+          "id": "irmecon",
+          "text": "Le invitas a comer aunque Iván ponga cara rara.",
+          "stance": "pro",
+          "consequence": "Te levantas y cruzas el comedor. Iván pone cara rara, pero nadie te sigue hasta la ventana. Marcos te mira, sin creérselo del todo, y hace sitio.",
+          "effects": {
+            "support": 10,
+            "isolation": -6,
+            "norm": 6
+          },
+          "relationEffects": {
+            "tu:marcos": 12
+          },
+          "setFlags": [],
+          "clearFlags": []
+        },
+        {
+          "id": "quedarme",
+          "text": "Te quedas donde estás, callado.",
+          "stance": "anti",
+          "consequence": "Te quedas. El comedor sigue con su ruido y Marcos con su ventana. La escena se repite un día más, y tú ya formas parte del decorado.",
+          "effects": {
+            "support": -4,
+            "silence": 5,
+            "isolation": 5
+          },
+          "relationEffects": {},
+          "setFlags": [],
+          "clearFlags": [
+            "firmeza"
+          ]
+        },
+        {
+          "id": "gesto",
+          "text": "Le haces un gesto de saludo, sin comprometerte más.",
+          "stance": "neutral",
+          "consequence": "Marcos te devuelve el gesto, tímido. Es poco, pero él lo ha visto. A veces el gesto es un principio.",
+          "effects": {
+            "support": 2,
+            "silence": 1,
+            "isolation": -1
+          },
+          "relationEffects": {},
+          "setFlags": [],
+          "clearFlags": []
+        }
+      ]
+    },
+    {
+      "id": "silencio-peso",
+      "day": 7,
+      "priority": 4,
+      "condition": {
+        "variable": "silence",
+        "op": ">",
+        "value": 55
+      },
+      "actor": "sara",
+      "speaker": "Sara (evitando tu mirada)",
+      "scene": "El aula, en el cambio de clase. Nadie menciona el nombre de Marcos, y todos lo notan.",
+      "text": "El silencio pesa como una manta. Sara evita tu mirada: los dos sabéis que 'no hacer nada' también es una elección.",
+      "choices": [
+        {
+          "id": "decirlo",
+          "text": "Lo dices en voz baja: 'Estamos raros, ¿no?'",
+          "stance": "pro",
+          "consequence": "Tu frase rompe el hechizo un segundo. Sara asiente, y el silencio ya no es tan unánime. Romperlo no arregla nada, pero abre una grieta.",
+          "effects": {
+            "silence": -3,
+            "support": 3,
+            "norm": 3
+          },
+          "relationEffects": {},
+          "setFlags": [],
+          "clearFlags": []
+        },
+        {
+          "id": "sobrevivir",
+          "text": "Decides que hoy tampoco toca.",
+          "stance": "neutral",
+          "consequence": "El silencio sigue su curso. Cada día que pasa sin nombrarlo lo hace más grande, y más difícil de nombrar.",
+          "effects": {
+            "silence": 2
+          },
+          "relationEffects": {},
+          "setFlags": [],
+          "clearFlags": []
+        },
+        {
+          "id": "culpar",
+          "text": "'Es que él tampoco se esfuerza.'",
+          "stance": "anti",
+          "consequence": "La frase encuentra eco y se repite en el grupo. Es la frase que más duele de rebatir, y se convierte en verdad para muchos.",
+          "effects": {
+            "norm": -4,
+            "silence": 4,
+            "support": -4
+          },
+          "relationEffects": {},
+          "setFlags": [],
+          "clearFlags": []
+        }
+      ]
+    },
+    {
+      "id": "confesion-sara",
+      "day": 8,
+      "priority": 4,
+      "condition": {
+        "flag": "duda"
+      },
+      "actor": "sara",
+      "speaker": "Sara, a solas",
+      "scene": "En un hueco tranquilo del pasillo, Sara se detiene y baja la voz.",
+      "text": "'Lo mío me revuelve', te confiesa. Le duele verlo, y se siente cómplice por callar.",
+      "choices": [
+        {
+          "id": "escuchar",
+          "text": "La acoges y juntas un gesto concreto.",
+          "stance": "pro",
+          "consequence": "Sara se queda más tranquila al decirlo. El gesto concreto os une, y por primera vez el 'yo no he hecho nada' se convierte en 'yo puedo hacer algo'.",
+          "effects": {
+            "support": 8,
+            "silence": -5,
+            "norm": 5
+          },
+          "relationEffects": {},
+          "setFlags": [
+            "incipiente"
+          ],
+          "clearFlags": []
+        },
+        {
+          "id": "tranquila",
+          "text": "Intentas calmarla para evitar líos.",
+          "stance": "anti",
+          "consequence": "La calmas, le dices que no pasa nada y que ya se olvidará. Te lo agradece, pero el 'no pasa nada' también se lo dice ella a sí misma cada noche.",
+          "effects": {
+            "support": -5,
+            "silence": 4
+          },
+          "relationEffects": {},
+          "clearFlags": [],
+          "setFlags": []
+        },
+        {
+          "id": "omision",
+          "text": "Escuchas; no sabes qué hacer.",
+          "stance": "neutral",
+          "consequence": "Escuchas y no sabes qué decir. Sara agradece que la hayas escuchado, aunque los dos sabéis que eso no cambia nada. Aún no.",
+          "effects": {
+            "silence": 2,
+            "pressure": 2
+          },
+          "relationEffects": {},
+          "clearFlags": [],
+          "setFlags": []
+        }
+      ]
+    },
+    {
+      "id": "amago-defensa",
+      "day": 8,
+      "priority": 4,
+      "condition": null,
+      "actor": "lucia",
+      "speaker": "Lucía (tensa)",
+      "scene": "Lucía intenta acercarse a Marcos, pero la risa de Iván corta el aire y ella se calla, incómoda.",
+      "text": "Lucía intenta hablar con Marcos pero tropieza con la risa de Iván y se calla.",
+      "choices": [
+        {
+          "id": "respaldar",
+          "text": "La respaldas y encaráis la conversación.",
+          "stance": "pro",
+          "consequence": "Con dos personas la conversación se sostiene. Iván se ríe solo y se rinde. Lucía te mira con gratitud: no ha tenido que hacerlo sola.",
+          "effects": {
+            "support": 7,
+            "norm": 5,
+            "silence": 4
+          },
+          "relationEffects": {
+            "tu:lucia": 10
+          },
+          "setFlags": [
+            "alianza"
+          ],
+          "clearFlags": []
+        },
+        {
+          "id": "dejar",
+          "text": "La dejas pasar como la vez anterior.",
+          "stance": "neutral",
+          "consequence": "Lucía se calla y tú también. La risa de Iván llena el hueco. Marcos se queda otra vez sin saber que alguien intentó llegar a él.",
+          "effects": {
+            "silence": 3
+          },
+          "relationEffects": {},
+          "setFlags": [],
+          "clearFlags": []
+        },
+        {
+          "id": "seguir-la-risa",
+          "text": "Finges que no lo has visto y te unes a la conversación de enfrente.",
+          "stance": "anti",
+          "consequence": "Evitas el compromiso. Lucía lo nota y no vuelve a intentarlo a tu lado. El silencio de dos pesa igual que el de veinte.",
+          "effects": {
+            "support": -4,
+            "silence": 4
+          },
+          "relationEffects": {},
+          "setFlags": [],
+          "clearFlags": []
+        }
+      ]
+    },
+    {
+      "id": "charla-tutor",
+      "day": 8,
+      "priority": 5,
+      "condition": {
+        "flag": "datos"
+      },
+      "actor": "laura",
+      "speaker": "Laura (después de tutoría)",
+      "scene": "A la salida de tutoría, la clase se dispersa en corrillos. Varios te miran.",
+      "text": "Laura ha hablado con la tutora con los datos que juntasteis. Ahora la clase murmura: '¿Qué se habrá dicho?'.",
+      "choices": [
+        {
+          "id": "informar-clase",
+          "text": "Explicas a la clase por qué os reunisteis, sin juicios.",
+          "stance": "pro",
+          "consequence": "Contar con calma desactiva el chisme: el 'qué se habrá dicho' se convierte en 'qué se puede hacer'. La tutora ya no es un enemigo, es un recurso.",
+          "effects": {
+            "norm": 6,
+            "silence": -3,
+            "support": 3
+          },
+          "relationEffects": {},
+          "setFlags": [],
+          "clearFlags": []
+        },
+        {
+          "id": "reservado",
+          "text": "'Es un tema de dirección, no puedo contaros nada.'",
+          "stance": "neutral",
+          "consequence": "La reserva evita el fuego, pero deja la curiosidad encendida. La clase se queda a medias entre el miedo y la sospecha.",
+          "effects": {
+            "silence": 1
+          },
+          "relationEffects": {},
+          "setFlags": [],
+          "clearFlags": []
+        },
+        {
+          "id": "desinflar",
+          "text": "'Nada, un malentendido. Todo en orden.'",
+          "stance": "anti",
+          "consequence": "Restas importancia para que todo vuelva a la normalidad. La normalidad, justamente, era el problema.",
+          "effects": {
+            "norm": -3,
+            "silence": 4,
+            "support": -2
+          },
+          "relationEffects": {},
+          "setFlags": [],
+          "clearFlags": [
+            "datos"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "charla-daniel",
+      "day": 9,
+      "priority": 5,
+      "condition": {
+        "variable": "norm",
+        "op": "<",
+        "value": 45
+      },
+      "actor": "daniel",
+      "speaker": "Daniel",
+      "scene": "Daniel te intercepta al salir de clase. No pregunta, exige una respuesta.",
+      "text": "Daniel te busca: 'Es todo bromista. ¿Por qué le das importancia?'",
+      "choices": [
+        {
+          "id": "sindicato",
+          "text": "'No. Esto ha cruzado una línea.'",
+          "stance": "pro",
+          "consequence": "Daniel se queda mirándote, midiendo si hablas en serio. No te responde. A partir de ahí el patio lo siente distinto, y Marcos también.",
+          "effects": {
+            "support": 10,
+            "norm": 8,
+            "pressure": -2
+          },
+          "relationEffects": {},
+          "setFlags": [
+            "firmeza"
+          ],
+          "clearFlags": []
+        },
+        {
+          "id": "quito",
+          "text": "Bajas la cabeza y aguantas el miedo.",
+          "stance": "anti",
+          "consequence": "Bajas la cabeza. Daniel da la conversación por zanjada y se aleja satisfecho. El miedo te dura toda la tarde; a Marcos, todo el curso.",
+          "effects": {
+            "support": -6,
+            "norm": -5,
+            "silence": 6,
+            "pressure": 4
+          },
+          "relationEffects": {},
+          "clearFlags": [
+            "firmeza"
+          ],
+          "setFlags": []
+        },
+        {
+          "id": "respuesta",
+          "text": "'Le doy el margen, pero no te pases.'",
+          "stance": "neutral",
+          "consequence": "Daniel acepta el margen a regañadientes. No es un acuerdo, es una tregua, y las treguas dependen de que alguien las recuerde cada día.",
+          "effects": {
+            "norm": 2,
+            "pressure": 2
+          },
+          "relationEffects": {},
+          "setFlags": [],
+          "clearFlags": []
+        }
+      ]
+    },
+    {
+      "id": "ultimo-recado",
+      "day": 9,
+      "priority": 3,
+      "condition": null,
+      "actor": "pablo",
+      "speaker": "Pablo",
+      "scene": "Al terminar el recreo, la propuesta del torneo queda flotando en el silencio del grupo.",
+      "text": "Alguien sugiere invitar a Marcos al torneo. La propuesta flota en el aire.",
+      "choices": [
+        {
+          "id": "voto",
+          "text": "Votas a favor en voz alta.",
+          "stance": "pro",
+          "consequence": "Tu 'sí' rompe el silencio. Uno a uno, otros se suman. El torneo se convierte en algo donde Marcos también está. No es nada heroico: es un nombre que suena.",
+          "effects": {
+            "support": 6,
+            "norm": 5,
+            "isolation": -4
+          },
+          "relationEffects": {
+            "tu:marcos": 8
+          },
+          "setFlags": [],
+          "clearFlags": []
+        },
+        {
+          "id": "silencio",
+          "text": "No dices nada entre todos.",
+          "stance": "anti",
+          "consequence": "El silencio decide por todos. La propuesta muere sin votos y sin que nadie la entierre. Marcos no pregunta, ya ha aprendido a no hacerlo.",
+          "effects": {
+            "support": -3,
+            "silence": 4
+          },
+          "relationEffects": {},
+          "setFlags": [],
+          "clearFlags": []
+        },
+        {
+          "id": "depende",
+          "text": "'Depende de si él querrá', dices, y lo dejas caer.",
+          "stance": "neutral",
+          "consequence": "La frase deja la puerta abierta, y la propuesta respira un poco más. Nadie lo invita aún, pero nadie la cierra tampoco.",
+          "effects": {
+            "support": 2,
+            "norm": 2
+          },
+          "relationEffects": {},
+          "setFlags": [],
+          "clearFlags": []
+        }
+      ]
+    },
+    {
+      "id": "reunion-final",
+      "day": 10,
+      "priority": 9,
+      "condition": null,
+      "actor": "tu",
+      "speaker": "Tutoría / claustro / asamblea",
+      "scene": "Diez días después, la tutoría es una asamblea. La clase entera espera saber qué rumbo toma esto.",
+      "text": "Diez días después hay que decidir el curso de la clase: investigar como grupo, darle la espalda o archivarlo por falta de pruebas.",
+      "choices": [
+        {
+          "id": "proteger",
+          "text": "Impulsas un protocolo de acompañamiento y explicas que el silencio no es inocencia.",
+          "stance": "pro",
+          "consequence": "La asamblea acaba con un protocolo, pero lo que queda es más pequeño y más grande a la vez: la clase ha dejado de fingir que no ve. Eso ya no se deshace.",
+          "effects": {
+            "support": 12,
+            "norm": 10,
+            "isolation": -8,
+            "silence": -8
+          },
+          "relationEffects": {},
+          "setFlags": [
+            "programa"
+          ],
+          "clearFlags": []
+        },
+        {
+          "id": "imponer2",
+          "text": "Aunque el consenso es frágil, fuerzas una mediación.",
+          "stance": "pro",
+          "consequence": "La mediación se pone en marcha, frágil. Algunos la aceptan por orden, no por convicción, pero el mecanismo existe: cuando algo está escrito, es más difícil que no pase.",
+          "effects": {
+            "support": 6,
+            "norm": 4,
+            "pressure": 5
+          },
+          "relationEffects": {},
+          "setFlags": [
+            "programa"
+          ],
+          "clearFlags": []
+        },
+        {
+          "id": "diluir2",
+          "text": "Como 'no hay pruebas contundentes', decides no removerlo.",
+          "stance": "anti",
+          "consequence": "'No hay pruebas' suena a cierre definitivo. La clase se dispersa aliviada. El silencio queda firmado por todos, sin una firma.",
+          "effects": {
+            "support": -8,
+            "silence": 8,
+            "isolation": 6
+          },
+          "relationEffects": {},
+          "setFlags": [
+            "silencio_final"
+          ],
+          "clearFlags": []
+        }
+      ]
+    }
+  ],
+  "endings": [
+    {
+      "id": "final-apoyo",
+      "title": "La clase se vuelca",
+      "text": "El grupo cambia la inercia: se habla, se investigan los episodios y se abren espacios de acogida. La clase que callaba ahora protege.",
+      "condition": {
+        "logic": "and",
+        "rules": [
+          {
+            "variable": "support",
+            "op": ">=",
+            "value": 50
+          }
+        ]
+      }
+    },
+    {
+      "id": "final-aislamiento",
+      "title": "El aislamiento se consolida",
+      "text": "El silencio y el aislamiento se hunden. Marcos sigue en el aula, pero la clase sigue fingiendo no verlo.",
+      "condition": {
+        "logic": "and",
+        "rules": [
+          {
+            "variable": "isolation",
+            "op": ">=",
+            "value": 70
+          }
+        ]
+      }
+    },
+    {
+      "id": "final-inercia",
+      "title": "La inercia",
+      "text": "Ni se protege ni se rompe del todo el silencio. La indolencia de cada día, vista de frente, también es una decisión.",
+      "condition": {
+        "logic": "and",
+        "rules": [
+          {
+            "variable": "support",
+            "op": "<=",
+            "value": 100
+          }
+        ]
+      }
+    }
+  ]
+}

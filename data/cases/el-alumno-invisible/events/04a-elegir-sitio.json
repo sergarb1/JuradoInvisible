@@ -1,0 +1,60 @@
+{
+  "id": "elegir-sitio",
+  "day": 4,
+  "priority": 5,
+  "condition": {
+    "variable": "isolation",
+    "op": ">",
+    "value": 40
+  },
+  "actor": "sara",
+  "speaker": "Sara (un susurro incómodo)",
+  "scene": "Clase de lengua, en silencio. La frase de Sara sobrevuela la mesa y nadie levanta la cabeza.",
+  "text": "'Yo no he hecho nada', se justifica Sara en voz alta. Nadie lo rebate.",
+  "choices": [
+    {
+      "id": "evidenciar",
+      "text": "'Callándonos también estamos haciendo algo.'",
+      "stance": "pro",
+      "consequence": "Tu frase cae como una piedra en el silencio. Sara se calla, y por un momento nadie sabe mirar. Pero ya está dicho: callarse también es hacer algo.",
+      "effects": {
+        "support": 8,
+        "silence": 6,
+        "pressure": 2
+      },
+      "relationEffects": {
+        "tu:sara": 8
+      },
+      "setFlags": [
+        "duda"
+      ],
+      "clearFlags": []
+    },
+    {
+      "id": "asentir",
+      "text": "Asientes; es más fácil.",
+      "stance": "anti",
+      "consequence": "Asientes. Es más fácil. El 'yo no he hecho nada' de Sara queda sin respuesta, y todos respiráis un poco más tranquilos. Marcos, un poco menos.",
+      "effects": {
+        "support": -5,
+        "silence": 6,
+        "norm": -3
+      },
+      "relationEffects": {},
+      "setFlags": [],
+      "clearFlags": []
+    },
+    {
+      "id": "omitir",
+      "text": "No entras en ello y sigues con tu trabajo.",
+      "stance": "neutral",
+      "consequence": "No entras en ello. La frase de Sara se disuelve en el ruido de la clase, y nadie la recuerda. La palabra 'cómplice' sigue ahí, sin nombre.",
+      "effects": {
+        "silence": 4
+      },
+      "relationEffects": {},
+      "setFlags": [],
+      "clearFlags": []
+    }
+  ]
+}

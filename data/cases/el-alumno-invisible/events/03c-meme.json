@@ -1,0 +1,57 @@
+{
+  "id": "meme",
+  "day": 3,
+  "priority": 2,
+  "condition": {
+    "variable": "support",
+    "op": "<",
+    "value": 25
+  },
+  "actor": "pablo",
+  "speaker": "Pablo (en el chat)",
+  "scene": "El grupo de clase hierve en silencio. En la pantalla, el meme de Marcos se ha quedado sin comentarios.",
+  "text": "Circula un meme con la cara de Marcos. Nadie lo denuncia ni lo comparte abiertamente.",
+  "choices": [
+    {
+      "id": "denunciar",
+      "text": "Te parece de mal gusto y lo comentáis en serio.",
+      "stance": "pro",
+      "consequence": "El meme deja de circular. Algunos lo borran sin decir nada. No hay héroes, pero por una vez alguien ha roto la rueda del 'es solo un meme'.",
+      "effects": {
+        "support": 6,
+        "norm": 5,
+        "silence": -4
+      },
+      "relationEffects": {},
+      "setFlags": [],
+      "clearFlags": []
+    },
+    {
+      "id": "compartir2",
+      "text": "'Es un meme, es la vida', dices y lo reenvías sin pensarlo.",
+      "stance": "anti",
+      "consequence": "Se reenvía en cadena. Marcos lo ve de reojo y borra la conversación. La risa es de todos menos suya.",
+      "effects": {
+        "support": -5,
+        "norm": -4,
+        "silence": 4,
+        "isolation": 4
+      },
+      "relationEffects": {},
+      "setFlags": [],
+      "clearFlags": []
+    },
+    {
+      "id": "ignorar2",
+      "text": "Lo ignoras y esperas a que se pase.",
+      "stance": "neutral",
+      "consequence": "Se pasa, pero nadie ha dicho nada. El meme muere solo, sin que nadie haya aprendido nada.",
+      "effects": {
+        "silence": 2
+      },
+      "relationEffects": {},
+      "setFlags": [],
+      "clearFlags": []
+    }
+  ]
+}

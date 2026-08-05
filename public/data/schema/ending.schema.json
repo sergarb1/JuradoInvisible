@@ -1,0 +1,8 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://eljuradoinvisible.dev/ending.schema.json",
+  "title": "Finales de un caso",
+  "description": "Valida un fichero de finales (array). Referencia la definición de case.schema.json.",
+  "type": "array",
+  "items": { "$ref": "case.schema.json#/definitions/ending" }
+}

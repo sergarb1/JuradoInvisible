@@ -1,0 +1,47 @@
+[
+  {
+    "id": "final-apoyo",
+    "title": "La clase se vuelca",
+    "text": "El grupo cambia la inercia: se habla, se investigan los episodios y se abren espacios de acogida. La clase que callaba ahora protege.",
+    "condition": {
+      "logic": "and",
+      "rules": [
+        {
+          "variable": "support",
+          "op": ">=",
+          "value": 50
+        }
+      ]
+    }
+  },
+  {
+    "id": "final-aislamiento",
+    "title": "El aislamiento se consolida",
+    "text": "El silencio y el aislamiento se hunden. Marcos sigue en el aula, pero la clase sigue fingiendo no verlo.",
+    "condition": {
+      "logic": "and",
+      "rules": [
+        {
+          "variable": "isolation",
+          "op": ">=",
+          "value": 70
+        }
+      ]
+    }
+  },
+  {
+    "id": "final-inercia",
+    "title": "La inercia",
+    "text": "Ni se protege ni se rompe del todo el silencio. La indolencia de cada día, vista de frente, también es una decisión.",
+    "condition": {
+      "logic": "and",
+      "rules": [
+        {
+          "variable": "support",
+          "op": "<=",
+          "value": 100
+        }
+      ]
+    }
+  }
+]

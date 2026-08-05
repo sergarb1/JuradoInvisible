@@ -1,0 +1,34 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://eljuradoinvisible.dev/meta.schema.json",
+  "title": "Meta de un caso",
+  "description": "Valida el fragmento meta.json de un caso. Referencia las definiciones de case.schema.json.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "title",
+    "seed",
+    "description",
+    "intro",
+    "days",
+    "playerId",
+    "victimId",
+    "initial"
+  ],
+  "properties": {
+    "id": { "type": "string" },
+    "title": { "type": "string" },
+    "seed": { "type": "number" },
+    "description": { "type": "string" },
+    "intro": { "type": "string" },
+    "days": { "type": "number", "minimum": 1 },
+    "playerId": { "type": "string" },
+    "victimId": { "type": "string" },
+    "initial": { "$ref": "case.schema.json#/definitions/variableMap" },
+    "prologue": {
+      "type": "array",
+      "items": { "$ref": "case.schema.json#/definitions/narrativeBlock" }
+    }
+  }
+}

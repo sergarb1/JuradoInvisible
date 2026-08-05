@@ -1,0 +1,45 @@
+{
+  "name": "juegobullying",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "assemble-cases": "node scripts/assemble-cases.mjs",
+    "assemble-cases:watch": "node scripts/assemble-cases.mjs --watch",
+    "predev": "npm run assemble-cases",
+    "pretest": "npm run assemble-cases",
+    "prebuild": "npm run assemble-cases",
+    "predeploy": "npm run assemble-cases",
+    "dev": "vite",
+    "build": "vue-tsc -b && vite build",
+    "typecheck": "vue-tsc -b --noEmit",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "deploy": "npm run build && gh-pages -d dist"
+  },
+  "dependencies": {
+    "@vueuse/core": "^14.4.0",
+    "ajv": "^8.20.0",
+    "lucide-vue-next": "^1.0.0",
+    "pinia": "^4.0.2",
+    "vue": "^3.5.41",
+    "vue-router": "^5.2.0"
+  },
+  "devDependencies": {
+    "@happy-dom/global-registrator": "^20.11.1",
+    "@tailwindcss/vite": "^4.3.3",
+    "@types/node": "^24.13.3",
+    "@vitejs/plugin-vue": "^6.0.8",
+    "@vue/test-utils": "^2.4.11",
+    "@vue/tsconfig": "^0.9.1",
+    "gh-pages": "^6.3.0",
+    "happy-dom": "^20.11.1",
+    "tailwindcss": "^4.3.3",
+    "typescript": "~6.0.2",
+    "vite": "^8.2.0",
+    "vite-plugin-pwa": "^1.3.0",
+    "vitest": "^4.1.10",
+    "vue-tsc": "^3.3.8"
+  }
+}

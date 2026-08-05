@@ -1,0 +1,55 @@
+{
+  "id": "primer-dia",
+  "day": 1,
+  "priority": 5,
+  "condition": null,
+  "actor": "laura",
+  "speaker": "Laura (la delegada)",
+  "scene": "El aula, primer recreo del trimestre. Las mesas forman islas y Marcos se sienta solo en una, junto a la ventana.",
+  "text": "Marcos es nuevo. Ningún grupo le invita y hay sitio junto a él. Laura te mira, esperando que lo veas.",
+  "choices": [
+    {
+      "id": "acoger",
+      "text": "Te sientas con Marcos.",
+      "stance": "pro",
+      "consequence": "Marcos levanta la cabeza, sorprendido, y te dedica una sonrisa torpe. En la mesa, alguien deja de mirar el móvil. Por un momento, la isla deja de ser una isla.",
+      "effects": {
+        "support": 6,
+        "isolation": -4,
+        "silence": -2
+      },
+      "relationEffects": {
+        "tu:marcos": 15
+      },
+      "setFlags": [],
+      "clearFlags": []
+    },
+    {
+      "id": "no_mirar",
+      "text": "Miras hacia otra parte, como todos.",
+      "stance": "anti",
+      "consequence": "Nadie dice nada. La isla junto a la ventana sigue ahí, y tú también miras el móvil. Es fácil, y eso es justo lo que pesa.",
+      "effects": {
+        "support": -3,
+        "silence": 4,
+        "isolation": 2
+      },
+      "relationEffects": {},
+      "setFlags": [],
+      "clearFlags": []
+    },
+    {
+      "id": "dejar",
+      "text": "Dejas que lo organice Laura.",
+      "stance": "neutral",
+      "consequence": "Laura tampoco lo hace. El sitio junto a Marcos sigue vacío, y la clase entiende que, por ahora, nadie lo va a ocupar.",
+      "effects": {
+        "silence": 2,
+        "isolation": 1
+      },
+      "relationEffects": {},
+      "setFlags": [],
+      "clearFlags": []
+    }
+  ]
+}

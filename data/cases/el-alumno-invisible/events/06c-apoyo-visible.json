@@ -1,0 +1,57 @@
+{
+  "id": "apoyo-visible",
+  "day": 6,
+  "priority": 4,
+  "condition": {
+    "flag": "alianza"
+  },
+  "actor": "lucia",
+  "speaker": "Lucía (con el grupo de sociales)",
+  "scene": "La biblioteca, después de clase. Lucía reorganiza las hojas y levanta la vista hacia la mesa vacía.",
+  "text": "El grupo de trabajo de sociales tiene que ser de cuatro. Lucía te mira y dice: '¿Y Marcos?'.",
+  "choices": [
+    {
+      "id": "nombrar-marcos",
+      "text": "'Pues sí: Marcos.'",
+      "stance": "pro",
+      "consequence": "El nombre de Marcos entra en una lista, y las listas también cambian hábitos. Él se entera en la hora siguiente, y esta vez no tiene que pedirlo.",
+      "effects": {
+        "support": 6,
+        "isolation": -4,
+        "silence": -2
+      },
+      "relationEffects": {
+        "tu:marcos": 8
+      },
+      "setFlags": [],
+      "clearFlags": []
+    },
+    {
+      "id": "cuatro-mejor",
+      "text": "'Quedamos en tres, más fácil.'",
+      "stance": "neutral",
+      "consequence": "Quedáis en tres. Es más fácil, sí. Marcos no se entera de nada, y esa es justamente la parte incómoda.",
+      "effects": {
+        "silence": 1,
+        "support": -1
+      },
+      "relationEffects": {},
+      "setFlags": [],
+      "clearFlags": []
+    },
+    {
+      "id": "ya-sabra",
+      "text": "'Si no se apunta él, no es cosa nuestra.'",
+      "stance": "anti",
+      "consequence": "La lógica suena razonable y se repite en el grupo. Es la frase que más cuesta rebatir: 'él tendría que pedirlo'.",
+      "effects": {
+        "support": -3,
+        "silence": 3,
+        "isolation": 3
+      },
+      "relationEffects": {},
+      "setFlags": [],
+      "clearFlags": []
+    }
+  ]
+}

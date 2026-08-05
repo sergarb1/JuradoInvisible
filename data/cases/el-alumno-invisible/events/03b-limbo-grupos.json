@@ -1,0 +1,56 @@
+{
+  "id": "limbo-grupos",
+  "day": 3,
+  "priority": 3,
+  "condition": null,
+  "actor": "lucia",
+  "speaker": "Recreo",
+  "scene": "Recreo. Lucía reparte parejas para los trabalenguas y todos los nombres van cayendo, menos uno.",
+  "text": "Lucía organiza los trabalenguas por parejas y Marcos se queda a desechar el plan; falta alguien que lo sume.",
+  "choices": [
+    {
+      "id": "sumar",
+      "text": "Propones que Marcos forme un grupo contigo.",
+      "stance": "pro",
+      "consequence": "Nombran a Marcos antes de que pueda excusarse. Se sienta a tu lado con los ojos bajos, pero se queda. Nadie se queja.",
+      "effects": {
+        "support": 5,
+        "isolation": -5,
+        "silence": -2
+      },
+      "relationEffects": {
+        "tu:marcos": 10
+      },
+      "setFlags": [
+        "alianza"
+      ],
+      "clearFlags": []
+    },
+    {
+      "id": "callar2",
+      "text": "Dejas que los otros decidan.",
+      "stance": "neutral",
+      "consequence": "Nadie lo nombra. Marcos se queda esperando un nombre que no llega, hasta que dice que le da igual y se vuelve a su sitio.",
+      "effects": {
+        "silence": 2
+      },
+      "relationEffects": {},
+      "setFlags": [],
+      "clearFlags": []
+    },
+    {
+      "id": "quitar-pareja",
+      "text": "'En mi grupo no caben más' y miras a otro lado.",
+      "stance": "anti",
+      "consequence": "La frase se dice sin querer, pero todos la oyen. Marcos se aleja antes de que nadie le diga que no.",
+      "effects": {
+        "support": -3,
+        "silence": 3,
+        "isolation": 3
+      },
+      "relationEffects": {},
+      "setFlags": [],
+      "clearFlags": []
+    }
+  ]
+}

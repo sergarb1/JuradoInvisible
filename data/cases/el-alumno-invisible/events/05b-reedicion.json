@@ -1,0 +1,55 @@
+{
+  "id": "reedicion",
+  "day": 5,
+  "priority": 2,
+  "condition": {
+    "flag": "firmeza"
+  },
+  "actor": "lucia",
+  "speaker": "Lucía retoma con fuerza",
+  "scene": "Después de tu gesto, Lucía te busca entre el bullicio con una idea en la cabeza.",
+  "text": "Tu firmeza de antes anima a Lucía: propone reunir a Marcos a un plan de grupo.",
+  "choices": [
+    {
+      "id": "acompanar2",
+      "text": "Apoyas la idea y la pones en marcha.",
+      "stance": "pro",
+      "consequence": "La idea se pone en marcha. Marcos no dice mucho, pero aparece. A veces basta con que el plan exista para que alguien deje de estar solo.",
+      "effects": {
+        "support": 5,
+        "norm": 4,
+        "pressure": -2
+      },
+      "relationEffects": {},
+      "setFlags": [],
+      "clearFlags": []
+    },
+    {
+      "id": "dejar-hacer",
+      "text": "Lo dejas en manos de Lucía.",
+      "stance": "neutral",
+      "consequence": "Lucía lo organiza, pero sin refuerzo el plan se apaga en dos días.",
+      "effects": {
+        "support": 1,
+        "silence": 1
+      },
+      "relationEffects": {},
+      "setFlags": [],
+      "clearFlags": []
+    },
+    {
+      "id": "restarle",
+      "text": "'No hagas teatro, solo se va a notar más.'",
+      "stance": "anti",
+      "consequence": "Lucía se encoge. Tu cautela gana y el plan se olvida antes de empezar.",
+      "effects": {
+        "support": -3,
+        "silence": 4,
+        "norm": -2
+      },
+      "relationEffects": {},
+      "setFlags": [],
+      "clearFlags": []
+    }
+  ]
+}

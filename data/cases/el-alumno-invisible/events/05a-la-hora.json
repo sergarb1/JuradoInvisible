@@ -1,0 +1,55 @@
+{
+  "id": "la-hora",
+  "day": 5,
+  "priority": 4,
+  "condition": null,
+  "actor": "pablo",
+  "speaker": "Pablo",
+  "scene": "Comedor, la misma escena de siempre: el grupo que se ríe, Marcos solo, y el tiempo que pasa.",
+  "text": "En el comedor es evidente el grupo que se ríe de Marcos cada día. Pablo espera que alguien lo nombre.",
+  "choices": [
+    {
+      "id": "acomodo",
+      "text": "Comentas el tema en serio y abres la puerta a Marcos.",
+      "stance": "pro",
+      "consequence": "Nombran a Marcos, y por un momento el comedor se queda en silencio. Alguien le hace un hueco. No es un milagro: es una decisión, y empieza a ser colectiva.",
+      "effects": {
+        "support": 7,
+        "norm": 5,
+        "isolation": -4
+      },
+      "relationEffects": {
+        "tu:marcos": 8
+      },
+      "setFlags": [],
+      "clearFlags": []
+    },
+    {
+      "id": "reirse2",
+      "text": "Te ríes con ellos una hora más.",
+      "stance": "anti",
+      "consequence": "Te ríes una hora más. Marcos come rápido y se va antes de que nadie le diga nada. El grupo gana la partida del comedor, otra vez.",
+      "effects": {
+        "support": -4,
+        "norm": -4,
+        "silence": 5
+      },
+      "relationEffects": {},
+      "setFlags": [],
+      "clearFlags": []
+    },
+    {
+      "id": "desvio",
+      "text": "Desvías la conversación para que nadie lo nombre.",
+      "stance": "neutral",
+      "consequence": "Nadie lo nombra. El alivio es breve: has elegido el tema, no la persona.",
+      "effects": {
+        "silence": 3,
+        "norm": 1
+      },
+      "relationEffects": {},
+      "setFlags": [],
+      "clearFlags": []
+    }
+  ]
+}

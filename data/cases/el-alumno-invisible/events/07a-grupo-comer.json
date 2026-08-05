@@ -1,0 +1,62 @@
+{
+  "id": "grupo-comer",
+  "day": 7,
+  "priority": 5,
+  "condition": {
+    "variable": "isolation",
+    "op": ">",
+    "value": 50
+  },
+  "actor": "tu",
+  "speaker": "",
+  "scene": "El comedor a mediodía. Marcos, otra vez junto a la ventana. La escena se repite y algo te pesa más que otros días.",
+  "text": "Al mediodía Marcos vuelve a quedarse solo junto a la ventana. Esta vez la escena te resulta cada vez menos neutral.",
+  "choices": [
+    {
+      "id": "irmecon",
+      "text": "Le invitas a comer aunque Iván ponga cara rara.",
+      "stance": "pro",
+      "consequence": "Te levantas y cruzas el comedor. Iván pone cara rara, pero nadie te sigue hasta la ventana. Marcos te mira, sin creérselo del todo, y hace sitio.",
+      "effects": {
+        "support": 10,
+        "isolation": -6,
+        "norm": 6
+      },
+      "relationEffects": {
+        "tu:marcos": 12
+      },
+      "setFlags": [],
+      "clearFlags": []
+    },
+    {
+      "id": "quedarme",
+      "text": "Te quedas donde estás, callado.",
+      "stance": "anti",
+      "consequence": "Te quedas. El comedor sigue con su ruido y Marcos con su ventana. La escena se repite un día más, y tú ya formas parte del decorado.",
+      "effects": {
+        "support": -4,
+        "silence": 5,
+        "isolation": 5
+      },
+      "relationEffects": {},
+      "setFlags": [],
+      "clearFlags": [
+        "firmeza"
+      ]
+    },
+    {
+      "id": "gesto",
+      "text": "Le haces un gesto de saludo, sin comprometerte más.",
+      "stance": "neutral",
+      "consequence": "Marcos te devuelve el gesto, tímido. Es poco, pero él lo ha visto. A veces el gesto es un principio.",
+      "effects": {
+        "support": 2,
+        "silence": 1,
+        "isolation": -1
+      },
+      "relationEffects": {},
+      "setFlags": [],
+      "clearFlags": []
+    }
+  ]
+}

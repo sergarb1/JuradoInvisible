@@ -1,0 +1,55 @@
+{
+  "id": "ruido-pasillo",
+  "day": 6,
+  "priority": 3,
+  "condition": null,
+  "actor": "ivan",
+  "speaker": "Iván",
+  "scene": "Entre clase y clase, el apodo corre por el pasillo y las risas crecen como una ola.",
+  "text": "Reaparece otro apodo en el pasillo y cada vez hay más risa.",
+  "choices": [
+    {
+      "id": "nombrar",
+      "text": "Lo nombras en voz alta para cortar la risa.",
+      "stance": "pro",
+      "consequence": "Nombrarlo en voz alta basta para cortar la risa. El apodo se queda en el pasillo, y varios se sienten tontos por haberse reído. No pasa nada más: y ya es mucho.",
+      "effects": {
+        "support": 6,
+        "norm": 4,
+        "silence": -3
+      },
+      "relationEffects": {
+        "tu:marcos": 6
+      },
+      "setFlags": [],
+      "clearFlags": []
+    },
+    {
+      "id": "mirar",
+      "text": "Miras el suelo hasta que para.",
+      "stance": "anti",
+      "consequence": "Miras el suelo hasta que para. La risa se aleja y te alegras de no haber sido el siguiente. Marcos no se alegra tanto.",
+      "effects": {
+        "support": -3,
+        "silence": 4,
+        "isolation": 3
+      },
+      "relationEffects": {},
+      "setFlags": [],
+      "clearFlags": []
+    },
+    {
+      "id": "desvio-pasillo",
+      "text": "Te unes a la risa un segundo y te alejas.",
+      "stance": "neutral",
+      "consequence": "La risa te incluye a ti también, y por eso cuesta más pararla. Te alejas, pero ya has formado parte.",
+      "effects": {
+        "silence": 3,
+        "isolation": 2
+      },
+      "relationEffects": {},
+      "setFlags": [],
+      "clearFlags": []
+    }
+  ]
+}

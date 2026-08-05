@@ -1,0 +1,56 @@
+{
+  "id": "silencio-peso",
+  "day": 7,
+  "priority": 4,
+  "condition": {
+    "variable": "silence",
+    "op": ">",
+    "value": 55
+  },
+  "actor": "sara",
+  "speaker": "Sara (evitando tu mirada)",
+  "scene": "El aula, en el cambio de clase. Nadie menciona el nombre de Marcos, y todos lo notan.",
+  "text": "El silencio pesa como una manta. Sara evita tu mirada: los dos sabéis que 'no hacer nada' también es una elección.",
+  "choices": [
+    {
+      "id": "decirlo",
+      "text": "Lo dices en voz baja: 'Estamos raros, ¿no?'",
+      "stance": "pro",
+      "consequence": "Tu frase rompe el hechizo un segundo. Sara asiente, y el silencio ya no es tan unánime. Romperlo no arregla nada, pero abre una grieta.",
+      "effects": {
+        "silence": -3,
+        "support": 3,
+        "norm": 3
+      },
+      "relationEffects": {},
+      "setFlags": [],
+      "clearFlags": []
+    },
+    {
+      "id": "sobrevivir",
+      "text": "Decides que hoy tampoco toca.",
+      "stance": "neutral",
+      "consequence": "El silencio sigue su curso. Cada día que pasa sin nombrarlo lo hace más grande, y más difícil de nombrar.",
+      "effects": {
+        "silence": 2
+      },
+      "relationEffects": {},
+      "setFlags": [],
+      "clearFlags": []
+    },
+    {
+      "id": "culpar",
+      "text": "'Es que él tampoco se esfuerza.'",
+      "stance": "anti",
+      "consequence": "La frase encuentra eco y se repite en el grupo. Es la frase que más duele de rebatir, y se convierte en verdad para muchos.",
+      "effects": {
+        "norm": -4,
+        "silence": 4,
+        "support": -4
+      },
+      "relationEffects": {},
+      "setFlags": [],
+      "clearFlags": []
+    }
+  ]
+}

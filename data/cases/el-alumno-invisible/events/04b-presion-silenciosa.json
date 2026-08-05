@@ -1,0 +1,61 @@
+{
+  "id": "presion-silenciosa",
+  "day": 4,
+  "priority": 4,
+  "condition": {
+    "variable": "pressure",
+    "op": ">",
+    "value": 45
+  },
+  "actor": "daniel",
+  "speaker": "Daniel (al oído)",
+  "scene": "El patio, bajo el porche. Daniel no alza la voz: no necesita.",
+  "text": "Daniel se sienta a tu lado: 'Mira, si te pones de su lado, te vas a quedar fuera. Tú eliges.'",
+  "choices": [
+    {
+      "id": "no-negocio",
+      "text": "'No tengo que elegir eso.'",
+      "stance": "pro",
+      "consequence": "Daniel se encoge de hombros y se marcha. No es una victoria, es una línea que has dibujado sin gritar. Alguien lo ha visto.",
+      "effects": {
+        "support": 5,
+        "pressure": -3,
+        "norm": 4
+      },
+      "relationEffects": {
+        "tu:marcos": 6
+      },
+      "setFlags": [],
+      "clearFlags": []
+    },
+    {
+      "id": "calculo",
+      "text": "'Ya veremos.' Dejas la respuesta en el aire.",
+      "stance": "neutral",
+      "consequence": "Daniel sonríe, satisfecho: 'ya veremos' también es una respuesta. La presión no desaparece, solo cambia de turno.",
+      "effects": {
+        "pressure": 1,
+        "silence": 1
+      },
+      "relationEffects": {},
+      "setFlags": [],
+      "clearFlags": []
+    },
+    {
+      "id": "distanciarte",
+      "text": "Asientes y evitas a Marcos el resto del día.",
+      "stance": "anti",
+      "consequence": "Cumples el trato sin decirlo. La presión de Daniel se alivia, y el coste lo paga Marcos sin saber por qué.",
+      "effects": {
+        "support": -4,
+        "silence": 4,
+        "isolation": 3
+      },
+      "relationEffects": {},
+      "setFlags": [],
+      "clearFlags": [
+        "firmeza"
+      ]
+    }
+  ]
+}

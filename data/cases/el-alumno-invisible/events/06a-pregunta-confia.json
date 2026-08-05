@@ -1,0 +1,59 @@
+{
+  "id": "pregunta-confia",
+  "day": 6,
+  "priority": 5,
+  "condition": {
+    "variable": "support",
+    "op": "<",
+    "value": 30
+  },
+  "actor": "laura",
+  "speaker": "Laura (la delegada), seria",
+  "scene": "Los pasillos ya han vaciado. Laura te retiene un momento, con la voz más seria de lo habitual.",
+  "text": "Laura nota a Marcos extraño: 'Voy a informar a dirección.'",
+  "choices": [
+    {
+      "id": "frenar",
+      "text": "'Cuidémoslo bien y con datos, no para señalar.'",
+      "stance": "pro",
+      "consequence": "Laura te escucha. La palabra 'datos' cambia la conversación: ya no es chivarse, es mirar de verdad. Marcos no lo sabe, pero algo se mueve.",
+      "effects": {
+        "support": 7,
+        "silence": -4,
+        "norm": 5
+      },
+      "relationEffects": {},
+      "setFlags": [
+        "datos"
+      ],
+      "clearFlags": []
+    },
+    {
+      "id": "exagerada",
+      "text": "'Es solo una broma, no hace falta el informe.'",
+      "stance": "anti",
+      "consequence": "Laura se detiene, dudando. 'Es solo una broma' suena convincente, sobre todo porque todos queréis creerlo. El informe queda en nada.",
+      "effects": {
+        "support": -4,
+        "isolation": 4,
+        "silence": 4
+      },
+      "relationEffects": {},
+      "setFlags": [],
+      "clearFlags": []
+    },
+    {
+      "id": "posponer",
+      "text": "'Hablemos el lunes, sin prisa.'",
+      "stance": "neutral",
+      "consequence": "El lunes se convierte en el jueves, y el jueves en nada. La buena intención de Laura se disuelve en el calendario, como la de todos.",
+      "effects": {
+        "silence": 2,
+        "pressure": 2
+      },
+      "relationEffects": {},
+      "setFlags": [],
+      "clearFlags": []
+    }
+  ]
+}

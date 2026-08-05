@@ -1,0 +1,176 @@
+[
+  {
+    "id": "marcos",
+    "name": "Marcos",
+    "role": "victim",
+    "age": 15,
+    "traits": {
+      "empathy": 70,
+      "popularity": 20,
+      "influence": 15,
+      "conformity": 75,
+      "rejectionFear": 80
+    },
+    "beliefs": {
+      "victimResponsibility": 50,
+      "groupPressure": 60
+    },
+    "relationships": {
+      "daniel": -40,
+      "ivan": -30,
+      "tu": 10
+    }
+  },
+  {
+    "id": "daniel",
+    "name": "Daniel",
+    "role": "aggressor",
+    "age": 16,
+    "traits": {
+      "empathy": 25,
+      "popularity": 90,
+      "influence": 90,
+      "conformity": 25,
+      "rejectionFear": 20
+    },
+    "beliefs": {
+      "victimResponsibility": 70,
+      "groupPressure": 30
+    },
+    "relationships": {
+      "marcos": -40,
+      "ivan": 60,
+      "lucia": 20
+    }
+  },
+  {
+    "id": "ivan",
+    "name": "Iván",
+    "role": "aggressor",
+    "age": 16,
+    "traits": {
+      "empathy": 30,
+      "popularity": 60,
+      "influence": 55,
+      "conformity": 70,
+      "rejectionFear": 65
+    },
+    "beliefs": {
+      "victimResponsibility": 60,
+      "groupPressure": 70
+    },
+    "relationships": {
+      "daniel": 60,
+      "marcos": -25,
+      "pablo": 20
+    }
+  },
+  {
+    "id": "lucia",
+    "name": "Lucía",
+    "role": "defender",
+    "age": 15,
+    "traits": {
+      "empathy": 85,
+      "popularity": 65,
+      "influence": 55,
+      "conformity": 40,
+      "rejectionFear": 40
+    },
+    "beliefs": {
+      "victimResponsibility": 30,
+      "groupPressure": 35
+    },
+    "relationships": {
+      "tu": 40,
+      "sara": 30,
+      "marcos": 20
+    }
+  },
+  {
+    "id": "sara",
+    "name": "Sara",
+    "role": "bystander",
+    "age": 15,
+    "traits": {
+      "empathy": 60,
+      "popularity": 45,
+      "influence": 35,
+      "conformity": 65,
+      "rejectionFear": 60
+    },
+    "beliefs": {
+      "victimResponsibility": 50,
+      "groupPressure": 55
+    },
+    "relationships": {
+      "lucia": 30,
+      "pablo": 15
+    }
+  },
+  {
+    "id": "pablo",
+    "name": "Pablo",
+    "role": "bystander",
+    "age": 15,
+    "traits": {
+      "empathy": 50,
+      "popularity": 40,
+      "influence": 30,
+      "conformity": 80,
+      "rejectionFear": 75
+    },
+    "beliefs": {
+      "victimResponsibility": 45,
+      "groupPressure": 70
+    },
+    "relationships": {
+      "sara": 15,
+      "ivan": 20
+    }
+  },
+  {
+    "id": "laura",
+    "name": "Laura",
+    "role": "neutral",
+    "age": 16,
+    "traits": {
+      "empathy": 45,
+      "popularity": 70,
+      "influence": 60,
+      "conformity": 55,
+      "rejectionFear": 40
+    },
+    "beliefs": {
+      "victimResponsibility": 40,
+      "groupPressure": 45
+    },
+    "relationships": {
+      "daniel": 35,
+      "ivan": 20,
+      "sara": 20
+    }
+  },
+  {
+    "id": "tu",
+    "name": "Tú",
+    "role": "neutral",
+    "age": 15,
+    "traits": {
+      "empathy": 50,
+      "popularity": 50,
+      "influence": 45,
+      "conformity": 50,
+      "rejectionFear": 50
+    },
+    "beliefs": {
+      "victimResponsibility": 50,
+      "groupPressure": 50
+    },
+    "relationships": {
+      "marcos": 10,
+      "lucia": 40,
+      "daniel": 20
+    }
+  }
+]
