@@ -38,5 +38,11 @@ jobs:
     steps:
       - id: deployment
         uses: actions/deploy-pages@v5
-        with:
-          timeout: 1800000
+        continue-on-error: true
+      - name: Reintento de despliegue
+        if: steps.deployment.outcome == 'failure'
+        id: deployment_retry
+        uses: actions/deploy-pages@v5
+      - name: Fallar si ambos intentos fallan
+        if: steps.deployment.outcome == 'failure' && steps.deployment_retry.outcome == 'failure'
+        run: exit 1
