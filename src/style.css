@@ -12,13 +12,14 @@
     outline-offset: 2px;
   }
 
-  /* Fondo base oscuro + veladura cálida. Clase CSS real (no arbitraria de
-     Tailwind) para garantizar que siempre existe aunque el degradado falle. */
+  /* Fondo cálido y luminoso. Clase CSS real (no arbitraria de Tailwind)
+     para garantizar que siempre existe aunque el degradado falle. */
   .app-bg {
-    background-color: #020617;
+    background-color: #201a15;
     background-image:
-      radial-gradient(75% 50% at 50% -8%, rgba(251, 191, 36, 0.1), transparent 60%),
-      radial-gradient(60% 45% at 100% 100%, rgba(56, 189, 248, 0.07), transparent 60%);
+      radial-gradient(80% 55% at 15% -5%, rgba(251, 146, 60, 0.22), transparent 60%),
+      radial-gradient(55% 45% at 100% 105%, rgba(217, 119, 6, 0.12), transparent 60%),
+      radial-gradient(50% 40% at 90% -10%, rgba(56, 189, 248, 0.06), transparent 55%);
   }
 }
 

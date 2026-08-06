@@ -18,10 +18,10 @@ async function elegir(choiceId: string) {
 <template>
   <main v-if="event" class="mx-auto flex min-h-svh max-w-2xl flex-col justify-center gap-6 p-6">
     <div class="flex items-center justify-between">
-      <p class="text-sm text-slate-400">Día {{ sim.day }}</p>
+      <p class="text-sm text-stone-400">Día {{ sim.day }}</p>
       <button
         type="button"
-        class="flex items-center gap-2 rounded-lg border border-slate-700 px-3 py-1.5 text-xs text-slate-300 hover:bg-slate-900"
+        class="flex items-center gap-2 rounded-lg border border-stone-700 px-3 py-1.5 text-xs text-stone-300 hover:bg-stone-900"
         @click="router.push({ name: 'como-jugar' })"
       >
         <BookOpen class="h-3.5 w-3.5" />
@@ -29,18 +29,18 @@ async function elegir(choiceId: string) {
       </button>
     </div>
 
-    <div v-if="event.scene" class="flex items-start gap-3 text-sm italic text-slate-400">
-      <Quote class="mt-0.5 h-4 w-4 shrink-0 text-slate-500" />
+    <div v-if="event.scene" class="flex items-start gap-3 text-sm italic text-stone-400">
+      <Quote class="mt-0.5 h-4 w-4 shrink-0 text-stone-500" />
       <p>{{ event.scene }}</p>
     </div>
 
-    <div class="rounded-xl border-l-4 border-sky-500 bg-slate-900 p-5">
+    <div class="rounded-xl border-l-4 border-sky-500 bg-stone-900 p-5">
       <p class="text-xs uppercase tracking-wide text-sky-400">{{ event.speaker || sim.actorName || event.actor || '—' }}</p>
-      <p class="mt-2 text-slate-200">{{ event.text }}</p>
+      <p class="mt-2 text-stone-200">{{ event.text }}</p>
     </div>
 
     <div class="flex flex-col gap-3">
-      <p class="text-sm text-slate-400">¿Qué haces?</p>
+      <p class="text-sm text-stone-400">¿Qué haces?</p>
       <ChoiceCard
         v-for="choice in sim.availableChoices(event)"
         :key="choice.id"
@@ -53,7 +53,7 @@ async function elegir(choiceId: string) {
   <main v-else class="mx-auto flex min-h-svh max-w-2xl items-center justify-center p-6">
     <button
       type="button"
-      class="rounded-xl border border-slate-700 px-6 py-3 text-slate-200 hover:bg-slate-900"
+      class="rounded-xl border border-stone-700 px-6 py-3 text-stone-200 hover:bg-stone-900"
       @click="router.push({ name: 'mapa', params: { caseId: caso?.id } })"
     >
       Volver al mapa

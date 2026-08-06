@@ -67,19 +67,19 @@ async function empezar() {
     </div>
 
     <div v-else-if="loading" class="flex flex-col gap-6" aria-busy="true">
-      <div class="h-6 w-32 animate-pulse rounded bg-slate-800" />
-      <div class="h-9 w-2/3 animate-pulse rounded bg-slate-800" />
-      <div class="h-40 w-full animate-pulse rounded-xl bg-slate-800" />
+      <div class="h-6 w-32 animate-pulse rounded bg-stone-800" />
+      <div class="h-9 w-2/3 animate-pulse rounded bg-stone-800" />
+      <div class="h-40 w-full animate-pulse rounded-xl bg-stone-800" />
     </div>
 
     <template v-else-if="caso">
       <div v-if="blocks.length" class="flex flex-col gap-6">
-        <div class="flex items-center justify-between text-sm text-slate-400">
+        <div class="flex items-center justify-between text-sm text-stone-400">
           <span class="uppercase tracking-wide text-sky-400">{{ caso.title }}</span>
           <span class="tabular-nums">{{ step + 1 }} / {{ blocks.length }}</span>
         </div>
 
-        <div class="flex h-1 w-full overflow-hidden rounded-full bg-slate-800">
+        <div class="flex h-1 w-full overflow-hidden rounded-full bg-stone-800">
           <div
             class="h-full bg-sky-500 transition-all"
             :style="{ width: `${((step + 1) / blocks.length) * 100}%` }"
@@ -89,12 +89,12 @@ async function empezar() {
         <transition name="fade" mode="out-in">
           <section :key="step" class="flex flex-col gap-3">
             <h1 class="text-3xl font-bold sm:text-4xl">{{ blocks[step].title }}</h1>
-            <p class="text-lg leading-relaxed text-slate-300">{{ blocks[step].text }}</p>
+            <p class="text-lg leading-relaxed text-stone-300">{{ blocks[step].text }}</p>
           </section>
         </transition>
 
-        <div v-if="isLast" class="rounded-xl border border-slate-700 bg-slate-900/60 p-5">
-          <p class="mb-3 text-sm font-medium uppercase tracking-wide text-slate-400">
+        <div v-if="isLast" class="rounded-xl border border-stone-700 bg-stone-900/60 p-5">
+          <p class="mb-3 text-sm font-medium uppercase tracking-wide text-stone-400">
             Elige con qué avatar jugarás
           </p>
           <div class="flex gap-3">
@@ -104,7 +104,7 @@ async function empezar() {
               :class="
                 sim.playerGender === 'm'
                   ? 'border-sky-400 bg-sky-500/20 text-sky-200'
-                  : 'border-slate-700 text-slate-300 hover:bg-slate-800'
+                  : 'border-stone-700 text-stone-300 hover:bg-stone-800'
               "
               @click="sim.setPlayerGender('m')"
             >
@@ -116,7 +116,7 @@ async function empezar() {
               :class="
                 sim.playerGender === 'f'
                   ? 'border-sky-400 bg-sky-500/20 text-sky-200'
-                  : 'border-slate-700 text-slate-300 hover:bg-slate-800'
+                  : 'border-stone-700 text-stone-300 hover:bg-stone-800'
               "
               @click="sim.setPlayerGender('f')"
             >
@@ -126,21 +126,21 @@ async function empezar() {
         </div>
       </div>
 
-      <div v-else class="rounded-xl bg-slate-900 p-5 text-slate-300">
+      <div v-else class="rounded-xl bg-stone-900 p-5 text-stone-300">
         <p>{{ caso.intro }}</p>
       </div>
 
       <div class="flex justify-between">
         <button
           type="button"
-          class="rounded-xl border border-slate-700 px-6 py-3 text-slate-200 transition hover:bg-slate-900"
+          class="rounded-xl border border-stone-700 px-6 py-3 text-stone-200 transition hover:bg-stone-900"
           @click="router.push({ name: 'caso', params: { caseId: caso.id } })"
         >
           Volver
         </button>
         <button
           type="button"
-          class="flex items-center gap-2 rounded-xl bg-amber-500 px-6 py-3 font-semibold text-slate-950 transition hover:bg-amber-400"
+          class="flex items-center gap-2 rounded-xl bg-amber-500 px-6 py-3 font-semibold text-stone-950 transition hover:bg-amber-400"
           @click="continuar()"
         >
           <Play v-if="isLast" class="h-4 w-4" />

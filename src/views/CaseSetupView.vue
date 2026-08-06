@@ -54,10 +54,10 @@ async function comenzar() {
     </div>
 
     <div v-else-if="loading" class="flex flex-col gap-6" aria-busy="true">
-      <div class="h-6 w-32 animate-pulse rounded bg-slate-800" />
-      <div class="h-9 w-2/3 animate-pulse rounded bg-slate-800" />
-      <div class="aspect-video w-full animate-pulse rounded-xl bg-slate-800" />
-      <div class="h-20 w-full animate-pulse rounded-xl bg-slate-800" />
+      <div class="h-6 w-32 animate-pulse rounded bg-stone-800" />
+      <div class="h-9 w-2/3 animate-pulse rounded bg-stone-800" />
+      <div class="aspect-video w-full animate-pulse rounded-xl bg-stone-800" />
+      <div class="h-20 w-full animate-pulse rounded-xl bg-stone-800" />
     </div>
 
     <template v-else-if="caso">
@@ -72,28 +72,28 @@ async function comenzar() {
         class="aspect-video w-full rounded-xl object-cover"
         @error="coverFailed = true"
       />
-      <p class="text-slate-300">{{ caso.intro }}</p>
-      <div class="rounded-xl bg-slate-900 p-4 text-sm text-slate-400">
+      <p class="text-stone-300">{{ caso.intro }}</p>
+      <div class="rounded-xl bg-stone-900 p-4 text-sm text-stone-400">
         {{ caso.description }}
       </div>
       <div class="flex gap-3">
         <button
           type="button"
-          class="rounded-xl bg-amber-500 px-6 py-3 font-semibold text-slate-950 transition hover:bg-amber-400"
+          class="rounded-xl bg-amber-500 px-6 py-3 font-semibold text-stone-950 transition hover:bg-amber-400"
           @click="comenzar()"
         >
           Comenzar
         </button>
         <button
           type="button"
-          class="rounded-xl border border-slate-700 px-6 py-3 text-slate-200 hover:bg-slate-900"
+          class="rounded-xl border border-stone-700 px-6 py-3 text-stone-200 hover:bg-stone-900"
           @click="router.push({ name: 'como-jugar' })"
         >
           ¿Cómo se juega?
         </button>
         <button
           type="button"
-          class="rounded-xl border border-slate-700 px-6 py-3 text-slate-200 hover:bg-slate-900"
+          class="rounded-xl border border-stone-700 px-6 py-3 text-stone-200 hover:bg-stone-900"
           @click="router.push({ name: 'home' })"
         >
           Volver

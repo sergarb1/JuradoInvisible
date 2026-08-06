@@ -20,7 +20,7 @@ const stanceChip = computed(() => {
     case 'anti':
       return { label: 'en contra', cls: 'bg-red-500/15 text-red-300', icon: ArrowDownRight }
     default:
-      return { label: 'neutra', cls: 'bg-slate-700/40 text-slate-300', icon: Minus }
+      return { label: 'neutra', cls: 'bg-stone-700/40 text-stone-300', icon: Minus }
   }
 })
 </script>
@@ -28,10 +28,10 @@ const stanceChip = computed(() => {
 <template>
   <button
     type="button"
-    class="w-full rounded-xl border border-slate-700 bg-slate-900 p-4 text-left transition hover:border-sky-500 hover:bg-slate-800"
+    class="w-full rounded-xl border border-stone-700 bg-stone-900 p-4 text-left transition hover:border-sky-500 hover:bg-stone-800"
   >
     <div class="flex items-start justify-between gap-2">
-      <p class="text-sm text-slate-100">{{ choice.text }}</p>
+      <p class="text-sm text-stone-100">{{ choice.text }}</p>
       <span
         class="mt-0.5 flex shrink-0 items-center gap-1 rounded-full px-2 py-0.5 text-xs"
         :class="stanceChip.cls"
@@ -49,7 +49,7 @@ const stanceChip = computed(() => {
         v-for="(delta, key) in choice.effects"
         :key="key"
         class="rounded-full px-2 py-0.5 text-xs"
-        :class="(delta as number) > 0 ? 'bg-sky-500/20 text-sky-200' : (delta as number) < 0 ? 'bg-rose-500/20 text-rose-200' : 'bg-slate-700 text-slate-300'"
+        :class="(delta as number) > 0 ? 'bg-sky-500/20 text-sky-200' : (delta as number) < 0 ? 'bg-rose-500/20 text-rose-200' : 'bg-stone-700 text-stone-300'"
       >
         {{ LABELS[key] ?? key }}
         {{ (delta as number) > 0 ? '+' : '' }}{{ Math.round(delta as number) }}

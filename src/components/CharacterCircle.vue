@@ -44,9 +44,9 @@ watch(
   },
 )
 
-/** Tamaño del retrato: jerarquía sutil por influencia, con tope para que
- *  los líderes no rompan la cuadrícula (Daniel ya no se ve «gigante»). */
-const size = computed(() => Math.round(Math.min(50, 36 + props.character.traits.influence / 6)))
+/** Tamaño fijo del retrato: un mismo tamaño para todos, sin jerarquía
+ *  geométrica por influencia. El rol solo se distingue por color/etiqueta. */
+const size = 42
 const relationToVictim = computed(() => {
   if (props.character.id === props.victimId) return null
   return props.character.relationships[props.victimId]
@@ -59,7 +59,7 @@ const relationLabel = computed(() => {
 })
 const relationChip = computed(() => {
   const v = relationToVictim.value
-  if (v === null || v === undefined || v === 0) return 'bg-slate-700/60 text-slate-300'
+  if (v === null || v === undefined || v === 0) return 'bg-stone-700/60 text-stone-300'
   return v > 0 ? 'bg-emerald-500/20 text-emerald-300' : 'bg-rose-500/20 text-rose-300'
 })
 const initial = computed(() => props.character.name.trim().charAt(0).toUpperCase())
@@ -70,7 +70,7 @@ const icon = computed(() => meta.value.icon)
 
 <template>
   <div
-    class="flex flex-col items-center gap-1 rounded-xl bg-slate-900 p-2"
+    class="flex flex-col items-center gap-1 rounded-xl bg-stone-900 p-2"
     :style="{ width: `${size + 32}px` }"
     :title="`${character.name}: ${meta.label}. ${meta.desc}`"
   >
@@ -89,13 +89,13 @@ const icon = computed(() => meta.value.icon)
         @error="onImgError"
       />
       <span
-        class="absolute -bottom-1 -right-1 flex h-5 w-5 items-center justify-center rounded-full bg-slate-950 ring-1 ring-slate-700"
+        class="absolute -bottom-1 -right-1 flex h-5 w-5 items-center justify-center rounded-full bg-stone-950 ring-1 ring-stone-700"
         :title="meta.label"
       >
-        <component :is="icon" class="h-3.5 w-3.5 text-slate-300" />
+        <component :is="icon" class="h-3.5 w-3.5 text-stone-300" />
       </span>
     </div>
-    <div class="text-xs font-medium text-slate-200">{{ character.name }}</div>
+    <div class="text-xs font-medium text-stone-200">{{ character.name }}</div>
     <div class="flex flex-wrap items-center justify-center gap-1">
       <span class="rounded px-1 text-[10px]" :class="chip">{{ meta.label }}</span>
       <span

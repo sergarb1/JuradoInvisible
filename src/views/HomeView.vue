@@ -40,14 +40,14 @@ async function continuar() {
         @error="heroFailed = true"
       />
     <h1 class="text-4xl font-bold sm:text-5xl">El Jurado Invisible</h1>
-    <p class="max-w-md text-slate-400">
+    <p class="max-w-md text-stone-400">
       Un simulador social: decides dentro de una clase y observas cómo cambia la
       dinámica del grupo. Sin respuestas correctas.
     </p>
     <div class="flex w-full max-w-sm flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-stretch sm:justify-center">
       <button
         type="button"
-        class="flex items-center justify-center gap-2 rounded-xl bg-amber-500 px-8 py-3 font-semibold text-slate-950 transition hover:bg-amber-400"
+        class="flex items-center justify-center gap-2 rounded-xl bg-amber-500 px-8 py-3 font-semibold text-stone-950 transition hover:bg-amber-400"
         @click="router.push({ name: 'caso', params: { caseId: defaultCaseId } })"
       >
         <Play class="h-4 w-4" />
@@ -55,7 +55,7 @@ async function continuar() {
       </button>
       <button
         type="button"
-        class="flex items-center justify-center gap-2 rounded-xl border border-slate-700 px-8 py-3 text-slate-200 transition hover:border-amber-500 hover:bg-slate-900"
+        class="flex items-center justify-center gap-2 rounded-xl border border-stone-700 px-8 py-3 text-stone-200 transition hover:border-amber-500 hover:bg-stone-900"
         @click="router.push({ name: 'como-jugar' })"
       >
         <BookOpen class="h-4 w-4" />
@@ -64,7 +64,7 @@ async function continuar() {
       <button
         v-if="sim.hasSave"
         type="button"
-        class="rounded-xl border border-slate-700 px-8 py-3 text-slate-200 transition hover:border-amber-500 hover:bg-slate-900"
+        class="rounded-xl border border-stone-700 px-8 py-3 text-stone-200 transition hover:border-amber-500 hover:bg-stone-900"
         @click="continuar()"
       >
         Continuar partida

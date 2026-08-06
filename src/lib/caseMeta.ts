@@ -95,8 +95,8 @@ export const ROLE_META: Record<Role, RoleMeta> = {
   neutral: {
     label: 'Neutro',
     desc: 'Sin un rol definido. Puede mover la balanza.',
-    ring: 'ring-slate-400',
-    chip: 'bg-slate-500/20 text-slate-200',
+    ring: 'ring-stone-400',
+    chip: 'bg-stone-500/20 text-stone-200',
     icon: UserRound,
   },
 }

@@ -29,12 +29,12 @@ const rows = computed(() =>
 
 <template>
   <main class="mx-auto flex min-h-svh max-w-2xl flex-col justify-center gap-6 p-6">
-    <p class="text-sm text-slate-400">Día {{ sim.day - 1 }} · fin de la partida</p>
+    <p class="text-sm text-stone-400">Día {{ sim.day - 1 }} · fin de la partida</p>
     <h1 class="text-3xl font-bold">{{ endingTitle }}</h1>
-    <p class="text-slate-300">{{ endingText }}</p>
+    <p class="text-stone-300">{{ endingText }}</p>
 
-    <section v-if="caso" class="rounded-xl bg-slate-900 p-4">
-      <h2 class="mb-3 text-sm font-semibold uppercase tracking-wide text-slate-400">
+    <section v-if="caso" class="rounded-xl bg-stone-900 p-4">
+      <h2 class="mb-3 text-sm font-semibold uppercase tracking-wide text-stone-400">
         Evolución de la clase
       </h2>
       <div
@@ -42,19 +42,19 @@ const rows = computed(() =>
         :key="row.key"
         class="flex items-center gap-3 py-1"
       >
-        <component :is="row.icon" class="h-4 w-4 shrink-0 text-slate-400" />
-        <span class="w-32 text-xs text-slate-300">{{ row.label }}</span>
-        <span class="w-6 text-right text-xs tabular-nums text-slate-400">
+        <component :is="row.icon" class="h-4 w-4 shrink-0 text-stone-400" />
+        <span class="w-32 text-xs text-stone-300">{{ row.label }}</span>
+        <span class="w-6 text-right text-xs tabular-nums text-stone-400">
           {{ row.initial }}
         </span>
-        <div class="h-3 flex-1 overflow-hidden rounded-full bg-slate-800">
+        <div class="h-3 flex-1 overflow-hidden rounded-full bg-stone-800">
           <div
             class="h-full rounded-full transition-all"
             :class="row.bar"
             :style="{ width: `${row.final}%` }"
           />
         </div>
-        <span class="w-6 text-right text-xs tabular-nums text-slate-100">
+        <span class="w-6 text-right text-xs tabular-nums text-stone-100">
           {{ row.final }}
         </span>
       </div>
@@ -63,14 +63,14 @@ const rows = computed(() =>
     <div class="flex gap-3">
       <button
         type="button"
-        class="rounded-xl bg-amber-500 px-6 py-3 font-semibold text-slate-950 transition hover:bg-amber-400"
+        class="rounded-xl bg-amber-500 px-6 py-3 font-semibold text-stone-950 transition hover:bg-amber-400"
         @click="sim.restart(); router.push({ name: 'mapa', params: { caseId: caso?.id } })"
       >
         Rejugar
       </button>
       <button
         type="button"
-        class="rounded-xl border border-slate-700 px-6 py-3 text-slate-200 hover:bg-slate-900"
+        class="rounded-xl border border-stone-700 px-6 py-3 text-stone-200 hover:bg-stone-900"
         @click="router.push({ name: 'home' })"
       >
         Menú
