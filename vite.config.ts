@@ -10,13 +10,13 @@ export default defineConfig({
     tailwindcss(),
     VitePWA({
       registerType: 'autoUpdate',
-      includeAssets: ['favicon.svg', 'icons.svg'],
+      includeAssets: ['favicon.ico', 'favicon-16x16.png', 'favicon-32x32.png', 'apple-touch-icon.png'],
       manifest: {
         name: 'El Jurado Invisible',
         short_name: 'Jurado Invisible',
         description: 'Simulador social educativo: dinámicas grupales y acoso escolar',
-        theme_color: '#1e293b',
-        background_color: '#0f172a',
+        theme_color: '#201a15',
+        background_color: '#201a15',
         display: 'standalone',
         lang: 'es',
         icons: [
