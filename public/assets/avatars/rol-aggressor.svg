@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="Avatar del rol: agresor">
+  <defs>
+    <radialGradient id="bg" cx="0.5" cy="0.4" r="0.8">
+      <stop offset="0" stop-color="#7f1d1d"/>
+      <stop offset="1" stop-color="#2c0707"/>
+    </radialGradient>
+  </defs>
+  <circle cx="128" cy="128" r="124" fill="url(#bg)"/>
+  <circle cx="128" cy="128" r="118" fill="none" stroke="#f87171" stroke-width="5" opacity="0.8"/>
+
+  <!-- broad shoulders, chest out -->
+  <path d="M52 256 C52 192 80 160 128 160 C176 160 204 192 204 256 Z" fill="#4c0519"/>
+  <path d="M52 256 C52 192 80 160 128 160 C176 160 204 192 204 256 Z" fill="#be123c" opacity="0.25"/>
+
+  <!-- head -->
+  <circle cx="128" cy="116" r="48" fill="#dcc9b5"/>
+  <!-- short crop hair -->
+  <path d="M78 122 C78 70 98 62 128 62 C158 62 178 70 178 122 C178 104 160 96 128 96 C96 96 78 104 78 122 Z" fill="#1a161c"/>
+  <!-- strong brows -->
+  <g stroke="#3a2430" stroke-width="5" stroke-linecap="round">
+    <path d="M102 102 L120 96"/>
+    <path d="M154 102 L136 96"/>
+  </g>
+  <!-- eyes -->
+  <g fill="#1f1520">
+    <circle cx="111" cy="118" r="5"/>
+    <circle cx="145" cy="118" r="5"/>
+  </g>
+  <!-- smirk -->
+  <path d="M114 148 Q128 154 144 146" stroke="#7a3b4a" stroke-width="4" stroke-linecap="round" fill="none"/>
+  <path d="M142 146 L150 148" stroke="#7a3b4a" stroke-width="4" stroke-linecap="round" fill="none"/>
+</svg>

@@ -1,87 +1,53 @@
 # Public assets
 
-Aquí vas a generar tú, a mano, las imágenes del juego con un generador de IA
-(Leo, Midjourney, Ideogram, DALL·E…). **Carpetas y nombres son obligatorios**:
-el código y el modo PWA esperan estas rutas. Si un archivo falta, la app solo
-oculta esa imagen (no rompe nada), así que puedes ir añadiendo generaciones
-poco a poco y luego publicar.
+Hay dos capas:
 
-## Estilo común (pega este prefijo en TODOS los prompts)
+1. **Assets base en SVG** (ya en el repo, generados por mí) → funciona siempre.
+2. **Arte raster enriquecido** (tú lo generas con IA) → sustituye al SVG con el
+   mismo nombre, o añade nuevas piezas. Es opcional y mejora el acabado.
 
-> Ilustración editorial plana, sin líneas gruesas, paleta gris pizarra
-> (slate #0f172a / #1e293b) con acentos cielo #0ea5e9, violeta #8b5cf6 y ámbar
-> #f59e0b, fondo oscuro, atmósfera psicológica fría y contemplativa, sin
-> texto, encuadre cinematográfico, alta calidad.
-
-Comando para publicarlo todo al final: `npm run build && npm run deploy`
-(o `git push` a `main`, que ya despliega el workflow).
+**Regla de nombres**: carpetas y nombres son obligatorios. Si falta un archivo,
+la app oculta esa imagen y no rompe. Publica con `git push` a `main` (el
+workflow despliega solo).
 
 ---
 
-## Estructura
+## Qué usa el código hoy
 
-```
-public/assets/
-├── home-hero.webp        ← portada del menú (cuadrado ~1:1)
-├── icons/
-│   ├─ icon-192.png          192x192
-│   ├─ icon-512.png          512x512
-│   └─ icon-maskable-512.png 512x512 (con área segura)
-├── avatars/              ← un avatar por rol (los personajes reutilizan)
-│   ├─ rol-victim.webp
-│   ├─ rol-aggressor.webp
-│   ├─ rol-defender.webp
-│   ├─ rol-bystander.webp
-│   └─ rol-neutral.webp
-├── cases/                ← portada por caso: <casoId>-cover.webp (16:9)
-└── bg/                   ← fondos sutiles para finales/escenas
-```
+| Uso | Ruta esperada |
+|---|---|
+| Menú principal | `public/assets/home-hero.svg` |
+| Portada del caso | `public/assets/cases/<casoId>-cover.svg` |
+| Avatares de rol (5) | `public/assets/avatars/rol-<rol>.svg` |
+| Iconos PWA | `public/assets/icons/icon-192.svg`, `icon-512.svg`, `icon-maskable-512.svg` |
+
+`base` del proyecto: `/JuradoInvisible/`. El código usa `import.meta.env.BASE_URL`.
 
 ---
 
-## 1. Iconos PWA — `public/assets/icons/` (empieza por aquí)
+## 1. Iconos PWA (SVG ya hecho; si prefieres PNG, genéralo y guárdalo así)
 
-La app se instala como PWA cuando existan los 3 (en PNG).
+Chrome/Edge/Firefox aceptan SVG en el manifest. Si tu generador da PNG, guárdalos
+añadiéndolos **junto** al SVG:
 
-Prompt:
-> Icono de app de un simulador educativo sobre dinámicas de grupo: una balanza
-> cuya sombra es la silueta de un grupo, muy minimalista, fondo slate oscuro,
-> contenido central, [estilo]. (El `icon-maskable` debe dejar ~20% libre
-> alrededor.)
+- `public/assets/icons/icon-192.png`
+- `public/assets/icons/icon-512.png`
+- `public/assets/icons/icon-maskable-512.png` (área segura ~20% libre)
 
-## 2. Portada del menú — `public/assets/home-hero.webp`
-
-> Un aula vacía vista desde el marco de la puerta, pupitres en filas, una silla
-> vacía junto a una ventana con luz fría de tarde, atmósfera de silencio, una
-> larga sombra que entra sin cuerpo, como un observador invisible, [estilo],
-> sin texto. Aspecto ~1:1.
-
-## 3. Portada por caso — `public/assets/cases/<caso-id>-cover.webp`
-
-`<caso-id>` es el `id` del caso (hoy `el-alumno-invisible`). Aspecto 16:9.
-
-> "Un alumno solo al fondo de un pasillo del instituto a la hora del recreo,
-> los demás en grupos a lo lejos mirando de reojo, figura central algo
-> desenfocada, [estilo], sin texto."
-
-## 4. Avatares por rol — `public/assets/avatars/rol-<key>.webp`
-
-Los 8 personajes reutilizan el avatar de su rol.
-
-Prompt:
-> "Retrato de medio cuerpo de <rol> y ESO, ilustración plana, fondo
-> uniforme que recorte un avatar circular, [estilo]. Pauta por rol:
-> víctima encogida y mirando abajo; agresor con gesto seguro (rojo); defensor
-> con apoyo esmeralda; espectador mirando de reojo (ámbar); neutro postura
-> neutra (gris). Sin rasgos que marquen edad exacta, sin estigma."
-
-Roles: `victim`, `aggressor`, `defender`, `bystander`, `neutral`
-(coincide con `src/lib/roleMeta.ts`).
+y avísame para apuntar el manifest a PNG.
 
 ---
 
-## Notas
+## Estilo común (pegar en TODOS los prompts)
 
-- `.webp` para ilustraciones (más ligeras); solo los iconos PWA deben ser `.png`.
-- La `base` del proyecto es `/JuradoInvisible/`, las rutas ya se resuelven
-  desde el código con `import.meta.env.BASE_URL`.
+> Ilustración editorial plana, sin líneas gruesas ni cartoon infantil, paleta
+> gris pizarra (slate oscuro #0f172a / #1e293b) con acentos cielo #38bdf8,
+> violeta #8b5cf6, ámbar #f59e0b y rosa #f471b5, fondo oscuro, atmósfera
+> psicológica fría y contemplativa, sin texto, encuadre cinematográfico, alta calidad.
+
+## Prompt de referencia para sustituir el arte (generar tú)
+
+Los prompts detallados (hero, portada caso, 5 avatares) los tienes abajo en
+«Generación IA» con su ruta. Guarda cada resultado con **el nombre exacto de la
+ruta** indicada, reemplazando el `.svg` por `.png` o `.webp` si lo prefieres,
+y dime para cambiar la extensión en el código.

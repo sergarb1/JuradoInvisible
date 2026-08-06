@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="Avatar del rol: neutro">
+  <defs>
+    <radialGradient id="bg" cx="0.5" cy="0.4" r="0.8">
+      <stop offset="0" stop-color="#334155"/>
+      <stop offset="1" stop-color="#0f172a"/>
+    </radialGradient>
+  </defs>
+  <circle cx="128" cy="128" r="124" fill="url(#bg)"/>
+  <circle cx="128" cy="128" r="118" fill="none" stroke="#cbd5e1" stroke-width="5" opacity="0.7"/>
+
+  <!-- shoulders -->
+  <path d="M60 256 C60 196 86 166 128 166 C170 166 196 196 196 256 Z" fill="#475569"/>
+
+  <!-- head -->
+  <circle cx="128" cy="118" r="45" fill="#dcc9b5"/>
+  <!-- hair -->
+  <path d="M82 118 C82 74 100 66 128 66 C156 66 174 74 174 118 C174 92 128 84 82 118 Z" fill="#3b3430"/>
+
+  <!-- calm eyes -->
+  <g fill="#2a2024">
+    <circle cx="112" cy="122" r="5"/>
+    <circle cx="144" cy="122" r="5"/>
+  </g>
+  <!-- relaxed brows -->
+  <g stroke="#463a3c" stroke-width="3" stroke-linecap="round">
+    <path d="M106 110 L120 110"/>
+    <path d="M150 110 L136 110"/>
+  </g>
+  <!-- soft neutral mouth -->
+  <path d="M118 152 Q128 150 138 152" stroke="#7a5a52" stroke-width="4" stroke-linecap="round" fill="none"/>
+</svg>

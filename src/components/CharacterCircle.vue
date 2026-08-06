@@ -14,7 +14,7 @@ const avatarFailed = ref(false)
 const meta = computed(() => ROLE_META[props.character.role])
 
 const avatarSrc = computed(
-  () => `${import.meta.env.BASE_URL}assets/avatars/rol-${props.character.role}.webp`,
+  () => `${import.meta.env.BASE_URL}assets/avatars/rol-${props.character.role}.svg`,
 )
 
 const size = computed(() => 36 + props.character.traits.influence / 4)

@@ -11,7 +11,7 @@ const caso = ref<CaseData | null>(null)
 const error = ref('')
 const coverFailed = ref(false)
 
-const coverSrc = (caseId: string) => `${import.meta.env.BASE_URL}assets/cases/${caseId}-cover.webp`
+const coverSrc = (caseId: string) => `${import.meta.env.BASE_URL}assets/cases/${caseId}-cover.svg`
 
 onMounted(async () => {
   try {
