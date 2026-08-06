@@ -10,7 +10,7 @@ const sim = useSimulation()
 const heroFailed = ref(false)
 const defaultCaseId = 'el-alumno-invisible'
 
-const coverSrc = `${import.meta.env.BASE_URL}assets/home-hero.svg`
+const coverSrc = `${import.meta.env.BASE_URL}assets/home-hero.webp`
 
 onMounted(async () => {
   await sim.bootstrap()
