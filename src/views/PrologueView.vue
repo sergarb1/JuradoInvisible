@@ -12,16 +12,24 @@ const sim = useSimulation()
 
 const caso = ref<CaseData | null>(null)
 const error = ref('')
+const loading = ref(true)
 const step = ref(0)
 
-onMounted(async () => {
+async function cargar() {
+  loading.value = true
+  error.value = ''
   try {
     const id = String(route.params.caseId)
     caso.value = await loadCaseById(id)
   } catch (e) {
+    caso.value = null
     error.value = e instanceof Error ? e.message : 'No se pudo cargar el caso.'
+  } finally {
+    loading.value = false
   }
-})
+}
+
+onMounted(cargar)
 
 const blocks = computed(() => caso.value?.prologue ?? [])
 const isLast = computed(() => step.value >= blocks.value.length - 1)
@@ -43,8 +51,25 @@ async function empezar() {
 
 <template>
   <main class="mx-auto flex min-h-svh max-w-2xl flex-col justify-center gap-8 p-6">
-    <div v-if="error" class="rounded-xl border border-rose-500 bg-rose-500/10 p-4 text-rose-200">
-      {{ error }}
+    <div
+      v-if="error"
+      role="alert"
+      class="rounded-xl border border-rose-500 bg-rose-500/10 p-4 text-rose-200"
+    >
+      <p>{{ error }}</p>
+      <button
+        type="button"
+        class="mt-3 rounded-xl border border-rose-400 px-4 py-2 text-sm text-rose-100 hover:bg-rose-500/10"
+        @click="cargar()"
+      >
+        Reintentar
+      </button>
+    </div>
+
+    <div v-else-if="loading" class="flex flex-col gap-6" aria-busy="true">
+      <div class="h-6 w-32 animate-pulse rounded bg-slate-800" />
+      <div class="h-9 w-2/3 animate-pulse rounded bg-slate-800" />
+      <div class="h-40 w-full animate-pulse rounded-xl bg-slate-800" />
     </div>
 
     <template v-else-if="caso">
@@ -139,5 +164,16 @@ async function empezar() {
 .fade-leave-to {
   opacity: 0;
   transform: translateY(-8px);
+}
+@media (prefers-reduced-motion: reduce) {
+  .fade-enter-active,
+  .fade-leave-active {
+    transition: none;
+  }
+  .fade-enter-from,
+  .fade-leave-to {
+    opacity: 1;
+    transform: none;
+  }
 }
 </style>

@@ -29,13 +29,13 @@ async function elegir(choiceId: string) {
       </button>
     </div>
 
-    <div v-if="event.scene" class="flex items-start gap-3 text-sm italic text-slate-500">
-      <Quote class="mt-0.5 h-4 w-4 shrink-0 text-slate-600" />
+    <div v-if="event.scene" class="flex items-start gap-3 text-sm italic text-slate-400">
+      <Quote class="mt-0.5 h-4 w-4 shrink-0 text-slate-500" />
       <p>{{ event.scene }}</p>
     </div>
 
     <div class="rounded-xl border-l-4 border-sky-500 bg-slate-900 p-5">
-      <p class="text-xs uppercase tracking-wide text-sky-400">{{ sim.actorName || event.actor || '—' }}</p>
+      <p class="text-xs uppercase tracking-wide text-sky-400">{{ event.speaker || sim.actorName || event.actor || '—' }}</p>
       <p class="mt-2 text-slate-200">{{ event.text }}</p>
     </div>
 

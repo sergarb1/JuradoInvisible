@@ -17,7 +17,7 @@
   {
     "id": "final-aislamiento",
     "title": "El aislamiento se consolida",
-    "text": "El silencio y el aislamiento se hunden. Marcos sigue en el aula, pero la clase sigue fingiendo no verlo.",
+    "text": "El aislamiento se consolida. Marcos sigue en el aula, pero la clase ha fijado el hábito de no verlo.",
     "condition": {
       "logic": "and",
       "rules": [

@@ -3,6 +3,7 @@ import { computed } from 'vue'
 import { useRouter } from 'vue-router'
 import { useSimulation } from '../stores/simulation'
 import type { VariableMap } from '../models/types'
+import { VARIABLE_KEYS, VARIABLE_META } from '../lib/caseMeta'
 
 const router = useRouter()
 const sim = useSimulation()
@@ -16,13 +17,14 @@ const endingText = computed(
   () => ending.value?.text ?? 'El caso ha llegado a su fin.'
 )
 
-const LABELS: Record<keyof VariableMap, string> = {
-  isolation: 'Aislamiento',
-  support: 'Apoyo',
-  pressure: 'Presión grupal',
-  norm: 'Norma social',
-  silence: 'Silencio colectivo',
-}
+const rows = computed(() =>
+  VARIABLE_KEYS.map((k) => ({
+    key: k,
+    ...VARIABLE_META[k],
+    initial: Math.round(caso?.initial[k as keyof VariableMap] ?? 0),
+    final: sim.state ? Math.round(sim.state.classVars[k as keyof VariableMap]) : 0,
+  }))
+)
 </script>
 
 <template>
@@ -36,17 +38,24 @@ const LABELS: Record<keyof VariableMap, string> = {
         Evolución de la clase
       </h2>
       <div
-        v-for="(label, key) in LABELS"
-        :key="key"
+        v-for="row in rows"
+        :key="row.key"
         class="flex items-center gap-3 py-1"
       >
-        <span class="w-40 text-sm text-slate-300">{{ label }}</span>
-        <span class="text-slate-500 tabular-nums">
-          {{ Math.round(caso.initial[key as keyof VariableMap]) }}
+        <component :is="row.icon" class="h-4 w-4 shrink-0 text-slate-400" />
+        <span class="w-32 text-xs text-slate-300">{{ row.label }}</span>
+        <span class="w-6 text-right text-xs tabular-nums text-slate-400">
+          {{ row.initial }}
         </span>
-        <span class="text-slate-600">→</span>
-        <span v-if="sim.state" class="font-medium text-slate-100 tabular-nums">
-          {{ Math.round(sim.state.classVars[key as keyof VariableMap]) }}
+        <div class="h-3 flex-1 overflow-hidden rounded-full bg-slate-800">
+          <div
+            class="h-full rounded-full transition-all"
+            :class="row.bar"
+            :style="{ width: `${row.final}%` }"
+          />
+        </div>
+        <span class="w-6 text-right text-xs tabular-nums text-slate-100">
+          {{ row.final }}
         </span>
       </div>
     </section>

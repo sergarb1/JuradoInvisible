@@ -12,6 +12,7 @@ export const useSimulation = defineStore('simulation', () => {
   const activeCase = ref<CaseData | null>(null)
   const state = ref<SimulationState | null>(null)
   const hasSave = ref(false)
+  const bootstrapping = ref(false)
   const lastDecision = ref<{ eventId: string; choiceId: string } | null>(null)
   const playerGender = ref<'m' | 'f'>('m')
 
@@ -65,6 +66,19 @@ export const useSimulation = defineStore('simulation', () => {
     return true
   }
 
+  /** Restaura la partida guardada si existe. Usado al entrar por URL profunda o recargar. */
+  async function restoreSession(): Promise<boolean> {
+    if (activeCase.value && state.value) return true
+    bootstrapping.value = true
+    try {
+      await bootstrap()
+      if (hasSave.value) return await continueGame()
+      return false
+    } finally {
+      bootstrapping.value = false
+    }
+  }
+
   async function choose(choiceId: string): Promise<void> {
     const e = engine.value
     if (!e) return
@@ -104,6 +118,7 @@ export const useSimulation = defineStore('simulation', () => {
     activeCase,
     state,
     hasSave,
+    bootstrapping,
     classVars,
     day,
     ended,
@@ -114,6 +129,7 @@ export const useSimulation = defineStore('simulation', () => {
     bootstrap,
     newGame,
     continueGame,
+    restoreSession,
     restart,
     choose,
     advanceDay,

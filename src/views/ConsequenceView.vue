@@ -22,8 +22,8 @@ async function continuar() {
   >
     <p class="text-sm text-slate-400">Día {{ sim.day }}</p>
 
-    <div v-if="result.scene" class="flex items-start gap-3 text-sm italic text-slate-500">
-      <Quote class="mt-0.5 h-4 w-4 shrink-0 text-slate-600" />
+    <div v-if="result.scene" class="flex items-start gap-3 text-sm italic text-slate-400">
+      <Quote class="mt-0.5 h-4 w-4 shrink-0 text-slate-500" />
       <p>{{ result.scene }}</p>
     </div>
 

@@ -228,7 +228,7 @@
       "condition": null,
       "actor": "laura",
       "speaker": "Laura (la delegada)",
-      "scene": "El aula, primer recreo del trimestre. Las mesas forman islas y Marcos se sienta solo en una, junto a la ventana.",
+      "scene": "El aula, un recreo en el que te fijas en Marcos. Las mesas forman islas y él se sienta solo en una, junto a la ventana.",
       "text": "Marcos es nuevo. Ningún grupo le invita y hay sitio junto a él. Laura te mira, esperando que lo veas.",
       "choices": [
         {
@@ -922,7 +922,7 @@
         "value": 50
       },
       "actor": "tu",
-      "speaker": "",
+      "speaker": "Tú",
       "scene": "El comedor a mediodía. Marcos, otra vez junto a la ventana. La escena se repite y algo te pesa más que otros días.",
       "text": "Al mediodía Marcos vuelve a quedarse solo junto a la ventana. Esta vez la escena te resulta cada vez menos neutral.",
       "choices": [
@@ -1319,7 +1319,7 @@
       "priority": 9,
       "condition": null,
       "actor": "tu",
-      "speaker": "Tutoría / claustro / asamblea",
+      "speaker": "La tutora, en asamblea",
       "scene": "Diez días después, la tutoría es una asamblea. La clase entera espera saber qué rumbo toma esto.",
       "text": "Diez días después hay que decidir el curso de la clase: investigar como grupo, darle la espalda o archivarlo por falta de pruebas.",
       "choices": [
@@ -1394,7 +1394,7 @@
     {
       "id": "final-aislamiento",
       "title": "El aislamiento se consolida",
-      "text": "El silencio y el aislamiento se hunden. Marcos sigue en el aula, pero la clase sigue fingiendo no verlo.",
+      "text": "El aislamiento se consolida. Marcos sigue en el aula, pero la clase ha fijado el hábito de no verlo.",
       "condition": {
         "logic": "and",
         "rules": [

@@ -9,18 +9,26 @@ const router = useRouter()
 
 const caso = ref<CaseData | null>(null)
 const error = ref('')
+const loading = ref(true)
 const coverFailed = ref(false)
 
 const coverSrc = (caseId: string) => `${import.meta.env.BASE_URL}assets/cases/${caseId}-cover.webp`
 
-onMounted(async () => {
+async function cargar() {
+  loading.value = true
+  error.value = ''
   try {
     const id = String(route.params.caseId)
     caso.value = await loadCaseById(id)
   } catch (e) {
+    caso.value = null
     error.value = e instanceof Error ? e.message : 'No se pudo cargar el caso.'
+  } finally {
+    loading.value = false
   }
-})
+}
+
+onMounted(cargar)
 
 async function comenzar() {
   if (!caso.value) return
@@ -30,8 +38,26 @@ async function comenzar() {
 
 <template>
   <main class="mx-auto flex min-h-svh max-w-2xl flex-col justify-center gap-6 p-6">
-    <div v-if="error" class="rounded-xl border border-rose-500 bg-rose-500/10 p-4 text-rose-200">
-      {{ error }}
+    <div
+      v-if="error"
+      role="alert"
+      class="rounded-xl border border-rose-500 bg-rose-500/10 p-4 text-rose-200"
+    >
+      <p>{{ error }}</p>
+      <button
+        type="button"
+        class="mt-3 rounded-xl border border-rose-400 px-4 py-2 text-sm text-rose-100 hover:bg-rose-500/10"
+        @click="cargar()"
+      >
+        Reintentar
+      </button>
+    </div>
+
+    <div v-else-if="loading" class="flex flex-col gap-6" aria-busy="true">
+      <div class="h-6 w-32 animate-pulse rounded bg-slate-800" />
+      <div class="h-9 w-2/3 animate-pulse rounded bg-slate-800" />
+      <div class="aspect-video w-full animate-pulse rounded-xl bg-slate-800" />
+      <div class="h-20 w-full animate-pulse rounded-xl bg-slate-800" />
     </div>
 
     <template v-else-if="caso">

@@ -33,7 +33,7 @@ const stanceChip = computed(() => {
     <div class="flex items-start justify-between gap-2">
       <p class="text-sm text-slate-100">{{ choice.text }}</p>
       <span
-        class="mt-0.5 flex shrink-0 items-center gap-1 rounded-full px-2 py-0.5 text-[10px]"
+        class="mt-0.5 flex shrink-0 items-center gap-1 rounded-full px-2 py-0.5 text-xs"
         :class="stanceChip.cls"
         :title="`Postura ${stanceChip.label} con la víctima (no es bueno ni malo: influye en la clase)`"
       >
