@@ -11,6 +11,15 @@
     outline: 2px solid #fbbf24;
     outline-offset: 2px;
   }
+
+  /* Fondo base oscuro + veladura cálida. Clase CSS real (no arbitraria de
+     Tailwind) para garantizar que siempre existe aunque el degradado falle. */
+  .app-bg {
+    background-color: #020617;
+    background-image:
+      radial-gradient(75% 50% at 50% -8%, rgba(251, 191, 36, 0.1), transparent 60%),
+      radial-gradient(60% 45% at 100% 100%, rgba(56, 189, 248, 0.07), transparent 60%);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

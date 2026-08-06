@@ -44,7 +44,7 @@ async function continuar() {
       Un simulador social: decides dentro de una clase y observas cómo cambia la
       dinámica del grupo. Sin respuestas correctas.
     </p>
-    <div class="flex flex-col gap-3">
+    <div class="flex w-full max-w-sm flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-stretch sm:justify-center">
       <button
         type="button"
         class="flex items-center justify-center gap-2 rounded-xl bg-amber-500 px-8 py-3 font-semibold text-slate-950 transition hover:bg-amber-400"
@@ -55,7 +55,7 @@ async function continuar() {
       </button>
       <button
         type="button"
-        class="flex items-center justify-center gap-2 rounded-xl border border-slate-700 px-8 py-3 text-slate-200 transition hover:border-sky-500 hover:bg-slate-900"
+        class="flex items-center justify-center gap-2 rounded-xl border border-slate-700 px-8 py-3 text-slate-200 transition hover:border-amber-500 hover:bg-slate-900"
         @click="router.push({ name: 'como-jugar' })"
       >
         <BookOpen class="h-4 w-4" />
@@ -64,7 +64,7 @@ async function continuar() {
       <button
         v-if="sim.hasSave"
         type="button"
-        class="rounded-xl border border-slate-700 px-8 py-3 text-slate-200 transition hover:border-sky-500 hover:bg-slate-900"
+        class="rounded-xl border border-slate-700 px-8 py-3 text-slate-200 transition hover:border-amber-500 hover:bg-slate-900"
         @click="continuar()"
       >
         Continuar partida

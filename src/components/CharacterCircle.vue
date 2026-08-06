@@ -44,7 +44,9 @@ watch(
   },
 )
 
-const size = computed(() => 36 + props.character.traits.influence / 4)
+/** Tamaño del retrato: jerarquía sutil por influencia, con tope para que
+ *  los líderes no rompan la cuadrícula (Daniel ya no se ve «gigante»). */
+const size = computed(() => Math.round(Math.min(50, 36 + props.character.traits.influence / 6)))
 const relationToVictim = computed(() => {
   if (props.character.id === props.victimId) return null
   return props.character.relationships[props.victimId]
@@ -54,6 +56,11 @@ const relationLabel = computed(() => {
   if (v === null || v === undefined) return ''
   const sign = v >= 0 ? '+' : '−'
   return `${sign}${Math.abs(Number(v.toFixed(0)))}`
+})
+const relationChip = computed(() => {
+  const v = relationToVictim.value
+  if (v === null || v === undefined || v === 0) return 'bg-slate-700/60 text-slate-300'
+  return v > 0 ? 'bg-emerald-500/20 text-emerald-300' : 'bg-rose-500/20 text-rose-300'
 })
 const initial = computed(() => props.character.name.trim().charAt(0).toUpperCase())
 const ring = computed(() => meta.value.ring)
@@ -89,14 +96,16 @@ const icon = computed(() => meta.value.icon)
       </span>
     </div>
     <div class="text-xs font-medium text-slate-200">{{ character.name }}</div>
-    <span
-      v-if="relationLabel"
-      class="rounded px-1 text-[10px]"
-      :class="chip"
-      :title="`relación con la víctima: ${relationLabel} (${relationLabel.startsWith('+') ? 'afín' : 'hostil'})`"
-    >
-      {{ relationLabel }}
-    </span>
-    <span v-else class="text-[10px] text-slate-400">{{ meta.label }}</span>
+    <div class="flex flex-wrap items-center justify-center gap-1">
+      <span class="rounded px-1 text-[10px]" :class="chip">{{ meta.label }}</span>
+      <span
+        v-if="relationLabel"
+        class="rounded px-1 text-[10px] font-semibold tabular-nums"
+        :class="relationChip"
+        :title="`relación con la víctima: ${relationLabel} (${relationLabel.startsWith('+') ? 'afín' : 'hostil'})`"
+      >
+        {{ relationLabel }}
+      </span>
+    </div>
   </div>
 </template>
