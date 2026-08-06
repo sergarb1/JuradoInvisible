@@ -1,7 +1,7 @@
 {
   "id": "pregunta-lucia",
   "day": 3,
-  "priority": 4,
+  "priority": 5,
   "condition": {
     "variable": "silence",
     "op": ">",

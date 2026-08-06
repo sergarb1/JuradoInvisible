@@ -80,6 +80,7 @@
           "type": "string",
           "enum": ["victim", "aggressor", "defender", "bystander", "neutral"]
         },
+        "gender": { "type": "string", "enum": ["m", "f"] },
         "age": { "type": "number", "minimum": 10, "maximum": 20 },
         "traits": { "$ref": "#/definitions/traits" },
         "beliefs": { "$ref": "#/definitions/beliefs" },

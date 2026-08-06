@@ -1,7 +1,7 @@
 {
   "id": "confesion-sara",
   "day": 8,
-  "priority": 4,
+  "priority": 5,
   "condition": {
     "flag": "duda"
   },

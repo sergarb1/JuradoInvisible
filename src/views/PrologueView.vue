@@ -67,6 +67,38 @@ async function empezar() {
             <p class="text-lg leading-relaxed text-slate-300">{{ blocks[step].text }}</p>
           </section>
         </transition>
+
+        <div v-if="isLast" class="rounded-xl border border-slate-700 bg-slate-900/60 p-5">
+          <p class="mb-3 text-sm font-medium uppercase tracking-wide text-slate-400">
+            Elige con qué avatar jugarás
+          </p>
+          <div class="flex gap-3">
+            <button
+              type="button"
+              class="flex flex-1 items-center justify-center gap-2 rounded-xl border px-4 py-3 font-semibold transition"
+              :class="
+                sim.playerGender === 'm'
+                  ? 'border-sky-400 bg-sky-500/20 text-sky-200'
+                  : 'border-slate-700 text-slate-300 hover:bg-slate-800'
+              "
+              @click="sim.setPlayerGender('m')"
+            >
+              Chico
+            </button>
+            <button
+              type="button"
+              class="flex flex-1 items-center justify-center gap-2 rounded-xl border px-4 py-3 font-semibold transition"
+              :class="
+                sim.playerGender === 'f'
+                  ? 'border-sky-400 bg-sky-500/20 text-sky-200'
+                  : 'border-slate-700 text-slate-300 hover:bg-slate-800'
+              "
+              @click="sim.setPlayerGender('f')"
+            >
+              Chica
+            </button>
+          </div>
+        </div>
       </div>
 
       <div v-else class="rounded-xl bg-slate-900 p-5 text-slate-300">

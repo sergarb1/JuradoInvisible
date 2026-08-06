@@ -41,6 +41,7 @@
       "id": "marcos",
       "name": "Marcos",
       "role": "victim",
+      "gender": "m",
       "age": 15,
       "traits": {
         "empathy": 70,
@@ -63,6 +64,7 @@
       "id": "daniel",
       "name": "Daniel",
       "role": "aggressor",
+      "gender": "m",
       "age": 16,
       "traits": {
         "empathy": 25,
@@ -85,6 +87,7 @@
       "id": "ivan",
       "name": "Iván",
       "role": "aggressor",
+      "gender": "m",
       "age": 16,
       "traits": {
         "empathy": 30,
@@ -107,6 +110,7 @@
       "id": "lucia",
       "name": "Lucía",
       "role": "defender",
+      "gender": "f",
       "age": 15,
       "traits": {
         "empathy": 85,
@@ -129,6 +133,7 @@
       "id": "sara",
       "name": "Sara",
       "role": "bystander",
+      "gender": "f",
       "age": 15,
       "traits": {
         "empathy": 60,
@@ -150,6 +155,7 @@
       "id": "pablo",
       "name": "Pablo",
       "role": "bystander",
+      "gender": "m",
       "age": 15,
       "traits": {
         "empathy": 50,
@@ -171,6 +177,7 @@
       "id": "laura",
       "name": "Laura",
       "role": "neutral",
+      "gender": "f",
       "age": 16,
       "traits": {
         "empathy": 45,
@@ -193,6 +200,7 @@
       "id": "tu",
       "name": "Tú",
       "role": "neutral",
+      "gender": "m",
       "age": 15,
       "traits": {
         "empathy": 50,
@@ -276,7 +284,7 @@
       "actor": "ivan",
       "speaker": "Iván",
       "scene": "En el pasillo, entre risas, Iván hace de anfitrión y varios miran de reojo para ver quién se ríe.",
-      "text": "Algunos se ríen cuando Iván hace una broma sobre Marcos. 'Bienvenido al club, Marcitos.'",
+      "text": "Algunos se ríen cuando Iván hace una broma sobre Marcos. 'Bienvenido al club, Marquitos.'",
       "choices": [
         {
           "id": "parar",
@@ -332,7 +340,7 @@
     {
       "id": "pregunta-lucia",
       "day": 3,
-      "priority": 4,
+      "priority": 5,
       "condition": {
         "variable": "silence",
         "op": ">",
@@ -448,7 +456,7 @@
     {
       "id": "meme",
       "day": 3,
-      "priority": 2,
+      "priority": 4,
       "condition": {
         "variable": "support",
         "op": "<",
@@ -681,7 +689,7 @@
     {
       "id": "reedicion",
       "day": 5,
-      "priority": 2,
+      "priority": 4,
       "condition": {
         "flag": "firmeza"
       },
@@ -1025,7 +1033,7 @@
     {
       "id": "confesion-sara",
       "day": 8,
-      "priority": 4,
+      "priority": 5,
       "condition": {
         "flag": "duda"
       },
@@ -1136,7 +1144,7 @@
     {
       "id": "charla-tutor",
       "day": 8,
-      "priority": 5,
+      "priority": 6,
       "condition": {
         "flag": "datos"
       },

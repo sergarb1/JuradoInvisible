@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, ref } from 'vue'
+import { computed, ref, watch } from 'vue'
 import type { Character } from '../models/types'
 import { ROLE_META } from '../lib/caseMeta'
 
@@ -7,14 +7,41 @@ const props = defineProps<{
   character: Character
   victimId: string
   relationships: Record<string, number>
+  gender?: 'm' | 'f'
 }>()
 
-const avatarFailed = ref(false)
+/** URL de avatar que ya ha fallado (para no reintentar sin límite). */
+const failedSrc = ref<string | null>(null)
 
 const meta = computed(() => ROLE_META[props.character.role])
 
-const avatarSrc = computed(
+/** Género efectivo: prioriza el prop (para el personaje del jugador). */
+const gender = computed<'m' | 'f'>(() => props.gender ?? props.character.gender ?? 'm')
+
+const baseSrc = computed(
   () => `${import.meta.env.BASE_URL}assets/avatars/rol-${props.character.role}.webp`,
+)
+
+const femaleSrc = computed(
+  () => `${import.meta.env.BASE_URL}assets/avatars/rol-${props.character.role}-f.webp`,
+)
+
+const avatarSrc = computed(() => {
+  if (failedSrc.value === femaleSrc.value) return baseSrc.value
+  if (failedSrc.value === baseSrc.value) return ''
+  return gender.value === 'f' ? femaleSrc.value : baseSrc.value
+})
+
+function onImgError() {
+  const current = avatarSrc.value
+  if (current && failedSrc.value !== current) failedSrc.value = current
+}
+
+watch(
+  () => [props.character.id, gender.value] as const,
+  () => {
+    failedSrc.value = null
+  },
 )
 
 const size = computed(() => 36 + props.character.traits.influence / 4)
@@ -47,12 +74,12 @@ const icon = computed(() => meta.value.icon)
     >
       <span class="select-none">{{ initial }}</span>
       <img
-        v-if="!avatarFailed"
+        v-if="avatarSrc"
         :src="avatarSrc"
         :alt="`Retrato de ${character.name}`"
         class="absolute inset-0 h-full w-full object-cover"
         loading="lazy"
-        @error="avatarFailed = true"
+        @error="onImgError"
       />
       <span
         class="absolute -bottom-1 -right-1 flex h-5 w-5 items-center justify-center rounded-full bg-slate-950 ring-1 ring-slate-700"

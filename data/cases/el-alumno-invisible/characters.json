@@ -3,6 +3,7 @@
     "id": "marcos",
     "name": "Marcos",
     "role": "victim",
+    "gender": "m",
     "age": 15,
     "traits": {
       "empathy": 70,
@@ -25,6 +26,7 @@
     "id": "daniel",
     "name": "Daniel",
     "role": "aggressor",
+    "gender": "m",
     "age": 16,
     "traits": {
       "empathy": 25,
@@ -47,6 +49,7 @@
     "id": "ivan",
     "name": "Iván",
     "role": "aggressor",
+    "gender": "m",
     "age": 16,
     "traits": {
       "empathy": 30,
@@ -69,6 +72,7 @@
     "id": "lucia",
     "name": "Lucía",
     "role": "defender",
+    "gender": "f",
     "age": 15,
     "traits": {
       "empathy": 85,
@@ -91,6 +95,7 @@
     "id": "sara",
     "name": "Sara",
     "role": "bystander",
+    "gender": "f",
     "age": 15,
     "traits": {
       "empathy": 60,
@@ -112,6 +117,7 @@
     "id": "pablo",
     "name": "Pablo",
     "role": "bystander",
+    "gender": "m",
     "age": 15,
     "traits": {
       "empathy": 50,
@@ -133,6 +139,7 @@
     "id": "laura",
     "name": "Laura",
     "role": "neutral",
+    "gender": "f",
     "age": 16,
     "traits": {
       "empathy": 45,
@@ -155,6 +162,7 @@
     "id": "tu",
     "name": "Tú",
     "role": "neutral",
+    "gender": "m",
     "age": 15,
     "traits": {
       "empathy": 50,

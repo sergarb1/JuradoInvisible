@@ -97,6 +97,7 @@ export interface SaveData {
   savedAt: string
   caseData: CaseData
   state: SimulationState
+  playerGender?: 'm' | 'f'
 }
 
 const SAVE_KEY = 'current'
@@ -111,12 +112,17 @@ export class SaveSystem {
     this.backend = adapter ?? getIndexedDB() ?? getLocalStorage() ?? new MemoryStorage()
   }
 
-  async save(caseData: CaseData, state: SimulationState): Promise<void> {
+  async save(
+    caseData: CaseData,
+    state: SimulationState,
+    playerGender?: 'm' | 'f',
+  ): Promise<void> {
     const data: SaveData = {
       version: 1,
       savedAt: new Date().toISOString(),
       caseData,
       state,
+      playerGender,
     }
     await this.backend.set(SAVE_KEY, JSON.stringify(data))
   }

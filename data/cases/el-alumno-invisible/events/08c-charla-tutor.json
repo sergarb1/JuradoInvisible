@@ -1,7 +1,7 @@
 {
   "id": "charla-tutor",
   "day": 8,
-  "priority": 5,
+  "priority": 6,
   "condition": {
     "flag": "datos"
   },

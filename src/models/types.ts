@@ -29,6 +29,9 @@ export type Role =
   | 'bystander'
   | 'neutral'
 
+/** Género presentado del personaje (avatares, no es un dato de mecánica). */
+export type Gender = 'm' | 'f'
+
 export interface CharacterTraits {
   empathy: number
   popularity: number
@@ -50,6 +53,7 @@ export interface Character {
   id: string
   name: string
   role: Role
+  gender?: Gender
   age: number
   traits: CharacterTraits
   beliefs: CharacterBeliefs

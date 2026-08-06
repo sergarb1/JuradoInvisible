@@ -13,6 +13,11 @@ export const useSimulation = defineStore('simulation', () => {
   const state = ref<SimulationState | null>(null)
   const hasSave = ref(false)
   const lastDecision = ref<{ eventId: string; choiceId: string } | null>(null)
+  const playerGender = ref<'m' | 'f'>('m')
+
+  function setPlayerGender(g: 'm' | 'f'): void {
+    playerGender.value = g
+  }
 
   const classVars = computed<VariableMap | null>(() => state.value?.classVars ?? null)
   const day = computed<number>(() => state.value?.day ?? 0)
@@ -51,6 +56,7 @@ export const useSimulation = defineStore('simulation', () => {
     const save = await saveSystem.load()
     if (!save) return false
     activeCase.value = save.caseData
+    playerGender.value = save.playerGender ?? 'm'
     const e = newSimulation(save.caseData)
     e.restore(save.state)
     engine.value = e
@@ -90,7 +96,7 @@ export const useSimulation = defineStore('simulation', () => {
 
   async function persist(): Promise<void> {
     if (activeCase.value && state.value) {
-      await saveSystem.save(activeCase.value, state.value)
+      await saveSystem.save(activeCase.value, state.value, playerGender.value)
     }
   }
 
@@ -113,5 +119,7 @@ export const useSimulation = defineStore('simulation', () => {
     advanceDay,
     availableChoices,
     hasPendingDecision,
+    playerGender,
+    setPlayerGender,
   }
 })

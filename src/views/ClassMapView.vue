@@ -61,6 +61,7 @@ async function avanzarDia() {
           :character="ch"
           :victim-id="caso!.victimId"
           :relationships="sim.state!.relationships"
+          :gender="ch.id === caso?.playerId ? sim.playerGender : ch.gender"
         />
       </div>
 
