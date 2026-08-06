@@ -32,13 +32,13 @@ async function continuar() {
 
 <template>
   <main class="mx-auto flex min-h-svh max-w-2xl flex-col items-center justify-center gap-6 p-6 text-center">
-    <img
-      v-if="!heroFailed"
-      :src="coverSrc"
-      :alt="''"
-      class="w-56 rounded-2xl object-cover shadow-xl shadow-sky-500/10"
-      @error="heroFailed = true"
-    />
+      <img
+        v-if="!heroFailed"
+        :src="coverSrc"
+        :alt="''"
+        class="w-56 rounded-2xl object-cover shadow-xl shadow-amber-500/10"
+        @error="heroFailed = true"
+      />
     <h1 class="text-4xl font-bold sm:text-5xl">El Jurado Invisible</h1>
     <p class="max-w-md text-slate-400">
       Un simulador social: decides dentro de una clase y observas cómo cambia la
@@ -47,7 +47,7 @@ async function continuar() {
     <div class="flex flex-col gap-3">
       <button
         type="button"
-        class="flex items-center justify-center gap-2 rounded-xl bg-sky-500 px-8 py-3 font-semibold text-slate-950 transition hover:bg-sky-400"
+        class="flex items-center justify-center gap-2 rounded-xl bg-amber-500 px-8 py-3 font-semibold text-slate-950 transition hover:bg-amber-400"
         @click="router.push({ name: 'caso', params: { caseId: defaultCaseId } })"
       >
         <Play class="h-4 w-4" />

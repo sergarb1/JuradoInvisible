@@ -17,6 +17,12 @@ un **motor de simulación social**, no una novela lineal.
 - **No moralizar.** No mostrar respuestas «correcta/incorrecta», no convertirlo
   en examen. El jugador descubre mecanismos; las decisiones tienen costes.
 - **Personajes con motivaciones**, nunca buenos/malos monolíticos.
+- **Sin llegar a ser un drama continuo.** La temática es seria, pero el caso
+  debe ofrecer arcos positivos alcanzables (apoyo, alianza, protocolo) y gestos
+  pequeños con peso. Los finales matizan: ni todo es catástrofe ni todo es milagro.
+- **Paleta: oscura pero cálida.** Fondo `slate-950` + veladura ámbar, CTAs en
+  `amber-500`, info en `sky`. Respetar contraste AA: nada de `slate-500` en
+  texto pequeño. No devolver la app a un azul frío y plano.
 
 ## Pila
 Vue 3 + TypeScript + Vite + Tailwind 4 + Pinia + vue-router. Motor en TS puro
@@ -47,3 +53,14 @@ src/loader/      carga y validación JSON (JSON Schema)
 src/systems/     SaveSystem (IndexedDB), resources
 data/cases/      casos en JSON (alumno-invisible.json, futuro: ciberacoso, rumores…)
 ```
+
+## Estado del contenido
+- «El alumno invisible»: 10 días, **25 eventos**, **6 finales**, 8 personajes.
+- 5 variables de clase: aislamiento, apoyo, presión, norma, silencio.
+- Avatares por género en `public/assets/avatars/` (`rol-<rol>.webp` y `rol-<rol>-f.webp`).
+- Convenciones de eventos: un evento por día se elige por `priority` (más alta).
+  Los condicionales necesitan `priority` mayor que sus hermanos sin condición, o
+  nunca aparecen. El **día 7 ya tiene evento por defecto** (`07c-recreo-lluvia`,
+  priority 3) para no dejar días muertos.
+- Los `endings.json` se resuelven **en orden de aparición** (primer match gana):
+  dejar un matches-all (`support >= 0`) al final como final por defecto.

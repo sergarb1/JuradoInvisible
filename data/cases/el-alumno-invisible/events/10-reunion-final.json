@@ -56,6 +56,20 @@
         "silencio_final"
       ],
       "clearFlags": []
+    },
+    {
+      "id": "derivar",
+      "text": "Propones dejarlo en manos de la tutora, sin comprometer a nadie.",
+      "stance": "neutral",
+      "consequence": "La tutora recoge el tema, pero sin la clase detrás el seguimiento se va apagando. Nadie ha decidido en contra, y nadie ha decidido a favor: esa es la decisión que queda firmada.",
+      "effects": {
+        "silence": 3,
+        "pressure": 1,
+        "support": -1
+      },
+      "relationEffects": {},
+      "setFlags": [],
+      "clearFlags": []
     }
   ]
 }

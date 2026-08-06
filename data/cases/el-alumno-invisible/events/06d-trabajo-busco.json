@@ -1,0 +1,61 @@
+{
+  "id": "trabajo-busco",
+  "day": 6,
+  "priority": 5,
+  "condition": {
+    "variable": "support",
+    "op": "<",
+    "value": 35,
+    "notFlag": "alianza"
+  },
+  "actor": "pablo",
+  "speaker": "Pablo (buscando pareja)",
+  "scene": "Trabajo en parejas. Pablo recorre el aula con la lista, y cada vez que llega a un hueco alguien dice que ya tiene sitio.",
+  "text": "Pablo necesita pareja para el trabajo y va preguntando. Cuando llega a la mesa de Marcos, todos encuentran una excusa.",
+  "choices": [
+    {
+      "id": "buscando",
+      "text": "Te apuntas tú con Marcos, sin dramatismos.",
+      "stance": "pro",
+      "consequence": "Le dices a Pablo: 'conmigo'. Marcos levanta la cabeza, sorprendido de que nadie pidiera excusa por una vez. El trabajo sale regular. No importa: se ha acabado la norma de no querer pareja con él.",
+      "effects": {
+        "support": 7,
+        "isolation": -4,
+        "norm": 4,
+        "silence": -3
+      },
+      "relationEffects": {
+        "tu:marcos": 8
+      },
+      "setFlags": [],
+      "clearFlags": []
+    },
+    {
+      "id": "buscando-calla",
+      "text": "Te quedas mirando la libreta, en blanco.",
+      "stance": "neutral",
+      "consequence": "Pablo desiste y se busca la vida en otra mesa. Marcos vuelve a su sitio y nadie lo ha mirado. No has dicho que no: no has dicho nada, que es casi lo mismo.",
+      "effects": {
+        "silence": 2,
+        "isolation": 2
+      },
+      "relationEffects": {},
+      "setFlags": [],
+      "clearFlags": []
+    },
+    {
+      "id": "buscando-quito",
+      "text": "'Hoy estoy liado', dices, y te agachas sobre los apuntes.",
+      "stance": "anti",
+      "consequence": "La excusa es creíble y nadie la discute. Marcos la oye y la acepta: ya está acostumbrado a las excusas. La que no se oye es la de todos los demás.",
+      "effects": {
+        "support": -4,
+        "silence": 4,
+        "isolation": 3
+      },
+      "relationEffects": {},
+      "setFlags": [],
+      "clearFlags": []
+    }
+  ]
+}

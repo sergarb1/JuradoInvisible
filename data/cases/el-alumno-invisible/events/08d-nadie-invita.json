@@ -1,0 +1,59 @@
+{
+  "id": "nadie-invita",
+  "day": 8,
+  "priority": 6,
+  "condition": {
+    "notFlag": "alianza"
+  },
+  "actor": "sara",
+  "speaker": "Sara (con el móvil en la mano)",
+  "scene": "El grupo de clase silba al pasar el móvil: lista de invitados al cumpleaños del viernes. Los nombres van cayendo y Marcos no está en ninguno.",
+  "text": "Circula la lista del cumpleaños. Marcos pasa junto al corro justo cuando la leen en alto, y ninguno de los nombres es el suyo.",
+  "choices": [
+    {
+      "id": "listado",
+      "text": "'Falta uno', dices, y lo nombras delante de todos.",
+      "stance": "pro",
+      "consequence": "Se hace un silencio incómodo. Alguien dice 'ya sabes, es que no le cae bien a todo el mundo', y tú respondes que no se trata de caer bien. No lo invitan, pero ya no pueden decir que nadie lo notó.",
+      "effects": {
+        "support": 6,
+        "norm": 5,
+        "silence": -3
+      },
+      "relationEffects": {
+        "tu:marcos": 6
+      },
+      "setFlags": [
+        "puerta"
+      ],
+      "clearFlags": []
+    },
+    {
+      "id": "listado-calla",
+      "text": "Te quedas callado hasta que el móvil cambia de foto.",
+      "stance": "neutral",
+      "consequence": "El móvil cambia de foto y la lista se olvida. Marcos sigue sin estar en ella, y tú no has dicho nada. La lista no miente, pero tampoco cuenta toda la historia.",
+      "effects": {
+        "silence": 2,
+        "isolation": 1
+      },
+      "relationEffects": {},
+      "setFlags": [],
+      "clearFlags": []
+    },
+    {
+      "id": "listado-anade",
+      "text": "Te ríes con el grupo y comentas a quién invitaríais.",
+      "stance": "anti",
+      "consequence": "La conversación se anima con nombres, risas y planes. Marcos se aleja del corro sin que nadie lo llame. La lista queda cerrada, y con ella una puerta más.",
+      "effects": {
+        "support": -4,
+        "silence": 4,
+        "isolation": 3
+      },
+      "relationEffects": {},
+      "setFlags": [],
+      "clearFlags": []
+    }
+  ]
+}

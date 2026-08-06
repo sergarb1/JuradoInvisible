@@ -1,0 +1,59 @@
+{
+  "id": "foto-grupo",
+  "day": 4,
+  "priority": 5,
+  "condition": {
+    "variable": "support",
+    "op": "<",
+    "value": 30
+  },
+  "actor": "lucia",
+  "speaker": "El fotógrafo, desde la tarima",
+  "scene": "La foto de grupo del trimestre. La clase se ordena en filas y, sin que nadie lo proponga, Marcos acaba solo al borde, casi fuera de encuadre.",
+  "text": "Para la foto del curso hay que ordenarse. Las filas se llenan y, otra vez sin decirlo, Marcos se queda al borde, medio fuera del encuadre.",
+  "choices": [
+    {
+      "id": "fila",
+      "text": "Te mueves y le haces hueco a tu lado en la fila.",
+      "stance": "pro",
+      "consequence": "El fotógrafo tiene que recolocar a medio grupo cuando te apartas a buscar a Marcos. Alguien resopla, pero Marcos entra en la foto. La foto es de todos, y por primera vez él está en una.",
+      "effects": {
+        "support": 6,
+        "isolation": -4,
+        "norm": 3
+      },
+      "relationEffects": {
+        "tu:marcos": 7
+      },
+      "setFlags": [],
+      "clearFlags": []
+    },
+    {
+      "id": "fila-calla",
+      "text": "Dejas que las filas se hagan solas.",
+      "stance": "neutral",
+      "consequence": "Las filas se hacen solas, y Marcos queda fuera sin que nadie diga nada. La foto saldrá perfecta, con un hueco que nadie verá hasta dentro de años.",
+      "effects": {
+        "silence": 2,
+        "isolation": 1
+      },
+      "relationEffects": {},
+      "setFlags": [],
+      "clearFlags": []
+    },
+    {
+      "id": "fila-aparta",
+      "text": "Retrocedes un paso y el borde queda más lejos de ti.",
+      "stance": "anti",
+      "consequence": "Retrocedes un paso. La fila se cierra detrás de ti y Marcos queda fuera del encuadre sin que nadie lo ordene. Cómodo. Tan cómodo que pesa.",
+      "effects": {
+        "support": -3,
+        "isolation": 3,
+        "silence": 3
+      },
+      "relationEffects": {},
+      "setFlags": [],
+      "clearFlags": []
+    }
+  ]
+}

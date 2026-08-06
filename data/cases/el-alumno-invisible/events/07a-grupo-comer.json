@@ -57,6 +57,25 @@
       "relationEffects": {},
       "setFlags": [],
       "clearFlags": []
+    },
+    {
+      "id": "aliados",
+      "text": "Buscas a Lucía y cruzáis el comedor los dos.",
+      "stance": "pro",
+      "consequence": "Con Lucía al lado, cruzar el comedor resulta menos raro. Iván resopla, pero hay dos, y dos son suficientes para que Marcos no coma solo. No hace falta toda la clase: basta con que alguien se atreva a ser el primero con alguien al lado.",
+      "effects": {
+        "support": 5,
+        "isolation": -3,
+        "norm": 4
+      },
+      "relationEffects": {
+        "tu:lucia": 6,
+        "tu:marcos": 6
+      },
+      "setFlags": [
+        "alianza"
+      ],
+      "clearFlags": []
     }
   ]
 }

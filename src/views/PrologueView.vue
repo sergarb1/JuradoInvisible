@@ -74,7 +74,7 @@ async function empezar() {
 
     <template v-else-if="caso">
       <div v-if="blocks.length" class="flex flex-col gap-6">
-        <div class="flex items-center justify-between text-sm text-slate-500">
+        <div class="flex items-center justify-between text-sm text-slate-400">
           <span class="uppercase tracking-wide text-sky-400">{{ caso.title }}</span>
           <span class="tabular-nums">{{ step + 1 }} / {{ blocks.length }}</span>
         </div>
@@ -140,7 +140,7 @@ async function empezar() {
         </button>
         <button
           type="button"
-          class="flex items-center gap-2 rounded-xl bg-sky-500 px-6 py-3 font-semibold text-slate-950 transition hover:bg-sky-400"
+          class="flex items-center gap-2 rounded-xl bg-amber-500 px-6 py-3 font-semibold text-slate-950 transition hover:bg-amber-400"
           @click="continuar()"
         >
           <Play v-if="isLast" class="h-4 w-4" />

@@ -97,6 +97,6 @@ const icon = computed(() => meta.value.icon)
     >
       {{ relationLabel }}
     </span>
-    <span v-else class="text-[10px] text-slate-500">{{ meta.label }}</span>
+    <span v-else class="text-[10px] text-slate-400">{{ meta.label }}</span>
   </div>
 </template>

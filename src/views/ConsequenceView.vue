@@ -41,7 +41,7 @@ async function continuar() {
 
     <button
       type="button"
-      class="flex items-center justify-center gap-2 rounded-xl bg-sky-500 px-6 py-3 font-semibold text-slate-950 transition hover:bg-sky-400"
+      class="flex items-center justify-center gap-2 rounded-xl bg-amber-500 px-6 py-3 font-semibold text-slate-950 transition hover:bg-amber-400"
       @click="continuar()"
     >
       Continuar

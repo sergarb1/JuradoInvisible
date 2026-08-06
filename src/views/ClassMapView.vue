@@ -126,7 +126,7 @@ async function avanzarDia() {
         <p class="text-sm text-slate-400">Hay un acontecimiento en la clase.</p>
         <button
           type="button"
-          class="rounded-xl bg-sky-500 px-6 py-3 font-semibold text-slate-950 transition hover:bg-sky-400"
+          class="rounded-xl bg-amber-500 px-6 py-3 font-semibold text-slate-950 transition hover:bg-amber-400"
           @click="irAEvento()"
         >
           Ver evento del día

@@ -14,6 +14,11 @@
     <strong>Motor de simulación &middot; Datos editables &middot; Sin juicios &middot; 100% en el navegador</strong>
   </p>
   <p><em>Tú eres el juicio que nadie ve. Tus decisiones diarias moldean la clase: aislamiento, apoyo, presión, norma y silencio.</em></p>
+  <p style="font-size: 1.15rem; word-break: break-all;">
+    <a href="https://sergarb1.github.io/JuradoInvisible/" style="color:#f59e0b; font-weight:700; text-decoration:none;">
+      https://sergarb1.github.io/JuradoInvisible/
+    </a>
+  </p>
 </div>
 
 ---
@@ -53,13 +58,15 @@ Acontecimiento del día → eliges una decisión → la clase reacciona
 
 | | |
 |---|---|
-| 🎭 | **Casos en JSON** — «El alumno invisible» y prismáticos de ciberacoso, rumores o exclusión (en datos) |
+| 🎭 | **Casos en JSON** — «El alumno invisible»: 10 días, 25 eventos y 6 finales |
 | 🧠 | **Motor de simulación determinista** desacoplado del render (`src/core/`) |
 | 🧩 | **Teorías psicológicas como módulos puros** (`src/psychology/`) |
 | 🗣️ | **Prólogo, escenas y consecuencias narradas** para cada evento y decisión |
 | 🧭 | **Guía «¿Cómo se juega?»** con glosario de variables y roles e iconografía |
 | 📊 | **Barra de variables**: aislamiento, apoyo, presión, norma, silencio |
 | 🚻 | **Personajes con motivaciones**, nunca héroes ni villanos monolíticos |
+| 🏳️ | **Avatares por género** — retrato masculino y femenino por rol (`-f.webp`) |
+| 🧵 | **6 finales matizados** según apoyo, aislamiento y silencio (incluye finales intermedios) |
 | 🔄 | **Guardado automático** en IndexedDB (fallback localStorage) |
 | ✏️ | **Casos editables por fragmentos** (`data/cases/<id>/events/*.json`) |
 

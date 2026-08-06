@@ -50,6 +50,22 @@
       "relationEffects": {},
       "setFlags": [],
       "clearFlags": []
+    },
+    {
+      "id": "saludar",
+      "text": "Le saludas con la cabeza y le dices que mañana hay sitio.",
+      "stance": "pro",
+      "consequence": "Marcos te devuelve el saludo con los ojos bajos, pero asiente. No ha cambiado el mundo: solo has prometido un sitio. A veces el primer hueco se abre con una promesa pequeña.",
+      "effects": {
+        "support": 3,
+        "isolation": -2,
+        "silence": -1
+      },
+      "relationEffects": {
+        "tu:marcos": 6
+      },
+      "setFlags": [],
+      "clearFlags": []
     }
   ]
 }

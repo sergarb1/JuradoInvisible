@@ -1,0 +1,60 @@
+{
+  "id": "payoff-sara",
+  "day": 9,
+  "priority": 6,
+  "condition": {
+    "flag": "incipiente"
+  },
+  "actor": "sara",
+  "speaker": "Sara (decidida, por fin)",
+  "scene": "Sara te busca entre el bullicio con una hoja doblada. Por primera vez, no mira al suelo al hablar de Marcos.",
+  "text": "Sara no aguanta más el silencio. Propone escribir una nota conjunta para que la clase deje de fingir que no ve lo que ve.",
+  "choices": [
+    {
+      "id": "firmo",
+      "text": "Apoyas la nota y firmas la primera.",
+      "stance": "pro",
+      "consequence": "Firmas primero y otros van sumando. No es una revolución: es un papel con nombres. Pero un papel con nombres es más difícil de ignorar que una conciencia sola. Sara suelta el aire que llevaba aguantando desde el día uno.",
+      "effects": {
+        "support": 7,
+        "norm": 6,
+        "silence": -4
+      },
+      "relationEffects": {
+        "tu:sara": 8
+      },
+      "setFlags": [
+        "incipiente_firme"
+      ],
+      "clearFlags": []
+    },
+    {
+      "id": "nota-calla",
+      "text": "Lo dejas en manos de Sara, sin firmar.",
+      "stance": "neutral",
+      "consequence": "Sara recoge pocas firmas; la suya sola no pesa lo mismo que una fila. La nota se queda a medias, y Sara aprende que un gesto sin respaldo también es solitario.",
+      "effects": {
+        "support": 1,
+        "silence": 2
+      },
+      "relationEffects": {},
+      "setFlags": [],
+      "clearFlags": []
+    },
+    {
+      "id": "nota-resta",
+      "text": "'No hagamos un teatro que se viralice', le dices.",
+      "stance": "anti",
+      "consequence": "Sara se encoge y guarda la hoja. Tu cautela suena razonable, y por eso misma deja todo como estaba. El 'no hagas teatro' es la frase que más veces ha matado un gesto.",
+      "effects": {
+        "support": -4,
+        "silence": 4
+      },
+      "relationEffects": {},
+      "setFlags": [
+        "silencio_final"
+      ],
+      "clearFlags": []
+    }
+  ]
+}

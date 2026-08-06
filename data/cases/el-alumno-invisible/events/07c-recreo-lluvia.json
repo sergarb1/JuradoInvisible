@@ -1,0 +1,55 @@
+{
+  "id": "recreo-lluvia",
+  "day": 7,
+  "priority": 3,
+  "condition": null,
+  "actor": "pablo",
+  "speaker": "El recreo bajo la lluvia",
+  "scene": "Llueve y el recreo se queda dentro. El aula se llena de corrillos; Marcos dibuja solo en su mesa, y nadie se acerca a verlo.",
+  "text": "Con la lluvia el recreo se hace dentro. Marcos dibuja en su mesa, solo, y por un momento no hay risas: solo el hueco que todos saben que está ahí.",
+  "choices": [
+    {
+      "id": "ver-dibujo",
+      "text": "Te acercas y le pides ver el dibujo.",
+      "stance": "pro",
+      "consequence": "Marcos te enseña el dibujo con las orejas rojas. Es bueno. Le dices que es bueno, y durante un rato el aula tiene dos mesas juntas en lugar de una. A veces basta con que alguien se acerque.",
+      "effects": {
+        "support": 6,
+        "isolation": -4,
+        "silence": -2
+      },
+      "relationEffects": {
+        "tu:marcos": 8
+      },
+      "setFlags": [],
+      "clearFlags": []
+    },
+    {
+      "id": "lluvia-nada",
+      "text": "Te quedas en tu corrillo, mirando el móvil.",
+      "stance": "neutral",
+      "consequence": "El recreo pasa sin incidentes ni gestos. Marcos dibuja solo y tú miras el móvil: cada uno en su isla. La lluvia acaba y nada ha cambiado, ni siquiera un poco.",
+      "effects": {
+        "silence": 2,
+        "isolation": 1
+      },
+      "relationEffects": {},
+      "setFlags": [],
+      "clearFlags": []
+    },
+    {
+      "id": "lluvia-chiste",
+      "text": "Aprovechas para repetir el chiste y arrancar una risa.",
+      "stance": "anti",
+      "consequence": "El chiste arranca una risa general que llena el aula vacía de recreo. Marcos aprieta el lápiz y no levanta la cabeza. La risa es de todos, menos suya; la rutina, otra vez.",
+      "effects": {
+        "support": -4,
+        "silence": 4,
+        "isolation": 3
+      },
+      "relationEffects": {},
+      "setFlags": [],
+      "clearFlags": []
+    }
+  ]
+}

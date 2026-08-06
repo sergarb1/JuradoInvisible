@@ -2,8 +2,8 @@
   "id": "el-alumno-invisible",
   "title": "El alumno invisible",
   "seed": 7,
-  "description": "Marcos lleva dos meses sin encajar en el grupo. Las bromas, el silencio y la inercia colectiva deciden si la clase lo protege o lo abandona.",
-  "intro": "Marcos es nuevo. En dos meses nadie le ha invitado a un grupo. Lo que hagas en estos diez días y lo que la clase haga marcará el desenlace. No hay respuestas correctas: cada decisión tiene un coste y consecuencias.",
+  "description": "Marcos lleva dos meses sin encajar. Las bromas, el silencio y la inercia colectiva deciden cada día si la clase lo protege o lo abandona. Tú decides dentro: cada gesto, hasta el más pequeño, mueve algo.",
+  "intro": "Marcos es nuevo. En dos meses nadie le ha invitado a un grupo, y poco a poco ha aprendido a no pedirlo. Lo que hagas en estos diez días —y lo que la clase haga— marcará el desenlace. No hay respuestas correctas ni incorrectas: cada decisión tiene un coste, y a veces el gesto más pequeño es el que cambia una costumbre.",
   "prologue": [
     {
       "title": "Lunes, 8:20",
@@ -20,6 +20,10 @@
     {
       "title": "Diez días",
       "text": "Van a pasar diez días de instituto. Cada día puede traer una situación y varias salidas. No hay respuestas correctas ni incorrectas: cada decisión tiene un coste, y la clase reacciona a lo que haces y a lo que no haces."
+    },
+    {
+      "title": "Lo que verás",
+      "text": "Junto a la clase verás cinco dinámicas moverse: el apoyo que Marcos recibe, su aislamiento, la presión del grupo, lo que la clase considera normal y el silencio que lo envuelve todo. No son puntuación: son una radiografía viva de cómo cambia el grupo. Podrás consultarlas cuando quieras."
     },
     {
       "title": "No es un examen",

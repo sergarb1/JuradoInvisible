@@ -2,14 +2,52 @@
   {
     "id": "final-apoyo",
     "title": "La clase se vuelca",
-    "text": "El grupo cambia la inercia: se habla, se investigan los episodios y se abren espacios de acogida. La clase que callaba ahora protege.",
+    "text": "Algo se ha roto, para bien. Marcos ya no come junto a la ventana: hay nombre en las listas, sitio en los grupos y un silencio menos pesado en el aula. No hubo escena de película, hubo gestos pequeños y repetidos que acabaron siendo costumbre. La norma que antes normalizaba la risa ahora normaliza el «ven, hay sitio». Nadie cree haber hecho nada heroico, y esa es precisamente la clave: lo hicieron entre todos, y por eso se sostiene.",
     "condition": {
       "logic": "and",
       "rules": [
         {
           "variable": "support",
           "op": ">=",
-          "value": 50
+          "value": 60
+        }
+      ]
+    }
+  },
+  {
+    "id": "final-protocolo",
+    "title": "El protocolo",
+    "text": "El informe, la tutoría y la asamblea dejaron algo escrito: un protocolo de acompañamiento, con nombres y fechas. La clase no cambió de la noche a la mañana, pero el mecanismo está ahí. Cuando algo está escrito, cuesta mucho más fingir que no pasa. El siguiente paso ya no depende solo de la valentía de uno: depende de que el papel siga vivo, y de que alguien lo recite de vez en cuando.",
+    "condition": {
+      "logic": "and",
+      "rules": [
+        {
+          "flag": "programa"
+        },
+        {
+          "variable": "support",
+          "op": ">=",
+          "value": 40
+        }
+      ]
+    }
+  },
+  {
+    "id": "final-alianza",
+    "title": "La red que aguanta",
+    "text": "Sin campañas ni discursos, la red se sostuvo: un sitio en la mesa, un nombre en el grupo de sociales, una propuesta que se votó. Marcos sigue siendo discreto, pero ya no es invisible: hay quien lo nombra y quien lo busca. No es un final feliz de película, es un mecanismo que empezó a girar. Y los mecanismos, cuando giran un día tras otro, se convierten en costumbre antes de que nadie lo note.",
+    "condition": {
+      "logic": "and",
+      "rules": [
+        {
+          "variable": "support",
+          "op": ">=",
+          "value": 40
+        },
+        {
+          "variable": "isolation",
+          "op": "<",
+          "value": 60
         }
       ]
     }
@@ -17,7 +55,7 @@
   {
     "id": "final-aislamiento",
     "title": "El aislamiento se consolida",
-    "text": "El aislamiento se consolida. Marcos sigue en el aula, pero la clase ha fijado el hábito de no verlo.",
+    "text": "El aislamiento se consolidó como una regla no escrita. Marcos sigue en el aula, y la clase ha fijado el hábito de no verlo: nadie lo nombra, nadie le hace sitio, nadie se explica el porqué. Lo más difícil de ver no es la risa ni el apodo: es el «nadie ha hecho nada» que se repite sin que nadie lo diga en voz alta. El silencio no es inocente. Solo es cómodo, y lo cómodo rara vez se revisa.",
     "condition": {
       "logic": "and",
       "rules": [
@@ -30,16 +68,36 @@
     }
   },
   {
+    "id": "final-grieta",
+    "title": "La grieta",
+    "text": "Ni se protegió ni se rompió del todo el silencio. Hubo frases que se dijeron a medias y gestos que se quedaron en un saludo. La clase vive en el «otro día lo hablamos», y ese otro día no llega. No hubo ruptura: hubo una grieta. Las grietas a veces dejan pasar luz, y otras veces solo dejan pasar ruido. Nadie sabría decir en qué lado ha caído esta.",
+    "condition": {
+      "logic": "and",
+      "rules": [
+        {
+          "variable": "silence",
+          "op": ">=",
+          "value": 55
+        },
+        {
+          "variable": "support",
+          "op": "<",
+          "value": 40
+        }
+      ]
+    }
+  },
+  {
     "id": "final-inercia",
     "title": "La inercia",
-    "text": "Ni se protege ni se rompe del todo el silencio. La indolencia de cada día, vista de frente, también es una decisión.",
+    "text": "Ni se protege ni se rompe del todo el silencio. La indolencia de cada día, vista de frente, también es una decisión. Marcos aprende a no pedir sitio; la clase aprende a no tener que dárselo. Nada cambió de golpe, y justamente eso es lo que cambia: que nada cambie. Diez días de no decidir también dibujan una historia, y esta es la suya.",
     "condition": {
       "logic": "and",
       "rules": [
         {
           "variable": "support",
-          "op": "<=",
-          "value": 100
+          "op": ">=",
+          "value": 0
         }
       ]
     }

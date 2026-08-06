@@ -2,8 +2,8 @@
   "id": "el-alumno-invisible",
   "title": "El alumno invisible",
   "seed": 7,
-  "description": "Marcos lleva dos meses sin encajar en el grupo. Las bromas, el silencio y la inercia colectiva deciden si la clase lo protege o lo abandona.",
-  "intro": "Marcos es nuevo. En dos meses nadie le ha invitado a un grupo. Lo que hagas en estos diez días y lo que la clase haga marcará el desenlace. No hay respuestas correctas: cada decisión tiene un coste y consecuencias.",
+  "description": "Marcos lleva dos meses sin encajar. Las bromas, el silencio y la inercia colectiva deciden cada día si la clase lo protege o lo abandona. Tú decides dentro: cada gesto, hasta el más pequeño, mueve algo.",
+  "intro": "Marcos es nuevo. En dos meses nadie le ha invitado a un grupo, y poco a poco ha aprendido a no pedirlo. Lo que hagas en estos diez días —y lo que la clase haga— marcará el desenlace. No hay respuestas correctas ni incorrectas: cada decisión tiene un coste, y a veces el gesto más pequeño es el que cambia una costumbre.",
   "prologue": [
     {
       "title": "Lunes, 8:20",
@@ -20,6 +20,10 @@
     {
       "title": "Diez días",
       "text": "Van a pasar diez días de instituto. Cada día puede traer una situación y varias salidas. No hay respuestas correctas ni incorrectas: cada decisión tiene un coste, y la clase reacciona a lo que haces y a lo que no haces."
+    },
+    {
+      "title": "Lo que verás",
+      "text": "Junto a la clase verás cinco dinámicas moverse: el apoyo que Marcos recibe, su aislamiento, la presión del grupo, lo que la clase considera normal y el silencio que lo envuelve todo. No son puntuación: son una radiografía viva de cómo cambia el grupo. Podrás consultarlas cuando quieras."
     },
     {
       "title": "No es un examen",
@@ -271,6 +275,22 @@
             "isolation": 1
           },
           "relationEffects": {},
+          "setFlags": [],
+          "clearFlags": []
+        },
+        {
+          "id": "saludar",
+          "text": "Le saludas con la cabeza y le dices que mañana hay sitio.",
+          "stance": "pro",
+          "consequence": "Marcos te devuelve el saludo con los ojos bajos, pero asiente. No ha cambiado el mundo: solo has prometido un sitio. A veces el primer hueco se abre con una promesa pequeña.",
+          "effects": {
+            "support": 3,
+            "isolation": -2,
+            "silence": -1
+          },
+          "relationEffects": {
+            "tu:marcos": 6
+          },
           "setFlags": [],
           "clearFlags": []
         }
@@ -632,6 +652,65 @@
       ]
     },
     {
+      "id": "foto-grupo",
+      "day": 4,
+      "priority": 5,
+      "condition": {
+        "variable": "support",
+        "op": "<",
+        "value": 30
+      },
+      "actor": "lucia",
+      "speaker": "El fotógrafo, desde la tarima",
+      "scene": "La foto de grupo del trimestre. La clase se ordena en filas y, sin que nadie lo proponga, Marcos acaba solo al borde, casi fuera de encuadre.",
+      "text": "Para la foto del curso hay que ordenarse. Las filas se llenan y, otra vez sin decirlo, Marcos se queda al borde, medio fuera del encuadre.",
+      "choices": [
+        {
+          "id": "fila",
+          "text": "Te mueves y le haces hueco a tu lado en la fila.",
+          "stance": "pro",
+          "consequence": "El fotógrafo tiene que recolocar a medio grupo cuando te apartas a buscar a Marcos. Alguien resopla, pero Marcos entra en la foto. La foto es de todos, y por primera vez él está en una.",
+          "effects": {
+            "support": 6,
+            "isolation": -4,
+            "norm": 3
+          },
+          "relationEffects": {
+            "tu:marcos": 7
+          },
+          "setFlags": [],
+          "clearFlags": []
+        },
+        {
+          "id": "fila-calla",
+          "text": "Dejas que las filas se hagan solas.",
+          "stance": "neutral",
+          "consequence": "Las filas se hacen solas, y Marcos queda fuera sin que nadie diga nada. La foto saldrá perfecta, con un hueco que nadie verá hasta dentro de años.",
+          "effects": {
+            "silence": 2,
+            "isolation": 1
+          },
+          "relationEffects": {},
+          "setFlags": [],
+          "clearFlags": []
+        },
+        {
+          "id": "fila-aparta",
+          "text": "Retrocedes un paso y el borde queda más lejos de ti.",
+          "stance": "anti",
+          "consequence": "Retrocedes un paso. La fila se cierra detrás de ti y Marcos queda fuera del encuadre sin que nadie lo ordene. Cómodo. Tan cómodo que pesa.",
+          "effects": {
+            "support": -3,
+            "isolation": 3,
+            "silence": 3
+          },
+          "relationEffects": {},
+          "setFlags": [],
+          "clearFlags": []
+        }
+      ]
+    },
+    {
       "id": "la-hora",
       "day": 5,
       "priority": 4,
@@ -913,6 +992,67 @@
       ]
     },
     {
+      "id": "trabajo-busco",
+      "day": 6,
+      "priority": 5,
+      "condition": {
+        "variable": "support",
+        "op": "<",
+        "value": 35,
+        "notFlag": "alianza"
+      },
+      "actor": "pablo",
+      "speaker": "Pablo (buscando pareja)",
+      "scene": "Trabajo en parejas. Pablo recorre el aula con la lista, y cada vez que llega a un hueco alguien dice que ya tiene sitio.",
+      "text": "Pablo necesita pareja para el trabajo y va preguntando. Cuando llega a la mesa de Marcos, todos encuentran una excusa.",
+      "choices": [
+        {
+          "id": "buscando",
+          "text": "Te apuntas tú con Marcos, sin dramatismos.",
+          "stance": "pro",
+          "consequence": "Le dices a Pablo: 'conmigo'. Marcos levanta la cabeza, sorprendido de que nadie pidiera excusa por una vez. El trabajo sale regular. No importa: se ha acabado la norma de no querer pareja con él.",
+          "effects": {
+            "support": 7,
+            "isolation": -4,
+            "norm": 4,
+            "silence": -3
+          },
+          "relationEffects": {
+            "tu:marcos": 8
+          },
+          "setFlags": [],
+          "clearFlags": []
+        },
+        {
+          "id": "buscando-calla",
+          "text": "Te quedas mirando la libreta, en blanco.",
+          "stance": "neutral",
+          "consequence": "Pablo desiste y se busca la vida en otra mesa. Marcos vuelve a su sitio y nadie lo ha mirado. No has dicho que no: no has dicho nada, que es casi lo mismo.",
+          "effects": {
+            "silence": 2,
+            "isolation": 2
+          },
+          "relationEffects": {},
+          "setFlags": [],
+          "clearFlags": []
+        },
+        {
+          "id": "buscando-quito",
+          "text": "'Hoy estoy liado', dices, y te agachas sobre los apuntes.",
+          "stance": "anti",
+          "consequence": "La excusa es creíble y nadie la discute. Marcos la oye y la acepta: ya está acostumbrado a las excusas. La que no se oye es la de todos los demás.",
+          "effects": {
+            "support": -4,
+            "silence": 4,
+            "isolation": 3
+          },
+          "relationEffects": {},
+          "setFlags": [],
+          "clearFlags": []
+        }
+      ]
+    },
+    {
       "id": "grupo-comer",
       "day": 7,
       "priority": 5,
@@ -971,6 +1111,25 @@
           "relationEffects": {},
           "setFlags": [],
           "clearFlags": []
+        },
+        {
+          "id": "aliados",
+          "text": "Buscas a Lucía y cruzáis el comedor los dos.",
+          "stance": "pro",
+          "consequence": "Con Lucía al lado, cruzar el comedor resulta menos raro. Iván resopla, pero hay dos, y dos son suficientes para que Marcos no coma solo. No hace falta toda la clase: basta con que alguien se atreva a ser el primero con alguien al lado.",
+          "effects": {
+            "support": 5,
+            "isolation": -3,
+            "norm": 4
+          },
+          "relationEffects": {
+            "tu:lucia": 6,
+            "tu:marcos": 6
+          },
+          "setFlags": [
+            "alianza"
+          ],
+          "clearFlags": []
         }
       ]
     },
@@ -1023,6 +1182,61 @@
             "norm": -4,
             "silence": 4,
             "support": -4
+          },
+          "relationEffects": {},
+          "setFlags": [],
+          "clearFlags": []
+        }
+      ]
+    },
+    {
+      "id": "recreo-lluvia",
+      "day": 7,
+      "priority": 3,
+      "condition": null,
+      "actor": "pablo",
+      "speaker": "El recreo bajo la lluvia",
+      "scene": "Llueve y el recreo se queda dentro. El aula se llena de corrillos; Marcos dibuja solo en su mesa, y nadie se acerca a verlo.",
+      "text": "Con la lluvia el recreo se hace dentro. Marcos dibuja en su mesa, solo, y por un momento no hay risas: solo el hueco que todos saben que está ahí.",
+      "choices": [
+        {
+          "id": "ver-dibujo",
+          "text": "Te acercas y le pides ver el dibujo.",
+          "stance": "pro",
+          "consequence": "Marcos te enseña el dibujo con las orejas rojas. Es bueno. Le dices que es bueno, y durante un rato el aula tiene dos mesas juntas en lugar de una. A veces basta con que alguien se acerque.",
+          "effects": {
+            "support": 6,
+            "isolation": -4,
+            "silence": -2
+          },
+          "relationEffects": {
+            "tu:marcos": 8
+          },
+          "setFlags": [],
+          "clearFlags": []
+        },
+        {
+          "id": "lluvia-nada",
+          "text": "Te quedas en tu corrillo, mirando el móvil.",
+          "stance": "neutral",
+          "consequence": "El recreo pasa sin incidentes ni gestos. Marcos dibuja solo y tú miras el móvil: cada uno en su isla. La lluvia acaba y nada ha cambiado, ni siquiera un poco.",
+          "effects": {
+            "silence": 2,
+            "isolation": 1
+          },
+          "relationEffects": {},
+          "setFlags": [],
+          "clearFlags": []
+        },
+        {
+          "id": "lluvia-chiste",
+          "text": "Aprovechas para repetir el chiste y arrancar una risa.",
+          "stance": "anti",
+          "consequence": "El chiste arranca una risa general que llena el aula vacía de recreo. Marcos aprieta el lápiz y no levanta la cabeza. La risa es de todos, menos suya; la rutina, otra vez.",
+          "effects": {
+            "support": -4,
+            "silence": 4,
+            "isolation": 3
           },
           "relationEffects": {},
           "setFlags": [],
@@ -1198,6 +1412,65 @@
       ]
     },
     {
+      "id": "nadie-invita",
+      "day": 8,
+      "priority": 6,
+      "condition": {
+        "notFlag": "alianza"
+      },
+      "actor": "sara",
+      "speaker": "Sara (con el móvil en la mano)",
+      "scene": "El grupo de clase silba al pasar el móvil: lista de invitados al cumpleaños del viernes. Los nombres van cayendo y Marcos no está en ninguno.",
+      "text": "Circula la lista del cumpleaños. Marcos pasa junto al corro justo cuando la leen en alto, y ninguno de los nombres es el suyo.",
+      "choices": [
+        {
+          "id": "listado",
+          "text": "'Falta uno', dices, y lo nombras delante de todos.",
+          "stance": "pro",
+          "consequence": "Se hace un silencio incómodo. Alguien dice 'ya sabes, es que no le cae bien a todo el mundo', y tú respondes que no se trata de caer bien. No lo invitan, pero ya no pueden decir que nadie lo notó.",
+          "effects": {
+            "support": 6,
+            "norm": 5,
+            "silence": -3
+          },
+          "relationEffects": {
+            "tu:marcos": 6
+          },
+          "setFlags": [
+            "puerta"
+          ],
+          "clearFlags": []
+        },
+        {
+          "id": "listado-calla",
+          "text": "Te quedas callado hasta que el móvil cambia de foto.",
+          "stance": "neutral",
+          "consequence": "El móvil cambia de foto y la lista se olvida. Marcos sigue sin estar en ella, y tú no has dicho nada. La lista no miente, pero tampoco cuenta toda la historia.",
+          "effects": {
+            "silence": 2,
+            "isolation": 1
+          },
+          "relationEffects": {},
+          "setFlags": [],
+          "clearFlags": []
+        },
+        {
+          "id": "listado-anade",
+          "text": "Te ríes con el grupo y comentas a quién invitaríais.",
+          "stance": "anti",
+          "consequence": "La conversación se anima con nombres, risas y planes. Marcos se aleja del corro sin que nadie lo llame. La lista queda cerrada, y con ella una puerta más.",
+          "effects": {
+            "support": -4,
+            "silence": 4,
+            "isolation": 3
+          },
+          "relationEffects": {},
+          "setFlags": [],
+          "clearFlags": []
+        }
+      ]
+    },
+    {
       "id": "charla-daniel",
       "day": 9,
       "priority": 5,
@@ -1314,6 +1587,66 @@
       ]
     },
     {
+      "id": "payoff-sara",
+      "day": 9,
+      "priority": 6,
+      "condition": {
+        "flag": "incipiente"
+      },
+      "actor": "sara",
+      "speaker": "Sara (decidida, por fin)",
+      "scene": "Sara te busca entre el bullicio con una hoja doblada. Por primera vez, no mira al suelo al hablar de Marcos.",
+      "text": "Sara no aguanta más el silencio. Propone escribir una nota conjunta para que la clase deje de fingir que no ve lo que ve.",
+      "choices": [
+        {
+          "id": "firmo",
+          "text": "Apoyas la nota y firmas la primera.",
+          "stance": "pro",
+          "consequence": "Firmas primero y otros van sumando. No es una revolución: es un papel con nombres. Pero un papel con nombres es más difícil de ignorar que una conciencia sola. Sara suelta el aire que llevaba aguantando desde el día uno.",
+          "effects": {
+            "support": 7,
+            "norm": 6,
+            "silence": -4
+          },
+          "relationEffects": {
+            "tu:sara": 8
+          },
+          "setFlags": [
+            "incipiente_firme"
+          ],
+          "clearFlags": []
+        },
+        {
+          "id": "nota-calla",
+          "text": "Lo dejas en manos de Sara, sin firmar.",
+          "stance": "neutral",
+          "consequence": "Sara recoge pocas firmas; la suya sola no pesa lo mismo que una fila. La nota se queda a medias, y Sara aprende que un gesto sin respaldo también es solitario.",
+          "effects": {
+            "support": 1,
+            "silence": 2
+          },
+          "relationEffects": {},
+          "setFlags": [],
+          "clearFlags": []
+        },
+        {
+          "id": "nota-resta",
+          "text": "'No hagamos un teatro que se viralice', le dices.",
+          "stance": "anti",
+          "consequence": "Sara se encoge y guarda la hoja. Tu cautela suena razonable, y por eso misma deja todo como estaba. El 'no hagas teatro' es la frase que más veces ha matado un gesto.",
+          "effects": {
+            "support": -4,
+            "silence": 4
+          },
+          "relationEffects": {},
+          "setFlags": [
+            "silencio_final"
+          ],
+          "clearFlags": []
+        }
+      ]
+    },
+    {
       "id": "reunion-final",
       "day": 10,
       "priority": 9,
@@ -1371,6 +1704,20 @@
             "silencio_final"
           ],
           "clearFlags": []
+        },
+        {
+          "id": "derivar",
+          "text": "Propones dejarlo en manos de la tutora, sin comprometer a nadie.",
+          "stance": "neutral",
+          "consequence": "La tutora recoge el tema, pero sin la clase detrás el seguimiento se va apagando. Nadie ha decidido en contra, y nadie ha decidido a favor: esa es la decisión que queda firmada.",
+          "effects": {
+            "silence": 3,
+            "pressure": 1,
+            "support": -1
+          },
+          "relationEffects": {},
+          "setFlags": [],
+          "clearFlags": []
         }
       ]
     }
@@ -1379,14 +1726,52 @@
     {
       "id": "final-apoyo",
       "title": "La clase se vuelca",
-      "text": "El grupo cambia la inercia: se habla, se investigan los episodios y se abren espacios de acogida. La clase que callaba ahora protege.",
+      "text": "Algo se ha roto, para bien. Marcos ya no come junto a la ventana: hay nombre en las listas, sitio en los grupos y un silencio menos pesado en el aula. No hubo escena de película, hubo gestos pequeños y repetidos que acabaron siendo costumbre. La norma que antes normalizaba la risa ahora normaliza el «ven, hay sitio». Nadie cree haber hecho nada heroico, y esa es precisamente la clave: lo hicieron entre todos, y por eso se sostiene.",
       "condition": {
         "logic": "and",
         "rules": [
           {
             "variable": "support",
             "op": ">=",
-            "value": 50
+            "value": 60
+          }
+        ]
+      }
+    },
+    {
+      "id": "final-protocolo",
+      "title": "El protocolo",
+      "text": "El informe, la tutoría y la asamblea dejaron algo escrito: un protocolo de acompañamiento, con nombres y fechas. La clase no cambió de la noche a la mañana, pero el mecanismo está ahí. Cuando algo está escrito, cuesta mucho más fingir que no pasa. El siguiente paso ya no depende solo de la valentía de uno: depende de que el papel siga vivo, y de que alguien lo recite de vez en cuando.",
+      "condition": {
+        "logic": "and",
+        "rules": [
+          {
+            "flag": "programa"
+          },
+          {
+            "variable": "support",
+            "op": ">=",
+            "value": 40
+          }
+        ]
+      }
+    },
+    {
+      "id": "final-alianza",
+      "title": "La red que aguanta",
+      "text": "Sin campañas ni discursos, la red se sostuvo: un sitio en la mesa, un nombre en el grupo de sociales, una propuesta que se votó. Marcos sigue siendo discreto, pero ya no es invisible: hay quien lo nombra y quien lo busca. No es un final feliz de película, es un mecanismo que empezó a girar. Y los mecanismos, cuando giran un día tras otro, se convierten en costumbre antes de que nadie lo note.",
+      "condition": {
+        "logic": "and",
+        "rules": [
+          {
+            "variable": "support",
+            "op": ">=",
+            "value": 40
+          },
+          {
+            "variable": "isolation",
+            "op": "<",
+            "value": 60
           }
         ]
       }
@@ -1394,7 +1779,7 @@
     {
       "id": "final-aislamiento",
       "title": "El aislamiento se consolida",
-      "text": "El aislamiento se consolida. Marcos sigue en el aula, pero la clase ha fijado el hábito de no verlo.",
+      "text": "El aislamiento se consolidó como una regla no escrita. Marcos sigue en el aula, y la clase ha fijado el hábito de no verlo: nadie lo nombra, nadie le hace sitio, nadie se explica el porqué. Lo más difícil de ver no es la risa ni el apodo: es el «nadie ha hecho nada» que se repite sin que nadie lo diga en voz alta. El silencio no es inocente. Solo es cómodo, y lo cómodo rara vez se revisa.",
       "condition": {
         "logic": "and",
         "rules": [
@@ -1407,16 +1792,36 @@
       }
     },
     {
+      "id": "final-grieta",
+      "title": "La grieta",
+      "text": "Ni se protegió ni se rompió del todo el silencio. Hubo frases que se dijeron a medias y gestos que se quedaron en un saludo. La clase vive en el «otro día lo hablamos», y ese otro día no llega. No hubo ruptura: hubo una grieta. Las grietas a veces dejan pasar luz, y otras veces solo dejan pasar ruido. Nadie sabría decir en qué lado ha caído esta.",
+      "condition": {
+        "logic": "and",
+        "rules": [
+          {
+            "variable": "silence",
+            "op": ">=",
+            "value": 55
+          },
+          {
+            "variable": "support",
+            "op": "<",
+            "value": 40
+          }
+        ]
+      }
+    },
+    {
       "id": "final-inercia",
       "title": "La inercia",
-      "text": "Ni se protege ni se rompe del todo el silencio. La indolencia de cada día, vista de frente, también es una decisión.",
+      "text": "Ni se protege ni se rompe del todo el silencio. La indolencia de cada día, vista de frente, también es una decisión. Marcos aprende a no pedir sitio; la clase aprende a no tener que dárselo. Nada cambió de golpe, y justamente eso es lo que cambia: que nada cambie. Diez días de no decidir también dibujan una historia, y esta es la suya.",
       "condition": {
         "logic": "and",
         "rules": [
           {
             "variable": "support",
-            "op": "<=",
-            "value": 100
+            "op": ">=",
+            "value": 0
           }
         ]
       }

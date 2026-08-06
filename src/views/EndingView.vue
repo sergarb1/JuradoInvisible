@@ -63,7 +63,7 @@ const rows = computed(() =>
     <div class="flex gap-3">
       <button
         type="button"
-        class="rounded-xl bg-sky-500 px-6 py-3 font-semibold text-slate-950 transition hover:bg-sky-400"
+        class="rounded-xl bg-amber-500 px-6 py-3 font-semibold text-slate-950 transition hover:bg-amber-400"
         @click="sim.restart(); router.push({ name: 'mapa', params: { caseId: caso?.id } })"
       >
         Rejugar
